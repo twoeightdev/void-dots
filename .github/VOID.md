@@ -34,7 +34,8 @@
 ---
 #### Base Installation
 ```
-  - $ REPO=https://alpha.de.repo.voidlinux.org/current
+  - $ REPO=https://alpha.de.repo.voidlinux.org/current  # or below
+  - $ REPO=https://void.webconverger.org/current
   - $ ARCH=x86_64
   - $ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system
 ```
@@ -122,6 +123,12 @@
   - $ passwd hoaxdream
   - $ EDITOR=nvim visudo
 ```
+#### Change mirrors
+- $ mkdir -p /etc/xbps.d
+- $ cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
+- $ sudo sed -i 's|https://alpha.de.repo.voidlinux.org|https://void.webconverger.org|g' /etc/xbps.d/*-repository-*.conf
+- $ xbps-install -Su    # update
+- $ xpbs-query -L       # check new repo URL
 
 #### Packages
 
