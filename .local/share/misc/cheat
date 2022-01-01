@@ -1,0 +1,37 @@
+# Jump to directories
+cac=cache
+c=config
+s=share
+D=dl
+t=torrent
+p=home-pix
+dh=home-dl
+w=work
+wd=diffs
+wr=repo
+np=neovim-plug-config
+nc=neovim-colors
+mn=mnt
+b=scripts
+h=home
+x=games
+f=data
+mg=media-music
+pg=media-pix
+wg=media-wallpaper-landscape
+dg=media-docs
+vg=media-vids
+
+# Edit files
+bf=files
+bd=directories
+cfa=aliasrc
+cfz=zshrc
+cfv=init.vim
+cfe=vifmrc
+cfx=Xresources
+cfu=Newsboat-urls
+cfn=Newsboat-config
+cfmb=ncmpcpp-bindings
+cfmc=ncmpcpp-config
+cfk=sxhkdrc
