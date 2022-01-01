@@ -112,6 +112,9 @@ UUID=xxxx-xxxx /media/core ext4 rw,user,exec 0 0
 #### Git
 - single file commit
 - dot commit -m "Mesg" /path/to/file
+- revert back single file
+- git fetch --all
+- git checkout origin/main -- ~/.config/file
 ---
 #### Keybind XFree86 keysym path
 - `/usr/include/X11/XF86keysym.h
