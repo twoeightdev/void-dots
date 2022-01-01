@@ -1,5 +1,13 @@
-#### Void Installation Guide
+#### Void Installation UEFI EFISTUB Guide
 ---
+#### Login as root then change shell and font
+```
+  - $ username: root
+  - $ password: voidlinux
+  - $ bash
+  - $ ls /usr/share/kbd/consolefonts  # list of fonts available
+  - $ setfont LatGrkCyr-12x22         # set font
+```
 #### Prepare disk
 **Mount point** | **Partition** | **Partition type** | **Suggested size**
 | :---: | :---: | :---: | :---: |
@@ -41,31 +49,31 @@
   - $ cp /etc/resolv.conf /mnt/etc/
   - $ PS1='(chroot) # ' chroot /mnt/ /bin/bash
 ```
-- **Installation Configuration**
+- **Installation Configuration** if installing a glibc distribution, edit /etc/default/libc-locales, uncommenting desired locales.
 ```
-  - If installing a glibc distribution, edit /etc/default/libc-locales, uncommenting desired locales.
-  - $ echo "LANG=en_PH.UTF-8 UTF-8" > /etc/locale.conf
+  - $ echo "LANG=en_PH.UTF-8" > /etc/locale.conf
   - $ echo "LC_COLLATE=C" >> /etc/locale.conf
   - $ echo "en_PH.UTF-8 UTF-8" >> /etc/default/libc-locales
   - $ xbps-reconfigure -f glibc-locales
-  - Set hostname
-  - $ echo art > /etc/hostname
-  - $ vim /etc/rc.conf
-  - $ passwd  # Set password
-  - $ cp /proc/mounts /etc/fstab  # Generate fstab
-  - Remove lines in /etc/fstab that refer to proc, sys, devtmpfs and pts.
-  - Replace references to /dev/sdXX, /dev/nvmeXnYpZ, etc. with their respective UUID
+  - $ ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime   # set timezone
+  - $ echo art > /etc/hostname                                # set hostname
+  - $ nvim /etc/rc.conf                                       # uncomment FONT to change console font
+  - FONT=LatGrkCyr-12x22
+  - $ passwd                                                  # Set password
 ```
 - **Fstab**
 ```
-  - Change the last zero of the entry for / to 1, and the last zero of every other
+  - $ cp /proc/mounts /etc/fstab                              # Generate fstab
+  - Delete everything except / and /boot then add tmpfs:
   - line to 2. These values configure the behaviour of fsck.
   - Example below
-  /dev/sda1       /boot/EFI   vfat    rw,relatime,[...]       0 0
-  /dev/sda2       /           ext4    rw,relatime             0 0
+  /dev/nvme0n1p1   /boot       vfat    rw,relatime,[...]       0 0
+  /dev/nvme0n1p2   /           ext4    rw,relatime             0 0
 
-  UUID=6914[...]  /boot/EFI   vfat    rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro  0 2
-  UUID=dc1b[...]  /           ext4    rw,relatime             0 1
+  - Change /boot to 0 2; / to 0 1, then change to UUID;
+  - to get the UUID inside neovim type :r !blkid /dev/nvme0n1xx
+  UUID=6914[...]   /boot       vfat    rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro  0 2
+  UUID=dc1b[...]   /           ext4    rw,relatime             0 1
   - Add an entry to mount /tmp in RAM:
   tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0
 ```
@@ -80,14 +88,14 @@
 ```
 -- **Finishing install**
 ```
-  - $ xbps-install -Su void-repo-nonfree 
+  - $ xbps-install -Su void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
   - $ xbps-install -Su
   - $ xbps-install -Su intel-ucode nvidia
 ```
 - **EFIBSTUB**
 ```
   - $ ROOT_UUID=$(blkid -s UUID -o value /dev/nvme0n1p2)
-  - $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Arch" -l /vmlinuz-5.11.12_1 -u 'root=UUID=$ROOT_UUID rw quiet loglevel=3 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose
+  - $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UUID=$ROOT_UUID rw quiet loglevel=3 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose
 ```
 - **GRUB**
 ```
@@ -96,7 +104,7 @@
 ```
 - **Finalization**
 ```
-  - $ xbps-query -l | grep linux
+  - $ xbps-query -l | grep linux                # check major and minor; linux5.15
   - $ xbps-reconfigure -f linux<major>.<minor>
   - $ exit
   - $ umount -R /mnt
