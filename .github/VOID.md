@@ -76,6 +76,9 @@
   UUID=dc1b[...]   /           ext4    rw,relatime             0 1
   - Add an entry to mount /tmp in RAM:
   tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0
+  - Mount efivars
+  efivarfs  /sys/firmware/efi/efivars  efivarfs  defaults     0 0
+  - $ mount efivarfs
 ```
 -- **Dracut**
 ```
@@ -107,7 +110,7 @@
 - **Finalization**
 ```
   - $ xbps-query -l | grep linux                # check major and minor; linux5.15
-  - $ xbps-reconfigure -f linux<major>.<minor>
+  - $ xbps-reconfigure -fa linux<major>.<minor>
   - $ exit
   - $ umount -R /mnt
   - $ reboot
