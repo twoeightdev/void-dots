@@ -1,0 +1,113 @@
+#!/bin/sh
+# vol = ^c#d79921^ = color3 yellow
+# weather = ^c#928374^ = color8 bright black
+# clock1 = ^c#fabd2f^ = color11 bright yellow
+# local_clock = ^c#b8bb26^ color10 bright green
+# date = ^c#fb4934^ = color9 bright red
+# dl_speed = ^c#98971a^ = color2 green
+# dl_speed_icon =
+# mem = ^c#98971a^ = color2 green
+# gpu = ^c#d79921^ = color3 yellow
+# cpu = ^c#98971a^ = color2 green
+
+SEP='|'
+interval=1
+rxs=0
+txs=0
+
+pulseaudio() {
+    VOL=$(pamixer --get-volume-human | tr -d '%')
+printf "%s" "$SEP1"
+    if [ "$VOL" = "muted" ] || [ "$VOL" -eq 0 ]; then
+        printf "婢"
+    elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 33 ]; then
+        printf "^c#d79921^ %s%%^d^" "$VOL"
+    elif [ "$VOL" -gt 33 ] && [ "$VOL" -le 66 ]; then
+        printf "^c#d79921^ %s%%^d^" "$VOL"
+    else
+        printf "^c#d79921^ %s%%^d^" "$VOL"
+    fi
+}
+
+_date() {
+  printf "%s^d^-%s^d^ $SEP %s" "^c#fabd2f^$(TZ='Asia/Riyadh' date "+%I:%M%p")" "^c#b8bb26^$(date "+%I:%M%p")" "^c#fb4934^$(date "+%b-%d-%a")"
+}
+
+torrents() {
+    data=$(transmission-remote -l 2>/dev/null | grep -E "%|n/a")
+    [ "$data" ] || return
+    while read -r line; do
+        per="$(printf %s "$line" | awk '{ printf $2 }')"
+        printf %s "$line" | sed "
+            s/.*Stopped.*/  /g;
+            s/.*Seeding.*/  /g;
+            s/.*Idle.*/  /g;
+            s/.*Uploading.*/  /g;
+            s/.*Downloading.*/  /g;
+            s/.*[A-Z][a-z].*/  / g;
+            "
+        printf %s "$per"
+    done <<EOF
+    $data
+EOF
+    transmission-remote -l | grep -qE "%|n/a" && printf " %s"
+}
+
+mail() {
+  unread="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
+  pidof mbsync -c $HOME/.config/mbsync/mbsyncrc >/dev/null 2>&1 && icon="ﮮ"
+  [ "$unread" = "0" ] && [ "$icon" = "" ] || echo "MAIL-$unread$icon"
+}
+
+newsup() {
+  cat /tmp/newsupdate 2>/dev/null || echo "$(newsboat -x print-unread | awk '{ if($1>0) print "NEWS:" $1}')"
+}
+
+mpd() {
+  music="$(mpc current -f "%artist% - %title%")"
+  [ "$music" ] && printf " %s %s" "$music" "$SEP"
+}
+
+# Weather
+LOCATION='San Roque San Pedro Laguna'
+while true; do
+  #curl -s "https://wttr.in/${LOCATION}?format=1" > $HOME/.cache/Weather.tmp
+  curl -s "https://wttr.in/San+Roque+San+Pedro+Laguna?format=1" > $HOME/.cache/Weather.tmp
+  sleep 300
+done &
+
+while true; do
+  # Network Interface Name
+  interface=$(ip route get 8.8.8.8 2>/dev/null| awk '{print $5}')
+
+  # CPU
+  CPU_TEMP=$(sensors | awk '/Core 0/ {print "CPU" $3}')
+
+  # Weather
+  WEATHER=$(cat $HOME/.cache/Weather.tmp | awk '{print $2}')
+
+  # GPU
+  GPU_TEMP=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
+
+  # Used and total memory
+  MEMUSED=$(free --mebi | sed -n '2{p;q}' | awk '{printf ("%2.2fGiB\n", ( $3 / 1024))}')
+
+# Status    祝   
+xsetroot -name " ^c#fb4934^ﰬ^d^^c#b8bb26^${rxs}^d^KiB|^c#fb4934^ﰵ^d^^c#b8bb26^${txs}^d^KiB $(torrents) $(pulseaudio) $SEP ^c#98971a^$(mail)^d^ $SEP ^c#fb4934^$(newsup) $SEP ^c#928374^WEATHER:${WEATHER}^d^ $SEP ^c#98971a^MEM-${MEMUSED}^d^ $SEP ^c#d79921^GPU-${GPU_TEMP}°C^d^ $SEP ^c#98971a^${CPU_TEMP}^d^ $SEP $(_date) "
+
+# internet
+
+  rx1=$(cat /sys/class/net/$interface/statistics/rx_bytes)
+  tx1=$(cat /sys/class/net/$interface/statistics/tx_bytes)
+
+  sleep $interval
+
+  rx2=$(cat /sys/class/net/$interface/statistics/rx_bytes)
+  tx2=$(cat /sys/class/net/$interface/statistics/tx_bytes)
+  rxs=$(expr $rx2 - $rx1)
+  txs=$(expr $tx2 - $tx1)
+  rxs=$(expr $rxs / $interval)
+  txs=$(expr $txs / $interval)
+  rxs=$(expr $rxs / 1024)
+  txs=$(expr $txs / 1024)
+done &

@@ -1,0 +1,3 @@
+#!/bin/sh
+# set random wallpaper
+find /media/data/walls/ultrawide/ -type f,l | shuf | sxiv - -tb

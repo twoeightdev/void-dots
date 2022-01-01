@@ -1,0 +1,25 @@
+#!/bin/sh
+# open web page via dmenu and open on $BROWSER
+TEXT="duckduckgo\ngithub\ntorrent\n9901\nshopee\nfoodpanda\nludeon\nsuckless\narch\nanimix\nwallhaven\nunixporn\nyoutube\ngmail"
+
+DMENU="$( echo -e $TEXT | dmenu -l 7 -p web )"
+
+BROWSER="/usr/bin/qutebrowser" #Change this to your preference
+
+case "$DMENU" in
+    duckduckgo)   $BROWSER https://duckduckgo.com                   ;;
+    github)       $BROWSER https://github.com                       ;;
+    torrent)      $BROWSER https://1337x.to/home/                   ;;
+    9901)         $BROWSER http://localhost:9091/transmission/web/  ;;
+    shopee)       $BROWSER https://shopee.ph/                       ;;
+    foodpanda)    $BROWSER https://www.foodpanda.ph/                ;;
+    ludeon)       $BROWSER https://ludeon.com/forums/index.php      ;;
+    suckless)     $BROWSER https://suckless.org                     ;;
+    arch)         $BROWSER https://bbs.archlinux.org/index.php      ;;
+    animix)       $BROWSER https://animixplay.to                    ;;
+    wallhaven)    $BROWSER https://wallhaven.cc                     ;;
+    unixporn)     $BROWSER https://www.reddit.com/r/unixporn        ;;
+    youtube)      $BROWSER https://www.youtube.com                  ;;
+    gmail)        $BROWSER https://gmail.com                        ;;
+esac
+https://www.foodpanda.ph/

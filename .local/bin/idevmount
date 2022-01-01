@@ -1,0 +1,11 @@
+#!/bin/sh
+MOUNT_PATH="$HOME/.config/iPhone"
+fusermount -u $MOUNT_PATH
+
+rmdir $MOUNT_PATH
+
+idevicepair pair
+# a dialog box will appear on the phone, select trust
+mkdir $MOUNT_PATH
+
+ifuse $MOUNT_PATH

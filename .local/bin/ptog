@@ -1,0 +1,7 @@
+#!/bin/sh
+if pgrep -x "picom" > /dev/null
+then
+  killall picom && notify-send "Picom deactivated"
+else
+  picom -b && notify-send "Picom enabled"
+fi

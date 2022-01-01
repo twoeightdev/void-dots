@@ -1,0 +1,14 @@
+#!/bin/sh
+gtkn=$(cat ~/.config/work/backups/gtoken | dmenu -i -l 5)
+
+# exit if none chosen
+[ -z "$gtkn" ] && exit
+
+# if you run this command with an argument, it will automatically insert the
+# character. Otherwise, show a message that the code has been copied
+if [ -n "$1" ]; then
+    xdotool type "$gtkn"
+else
+    echo "$gtkn" | tr -d '\n' | xclip -selection clipboard
+    notify-send "'$gtkn' copied to clipboard." &
+fi

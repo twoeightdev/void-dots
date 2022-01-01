@@ -1,0 +1,3 @@
+#!/bin/bash
+cd ~/.dots/stow_home
+stow * --target ~

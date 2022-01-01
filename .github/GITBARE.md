@@ -1,0 +1,25 @@
+#### Setup git bare repository
+- **Git global config**
+  - `git config --global user.email "YourEmailAddressHere"`
+  - `git config --global user.name "YourNameHere"`
+  - `git config --global credential.helper cache`
+  - `git config --global credential.helper 'cache --timeout=86400'`
+  - `git config --global pager.branch 'false'`
+- **Git bare new setup**
+  - `mkdir ~/.config/dots`
+  - `git init --bare $HOME/.config/dots`
+  - `alias dot='git --git-dir=$HOME/.config/dots/ --work-tree=$HOME'` - `add to current shell scope`
+  - `dot config --local status.showUntrackedFiles no`
+  - `dot add <file>`
+  - `dot commit -m "your message here"`
+  - `dot branch -M main`
+  - `dot remote add origin https://your_original.git`
+  - `dot push -u origin main`
+- **Git bare installing on new machine**
+  - `alias dot='git --git-dir=$HOME/.config/dots/ --work-tree=$HOME'` - `add to current shell scope`
+  - `echo "dots" >> .gitignore`
+  - `git clone --bare https://github.com/hoaxdream/dots.git $HOME/.config/dots`
+  - `Remove stock configuration in $HOME, else error will occur.`
+  - `dot checkout`
+  - `dot config --local status.showUntrackedFiles no`
+  - `dot push -u origin main`

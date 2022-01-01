@@ -1,0 +1,2 @@
+#!/bin/sh
+sxiv -t * > /dev/null 2>&1 &
