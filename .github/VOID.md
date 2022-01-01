@@ -85,6 +85,8 @@
   use_fstab=yes
   compress="cat"
   omit_dracutmodules+=" dash i18n rpmversion btrfs lvm qemu multipatch qemu-net lunmask fstab-sys biosdevname dmraid dmsquash-live mdraid nbd nfs "
+  nofscks=yes
+  no_hostonly_commandline=yes
 ```
 -- **Finishing install**
 ```
@@ -95,7 +97,7 @@
 - **EFIBSTUB**
 ```
   - $ ROOT_UUID=$(blkid -s UUID -o value /dev/nvme0n1p2)
-  - $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UUID=$ROOT_UUID rw quiet loglevel=3 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose
+  - $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UUID=$ROOT_UUID rw quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose
 ```
 - **GRUB**
 ```
