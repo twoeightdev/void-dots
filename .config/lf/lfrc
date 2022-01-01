@@ -1,0 +1,115 @@
+# Basic
+#set previewer ~/.config/lf/scope
+set hidden true
+set drawbox true
+set icons true
+set ignorecase true
+#cmd trash %set -f; mv $fx ~/.trash
+
+# cmd functions
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+# compress current file or selected files with tar and gunzip
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+
+# compress current file or selected files with zip
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+
+cmd setbg ${{
+  cp "$f" ~/.config/wall.png && xwallpaper --zoom "$f"
+}}
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+cmd paste &{{
+  load=$(lf -remote 'load')
+  mode=$(echo "$load" | sed -n '1p')
+  list=$(echo "$load" | sed '1d')
+  if [ $mode = 'copy' ]; then
+    rsync -av --ignore-existing --progress $list . \
+    | stdbuf -i0 -o0 -e0 tr '\r' '\n' \
+    | while read line; do
+      lf -remote "send $id echo $line"
+    done
+  elif [ $mode = 'move' ]; then
+    mv -n $list .
+  fi
+  lf -remote 'send load'
+  lf -remote 'send clear'
+}}
+
+cmd open ${{
+  case $(file --mime-type $f -b) in
+    text/troff) man ./ $f;;
+    text/*) $EDITOR $fx;;
+    image/x-xcf|image/svg+xml) setsid gimp $f >/dev/null 2>&1 & ;;
+    image/*) rotdir $f | setsid sxiv -aio 2>/dev/null | lf-select & ;;
+    audio/*) mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s) $f ;;
+    video/*) setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s) $f -quiet >/dev/null 2>&1 & ;;
+    application/pdf) setsid zathura $fx >/dev/null 2>&1 & ;;
+    *) for f in $fx; do setsid $OPENER $f >/dev/null 2>&1 & done;;
+  esac
+}}
+
+# Basic binds
+map D delete
+map p paste
+map t cut
+map y copy
+map r rename
+map gg top
+map G bottom
+map C clear
+map u unselect
+map bg setbg
+map T extract
+map O mkdir
+map o mkfile
+map R reload
+map <enter> shell
+map x $$f
+map X !$f
+#map o &mimeopen $f
+#map O &mimeopen --ask $f
+
+# Directories
+map gh cd ~
+map gc cd ~/.config
+map gd cd ~/.config/dl
+map gb cd ~/.local/bin/
+map gmc cd /media/core
+map gmd cd /media/data
+map gmw cd /media/data/pix/walls
+map gmb cd /media/data/linux_data/backups

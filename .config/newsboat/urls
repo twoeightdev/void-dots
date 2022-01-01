@@ -1,0 +1,23 @@
+-NEWSFEEDS
+https://www.archlinux.org/feeds/news/ "~Arch Linux (Tech)"
+https://www.archlinux.org/feeds/packages/ "~Arch Packages Update (Tech)
+-YOUTUBE
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~DistroTube (Youtube)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCxhygwqQ1ZMoBGQM2yEcNug "~RaffyTulfo (Youtube)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "~Brodie Robertston (Youtube)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC95pSgGOrWclOheq6cchfPw "~Bitag (Youtube)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrqAGUPPMOdo0jfQ6grikZw "~Colt Steele (Youtube)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1szFCBUWXY3ESff8dJjjzw "~Loi Liang Yang (Youtube)"
+-REDDIT
+https://www.reddit.com/r/unixporn.rss "~r/unixporn (Reddit)"
+https://www.reddit.com/r/jailbreak.rss "~r/jailbreak (Reddit)"
+-GIT
+https://github.com/LukeSmithxyz.atom "~LukeSmithxyz (Github)"
+https://gitlab.com/dwt1.atom "~Distrotube (Gitlab)"
+-WEBTOON
+https://www.webtoons.com/en/super-hero/unordinary/rss?title_no=679 "~Unordinary (Webtoon)"
+https://www.webtoons.com/en/sports/wind-breaker/rss?title_no=372 "~Wind Breaker (Webtoon)"
+https://www.webtoons.com/en/action/weakhero/rss?title_no=1726 "~Weak Hero (Webtoon)"
+https://www.webtoons.com/en/sf/rebirth/rss?title_no=1412 "~Rebirth (Webtoon)"
+https://www.webtoons.com/en/horror/tales-of-the-unusual/rss?title_no=68 "~Tales of the Unusual (Webtoon)"

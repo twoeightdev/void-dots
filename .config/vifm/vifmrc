@@ -1,0 +1,47 @@
+" vim: filetype=vifm :
+source ~/.config/vifm/sc
+" Open with preview
+view
+
+colorscheme default
+set vicmd=$EDITOR           " Set default editor
+set dotdirs=                " Hide .. directory everywhere
+set dotfiles                " Auto show dotfiles
+set syscalls                " Perform file operations via system calls
+set history=1000            " Set how many directories to store in history
+set fastrun                 " Allow partially entered external commands with unambiguous beginning using :!
+set nofollowlinks           " Auto resolve symbolic links on l or enter
+set sortnumbers             " Natural sort of (version) numbers within text
+set novimhelp               " Disable help
+set undolevels=100          " Maximum number of changes that can be undone
+set wildmenu                " List matches on tab completion
+set wildstyle=popup         " Display completion in a form of popup
+set scrolloff=4             " Spaces from cursor to upper/lower border
+set ignorecase              " Ignore case in search unless it has uppercase
+set smartcase               " Ignore case in search unless it has uppercase
+set nohlsearch              " Disable highlight search 
+set incsearch               " Increment searching while typing
+set confirm-=delete         " Disable delete confirmation
+set rulerformat=            " Disable number of directories and files in status
+set title                   " Update terminal title
+
+set timefmt=%m/%d\ %H:%M
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+set vifminfo=dhistory,chistory,state,shistory,phistory,fhistory,dirstack,registers,bookmarks,bmarks
+
+command! df df -h %m 2> /dev/null
+command! diff vim -d %f %F
+command! zip zip -r %f.zip %f
+command! run !! ./%f
+command! make !!make %a
+command! mkcd :mkdir %a | cd %a
+command! vgrep vim "+grep %a"
+command! reload :write | restart
+
+" Disables preview on ../
+fileview ../ echo >/dev/null
+
+"" Load Configuration
+source $HOME/.config/vifm/filepreview
+source $HOME/.config/vifm/mappings
+source $HOME/.config/vifm/icons

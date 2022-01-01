@@ -1,0 +1,99 @@
+/* !! Nord Xresources palette */
+/* *.foreground: #D8DEE9 */
+/* *.background: #22262e */
+/* *.color0:     #3B4252 */ black */
+/* *.color1:     #BF616A */ red */
+/* *.color2:     #A3BE8C */ green */
+/* *.color3:     #EBCB8B */ yellow */
+/* *.color4:     #81A1C1 */ blue */
+/* *.color5:     #B48EAD */ magenta */
+/* *.color6:     #88C0D0 */ cyan */
+/* *.color7:     #E5E9F0 */ white */
+/* *.color8:     #4C566A */ black */
+/* *.color9:     #BF616A */ red */
+/* *.color10:    #A3BE8C */ green */
+/* *.color11:    #EBCB8B */ yellow */
+/* *.color12:    #81A1C1 */ blue */
+/* *.color13:    #B48EAD */ magenta */
+/* *.color14:    #8FBCBB */ cyan */
+/* *.color15:    #ECEFF4 */ white */
+
+!! Gruvbox Xresources pallete
+*.foreground: #ebdbb2
+*.background: #1d2021
+*.color0:     #1d2021
+*.color1:     #cc241d
+*.color2:     #98971a
+*.color3:     #d79921
+*.color4:     #458588
+*.color5:     #b16286
+*.color6:     #689d6a
+*.color7:     #a89984
+*.color8:     #928374
+*.color9:     #fb4934
+*.color10:    #b8bb26
+*.color11:    #fabd2f
+*.color12:    #83a598
+*.color13:    #d3869b
+*.color14:    #8ec07c
+*.color15:    #ebdbb2
+
+/* !! Iceberg Xresources palette */
+/* *.foreground: #c6c8d1 */
+/* *.background: #22262e */
+/* *.color0:     #22262e */
+/* *.color1:     #6b7089 */
+/* *.color2:     #e9b189 */
+/* *.color3:     #c0ca8e */
+/* *.color4:     #ada0d3 */
+/* *.color5:     #95c4ce */
+/* *.color6:     #91acd1 */
+/* *.color7:     #a093c7 */
+/* *.color8:     #e2a478 */
+/* *.color9:     #e98989 */
+/* *.color10:    #e27878 */
+/* *.color11:    #b4be82 */
+/* *.color12:    #84a0c6 */
+/* *.color13:    #89b8c2 */
+/* *.color14:    #d2d4de */
+/* *.color15:    #c6c8d1 */
+
+/* !! Dracula Xresources palette */
+/* *.foreground: #F8F8F2 */
+/* *.background: #282A36 */
+/* *.color0:     #000000 */
+/* *.color1:     #FF5555 */
+/* *.color2:     #50FA7B */
+/* *.color3:     #F1FA8C */
+/* *.color4:     #BD93F9 */
+/* *.color5:     #FF79C6 */
+/* *.color6:     #8BE9FD */
+/* *.color7:     #BFBFBF */
+/* *.color8:     #4D4D4D */
+/* *.color9:     #FF6E67 */
+/* *.color10:    #5AF78E */
+/* *.color11:    #F4F99D */
+/* *.color12:    #CAA9FA */
+/* *.color13:    #FF92D0 */
+/* *.color14:    #9AEDFE */
+/* *.color15:    #E6E6E6 */
+
+/* !! Substrata Xresources palette */
+/* *.foreground: #b5b4c9 */
+/* *.background: #191c25 */
+/* *.color0:     #2e313d */
+/* *.color1:     #cf8164 */
+/* *.color2:     #76a065 */
+/* *.color3:     #ab924c */
+/* *.color4:     #8296b0 */
+/* *.color5:     #a18daf */
+/* *.color6:     #659ea2 */
+/* *.color7:     #b5b4c9 */
+/* *.color8:     #5b5f71 */
+/* *.color9:     #fe9f7c */
+/* *.color10:    #92c47e */
+/* *.color11:    #d2b45f */
+/* *.color12:    #a0b9d8 */
+/* *.color13:    #c6aed7 */
+/* *.color14:    #7dc2c7 */
+/* *.color15:    #f0ecfe */

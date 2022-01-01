@@ -1,0 +1,9 @@
+[user]
+	email = hoaxdream@gmail.com
+	name = hoaxdream
+[pager]
+	branch = false
+[credential]
+	helper = cache --timeout=86400
+[init]
+	defaultBranch = main

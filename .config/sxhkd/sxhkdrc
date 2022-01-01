@@ -1,0 +1,105 @@
+# Basic
+super + Escape
+  bspc wm -r
+super + F5
+  killandnotify "sxhkd" "Config reloaded" && sxhkd &
+super + F6
+  reloadbar
+super + {_,shift + }q
+  bspc node -{c,k}
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Focus and swap
+super + {_,shift + }{h,j,k,l}
+  bspc node -{f,s} {west,south,north,east}
+super + Tab
+  bspc node -f {next,prev}.local
+
+# Resize window
+super + alt {h,j,k,l}
+  bspc node -z {left -5 0,bottom 0 5,top 0 -5,right 5 0}
+super + ctrl {h,j,k,l}
+  bspc node -z {right -5 0,top 0 5,bottom 0 -5,left 5 0}
+alt {h,j,k,l}
+  bspc node -v {-5 0,0 5,0 -5,5 0}
+alt + {minus,equal}
+  bspc config window_gap $(( $(bspc config window_gap) {-,+} 2 )) 
+
+# Window state and flags
+super + {t,shift + t,s,z}
+  bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + ctrl + {m,x,y,z}
+  bspc node -g {marked,locked,sticky,private}
+
+# Pre-select spawn
+super + ctrl + shift + {h,j,k,l}
+  bspc node -p {west,south,north,east}
+super + ctrl + space
+  bspc node -p cancel
+super + ctrl + {1-9}
+  bspc node -o 0.{1-9}
+
+# System
+super + x
+  dprompt "Shutdown computer?" "shutdown -h now"
+super + r
+  dprompt "Reboot computer?" "reboot"
+super + shift + Escape
+  dprompt 'Leave Xorg?' 'killall Xorg'
+super + {F9,F10}
+  {dmount,dumount}
+super + grave
+  dunicode
+super + Insert
+  showclip
+
+# Audio
+XF86AudioMute
+  pamixer --allow-boost -i 3
+XF86AudioRaiseVolume
+  pamixer --allow-boost -i 3
+XF86AudioLowerVolume
+  pamixer --allow-boost -d 3
+super + shift + a
+  $TERMINAL -e pulsemixer
+super + p
+  mpc toggle
+super + equal
+  pamixer --allow-boost -i 3
+super + minus
+  pamixer --allow-boost -d 3
+super + {comma,period}
+  mpc {prev,next}
+super + {_,shift +} bracketright
+  mpc seek +{10,120}
+super + {_,shift +} bracketleft
+  mpc seek -{10,120}
+
+# Recording
+Print
+  maimpick
+
+# User
+super + Return
+  $TERMINAL
+super + d
+  dmenu_run -fn 'mono:size=12' -nb '#1d2021' -sf '#ebdbb2' -sb '#fb4934' -nf '#ebdbb2'
+super + e
+  $TERMINAL -e vifmrun
+super + n
+  $TERMINAL -e newsboat
+super + m
+  $TERMINAL -e neomutt
+super + F12
+  mailsync
+super + b
+  $BROWSER
+super + c
+  $TERMINAL -e calcurse -D ~/.config/calcurse
+super + shift + p
+  $TERMINAL -e ncmpcpp
+super + shift + c
+  $TERMINAL -e bc
+super + g
+  sudo -A gparted

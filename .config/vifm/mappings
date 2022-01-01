@@ -1,0 +1,63 @@
+" vim: filetype=vifm
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-o> <C-w>o
+map <C-s> <C-w>s
+map <C-v> <C-w>v
+
+" Set wallpaper
+map bg :!setbg %f &<CR>
+
+" Open sxiv in thumbnail mode
+map S :!sxiv -t * 2>/dev/null &<CR>
+
+" New file
+map o :!$EDITOR<space>
+
+" Make directory
+map mkd :mkdir<space>
+
+" Mark file
+nmap <space> tj
+
+" Toggle visibility of preview window
+nnoremap w :view<cr>
+vnoremap w :view<cr>gv
+
+" Restart vifm
+map R :restart<CR>
+
+" Quit vifm
+nmap q :quit<CR>
+
+" Start shell in current directory
+nnoremap s :shell<cr>
+
+" Executable
+nnoremap x :!chmod +x %f<cr>
+nnoremap X :!chmod -x %f<cr>
+nnoremap F :!chmod -R a=r,u+w,a+X %f<cr>
+" Extract
+map T :!ext %f &<CR>
+
+" Zip
+map Z :zip %f &<CR>
+
+" Open editor to edit vifmrc and apply settings after returning to vifm
+nnoremap ,c :edit $MYVIFMRC | restart<cr>
+
+" Yank current directory path into the clipboard
+nnoremap yd :!printf %%s %d | xclip -selection clipboard<cr>
+
+" Yank current file path into the clipboard
+nnoremap yf :!printf %%s %c:p | xclip -selection clipboard<cr>
+
+" Faster rename
+nnoremap I cw<c-a>
+nnoremap cc cw<c-u>
+nnoremap A cw
+
+com FzfFind :set noquickview | :exec 'goto "'.system('find . -mindepth 1 2>/dev/null | fzf --height 100 2>/dev/tty').'"%IU' | redraw
+nno <C-f> :FzfFind<CR>

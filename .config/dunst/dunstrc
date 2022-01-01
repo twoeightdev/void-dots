@@ -1,0 +1,64 @@
+# vim: ft=cfg
+[global]
+  font = monospace 16
+  geometry = "350x5-5+30"
+  padding = 2
+  horizontal_padding = 8
+  shrink = true
+
+  markup = full
+  format = "<b>%s</b>\n%b"
+  alignment = center
+  word_wrap = true
+  separator_color = auto
+  transparency = 10
+  dmenu = /usr/bin/dmenu -p dunst:
+  browser = /usr/bin/qutebrowser
+
+  icon_position = left
+  max_icon_size = 32
+  icon_path = /dev/null
+
+  idle_threshold = 0
+  show_age_threshold = 60
+  show_indicators = false
+  hide_duplicate_count = true
+
+[shortcuts]
+  close = ctrl+space
+  close_all = ctrl+shift+space
+  history = ctrl+comma
+  context = ctrl+period
+
+[urgency_low]
+  background = "#22262e"
+  foreground = "#928374"
+  timeout = 5
+
+[urgency_normal]
+  background = "#22262e"
+  foreground = "#d8dee9"
+  timeout = 5
+
+[urgency_critical]
+  background = "#cc2421"
+  foreground = "#d8dee9"
+  timeout = 0
+
+# run dunst -print in order to find fitting options for rules
+
+[history-ignore-mpdnotify]
+  appname = "mdpnotify"
+  summary = "Now playing*"
+  history_ignore = yes
+  timeout = 2
+
+[history-ignore-volume]
+  appname = "volume"
+  summary = " Volume*"
+  history_ignore = yes
+  timeout = 2
+
+[play_sound]
+  summary = "*"
+  script = "alert"
