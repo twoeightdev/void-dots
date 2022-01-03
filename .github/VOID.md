@@ -135,9 +135,8 @@
   - $ xbps-install -Su    # update
   - $ xpbs-query -L       # check new repo URL
 ```
-#### Bootstrap
+#### Bootstrap [void-bootstrap](https://github.com/hoaxdream/void-bootstrap)
 ```
-  - [void-bootstrap](https://github.com/hoaxdream/void-bootstrap)
   - $ sudo xbps-install -Syu git
   - $ git clone https://github.com/hoaxdream/void-bootstrap
   - $ cd bootstrap
