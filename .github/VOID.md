@@ -9,4 +9,3 @@ _Use at your own risk._
   - Pre installation
     - Set shell
     - Change font
-    - 
