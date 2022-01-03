@@ -2,7 +2,7 @@
 # open web page via dmenu and open on $BROWSER
 TEXT="duckduckgo\ngithub\ntorrent\n9901\nshopee\nfoodpanda\nludeon\nsuckless\narch\nanimix\nwallhaven\nunixporn\nyoutube\ngmail"
 
-DMENU="$( echo -e $TEXT | dmenu -l 7 -p web )"
+DMENU="$( echo $TEXT | dmenu -l 7 -p web )"
 
 BROWSER="/usr/bin/qutebrowser" #Change this to your preference
 
