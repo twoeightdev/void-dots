@@ -1,7 +1,7 @@
 ## Overview
 
 * Arch linux dotfiles for [bspwm](https://github.com/baskerville/bspwm) [dwm](http://suckless.org/) & [xmonad](https://github.com/xmonad/xmonad)
-* EFISTUB Arch Linux Installation [Guide](https://github.com/hoaxdream/dots/blob/main/.github/INSTALL.md)
+* EFISTUB Arch Linux Installation [Guide](https://github.com/hoaxdream/void-dots/blob/main/.github/VOID.md)
 * [Dependencies](https://github.com/hoaxdream/dots#dependencies)
 
 ## Xmonad
