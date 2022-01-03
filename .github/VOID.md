@@ -126,11 +126,36 @@
   - $ EDITOR=nvim visudo
 ```
 #### Change mirrors
+```
 - $ mkdir -p /etc/xbps.d
 - $ cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
 - $ sudo sed -i 's|https://alpha.de.repo.voidlinux.org|https://void.webconverger.org|g' /etc/xbps.d/*-repository-*.conf
 - $ xbps-install -Su    # update
 - $ xpbs-query -L       # check new repo URL
+```
+#### void src
+```
+- $ git clone https://github.com/void-linux/void-packages.git
+- $ cd void-packages
+- $ ./xbps-src binary-bootstrap
+- $ echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
+- Build a package:
+  - $ ./xbps-src pkg <package_name>
+  - $ xbps-install -S xtools
+  - $ cd void-packages/masterdir
+  - $ xi <package_name>
+```
+#### libxft-bgra
+```
+- $ cd void-packages/srcpkgs/libXft
+- $ mkdir patches
+- Copy the patch inside patches directory
+- $ cd void-packages
+- $ ./xbps-src pkg -f libXft
+- $ sudo xbps-install -R./hostdir/binpkgs -f libXft
+- $ sudo xbps-install -R./hostdir/binpkgs -f libXft-devel
+- $ sudo xbps-pkgdb -m repolock libXft  # avoid overwritten by updates
+```
 
 # Missing
 signal-cli
