@@ -34,6 +34,9 @@ export READER="zathura"
 export FILE="nnnrun"
 export WM="dwm"
 
+# torrent
+TRANSMISSION_HOME="$HOME/.config/transmission-daemon"
+
 # nnn
 export NNN_PLUG='o:!tpic $nnn;t:!trash $nnn;f:!nperm $nnn;x:!xperm $nnn;u:!uperm $nnn'
 export NNN_OPENER=nnnopen
