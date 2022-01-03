@@ -120,18 +120,34 @@
 ```
 - **Post Install**
 ```
+  - $ ln -sf /etc/sv/dhcpcd /var/service    # enable internet
   - $ xbps-install -S zsh
   - $ useradd -m -G users,wheel,input,video,audio,storage,disk -s /bin/zsh hoaxdream
   - $ passwd hoaxdream
   - $ EDITOR=nvim visudo
+  - exit root and login user
 ```
 #### Change mirrors
 ```
-- $ mkdir -p /etc/xbps.d
-- $ cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
-- $ sudo sed -i 's|https://alpha.de.repo.voidlinux.org|https://void.webconverger.org|g' /etc/xbps.d/*-repository-*.conf
-- $ xbps-install -Su    # update
-- $ xpbs-query -L       # check new repo URL
+  - $ mkdir -p /etc/xbps.d
+  - $ cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
+  - $ sudo sed -i 's|https://alpha.de.repo.voidlinux.org|https://void.webconverger.org|g' /etc/xbps.d/*-repository-*.conf
+  - $ xbps-install -Su    # update
+  - $ xpbs-query -L       # check new repo URL
+```
+#### Bootstrap
+```
+  - [void-bootstrap](https://github.com/hoaxdream/void-bootstrap)
+  - $ sudo xbps-install -Syu git
+  - $ git clone https://github.com/hoaxdream/void-bootstrap
+  - $ cd bootstrap
+  - $ ./pkgsinstall
+  - $ ./dotsetup
+  - $ sudo ./partcore   # Run only for fresh disk
+  - $ sudo ./partdata   # Run only for fresh disk
+  - $ sudo ./postinstall
+  - $ ./fmanager
+  - $ sudo reboot
 ```
 #### void src
 ```
