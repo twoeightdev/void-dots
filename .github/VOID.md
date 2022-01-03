@@ -9,3 +9,38 @@ _Use at your own risk._
 - Pre installation
   - Set shell
   - Change font
+  - Check boot mode
+  - Check internet connection
+  - Partitioning
+    - Create partitions
+    - Format partitions
+    - Mount the file system
+- Installation
+  - Set repository
+  - Install Base meta package
+  - Mount pseudo-filesystems
+- Configure system
+  - Copy DNS configuration
+  - Chroot
+  - Localization
+  - Timezone
+  - Hostname
+  - Configure rc.conf
+  - Root password
+  - Fstab
+  - Dracut
+  - Non-free repo
+  - Bootloader
+    - EFISTUB
+    - GRUB
+  - Finalization
+- Post installation
+  - Services
+  - Users
+  - Sudoers
+  - Change mirrors
+- Dot files installation
+- Misc
+  - void-src
+  - libxft patch
+
