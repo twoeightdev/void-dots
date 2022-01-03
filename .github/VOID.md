@@ -54,7 +54,7 @@ _Use at your own risk._
 ### Change font
     $ setfont LatGrkCyr-12x22
 ### Check boot mode
-- If the command gives some output it is UEFI
+==If the command gives some output it is UEFI==
     $ ls /sys/firmware/efi
 ### Check internet connection
     $ ping -c 3 voidlinux.org
