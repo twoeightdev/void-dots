@@ -44,3 +44,7 @@ _Use at your own risk._
   - void-src
   - libxft patch
 
+---
+
+## Bootable Flash Drive
+    $ dd bs=4M if=path/to/archlinux.iso of=/dev/sdx conv=fsync oflag=direct status=progress
