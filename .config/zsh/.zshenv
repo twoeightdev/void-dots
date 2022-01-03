@@ -10,6 +10,7 @@ export XDG_LOCAL_HOME="$HOME/.local" # This sould be one of defaults
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
+#export SVDIR="$HOME/.local/var/service"
 
 # npm path
 export PATH="$HOME/.config/node_modules/bin:$PATH"
@@ -35,7 +36,7 @@ export FILE="nnnrun"
 export WM="dwm"
 
 # torrent
-TRANSMISSION_HOME="$HOME/.config/transmission-daemon"
+#TRANSMISSION_HOME="$HOME/.config/transmission-daemon"
 
 # nnn
 export NNN_PLUG='o:!tpic $nnn;t:!trash $nnn;f:!nperm $nnn;x:!xperm $nnn;u:!uperm $nnn'
