@@ -6,6 +6,6 @@ _Use at your own risk._
 
 ## Table of Contents
 - Bootable Flash Drive
-  - Pre installation
-    - Set shell
-    - Change font
+- Pre installation
+  - Set shell
+  - Change font
