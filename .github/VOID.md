@@ -57,30 +57,30 @@ $ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=p
 ### Pre installation
 
 - Set shell
-```
+<pre>
 - $ bash
-```
+</pre>
 
 - Change font
-```
+<pre>
 $ setfont LatGrkCyr-12x22
-```
+</pre>
 
 - Check boot mode
-```
+<pre>
 - $ ls /sys/firmware/efi    # shows output if it's UEFI
-```
+</pre>
 
 - Check internet connection
-```
+<pre>
 - $ ping -c 3 voidlinux.org
-```
+</pre>
 
 - Partitioning
-```
+<pre>
 - $ lsblk -f    # show all drives
   - Create partition
     - $ wipefs -af /dev/nvme0n1   # Wipe the drive
     - $ fdisk /dev/nvme0n1        # Use fdisk to parition disk
-    - Type **g** to set GPT disklabel
-```
+    - Type <b>g</b> to set GPT disklabel
+</pre>
