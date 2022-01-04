@@ -76,16 +76,16 @@ $ setfont LatGrkCyr-12x22
 - $ ping -c 3 voidlinux.org
 </pre>
 
-- Partitioning
+- Partitioning\
 **Mount point** | **Partition** | **Partition type** | **Suggested size**
 | --- | --- | --- | --- |
 | /mnt/boot | /dev/nvme0n1p1 | EFI system partition | 512 MiB |
 | /mnt | /dev/nvme0n1p2 | Linux Filesystem | Remainder of the device |
 
-```
+<pre>
 - $ lsblk -f    # show all drives
   - Create partition
     - $ wipefs -af /dev/nvme0n1   <b>Wipe the drive</b>
     - $ fdisk /dev/nvme0n1        <b>Use fdisk to parition disk</b>
     - Type <b>g</b> to set GPT disklabel
-```
+</pre>
