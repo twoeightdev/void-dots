@@ -231,3 +231,22 @@ $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UU
     - `$ sudo xbps-install -R./hostdir/binpkgs -f libXft`
     - `$ sudo xbps-install -R./hostdir/binpkgs -f libXft-devel`
     - `$ sudo xbps-pkgdb -m repolock libXft  # avoid overwritten by updates`
+- run as user service
+  - `$ sudo mkdir -p /etc/sv/hoaxdream/`
+  - `$ sudo touch /etc/sv/hoaxdream/run`
+  - `$ sudo chmod +x /etc/sv/hoaxdream/run`
+  - `$ sudo -E nvim /etc/sv/hoaxdream/run`
+  - run:
+```
+#!/bin/sh
+
+UID=$(pwd -P)
+UID=${UID##*/}
+
+if [ -d "/home/${UID}/.local/var/service" ]; then
+ chpst -u"${UID}" runsvdir /home/${UID}/.local/var/service
+fi
+```
+  - Add services in /home/user/.config/sv
+  - `$ ln -s ~/.config/sv/transmission-daemon ~/.local/var/service/transmission-daemon`
+  - `$ sv status ~/.local/var/service/transmission-daemon`
