@@ -52,16 +52,16 @@ _Use at your own risk._
 - Set shell
   - `$ bash`
 - Change font
-`$ setfont LatGrkCyr-12x22`
+  - `$ setfont LatGrkCyr-12x22`
 - Check boot mode
 If the command gives some output it is UEFI
-`$ ls /sys/firmware/efi`
+  - `$ ls /sys/firmware/efi`
 - Check internet connection
-    - `$ ping -c 3 voidlinux.org`
+  - `$ ping -c 3 voidlinux.org`
 - Partitioning
 Check which drive you want to use
-`$ lsblk -f`
+  - `$ lsblk -f`
 - Create partition
 Wipe the selected drive then use fdisk to partition the disk
-`$ wipefs -af /dev/nvme0n1`
-`$ fdisk /dev/nvme0n1`
+  - `$ wipefs -af /dev/nvme0n1`
+  - `$ fdisk /dev/nvme0n1`
