@@ -55,27 +55,42 @@ $ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=p
 #### Pre installation
 
 - Set shell
-  - `$ bash`
+```
+$ bash
+```
+
 - Change font
-  - `$ setfont LatGrkCyr-12x22`
+```
+$ setfont LatGrkCyr-12x22
+```
+
 - Check boot mode
 If the command gives some output it is UEFI
-  - `$ ls /sys/firmware/efi`
+```
+$ ls /sys/firmware/efi
+```
+
 - Check internet connection
-  - `$ ping -c 3 voidlinux.org`
+```
+$ ping -c 3 voidlinux.org
+```
+
 - Partitioning
 Check which drive you want to use
-  - `$ lsblk -f`
+```
+$ lsblk -f
+```
+
   - Create partition
 Wipe the selected drive then use fdisk to partition the disk
-    - `$ wipefs -af /dev/nvme0n1`
-    - `$ fdisk /dev/nvme0n1`
-     - Type `g` to set the label to gpt
-     - Type `n` to create a new partition for boot
-     - Set last sector: `+1G`
-     - Type `n` to create new partition for root
-     - Set all remainder for root partition
-      - Type `t` to change type to EFI
-      - Type `1` to choose boot partition
-      - Type `1` to set boot partition to EFI
-      - Type `w` to write and exit fdisk
+$ wipefs -af /dev/nvme0n1
+$ fdisk /dev/nvme0n1
+Type `g` to set the label to gpt
+Type `n` to create a new partition for boot
+Set last sector: `+1G`
+Type `n` to create new partition for root
+Set all remainder for root partition
+Type `t` to change type to EFI
+Type `1` to choose boot partition
+Type `1` to set boot partition to EFI
+Type `w` to write and exit fdisk
