@@ -1,13 +1,12 @@
 Void Installation UEFI EFISTUB Guide
-=
+====================================
 
 **DISCLAIMER**
 ---
 _I am not responsible for any damages, loss of data, system corruption, or any mishap you may somehow cause by following this guide._
 _Use at your own risk._
 
-Table of Contents
-======
+## Table of Contents
 
 - Bootable Flash Drive
 - Pre installation
@@ -52,39 +51,40 @@ Table of Contents
 
 ###  Bootable Flash Drive
 
-<pre>
+```
 $ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=progress
-</pre>
+```
 
 ### Pre installation
 
 - Set shell
-<pre>
+```
 - $ bash
-</pre>
+```
 
 - Change font
-<pre>
+```
 $ setfont LatGrkCyr-12x22
-</pre>
+```
 
 - Check boot mode
-<pre>
+```
 - $ ls /sys/firmware/efi    # shows output if it's UEFI
-</pre>
+```
 
 - Check internet connection
-<pre>
+```
 - $ ping -c 3 voidlinux.org
-</pre>
+```
 
 - Partitioning
----
+
 Mount point | Partition | Partition type | Suggested size
 | --- | --- | --- | --- |
 | /mnt/boot | /dev/nvme0n1p1 | EFI system partition | 512 MiB |
 | /mnt | /dev/nvme0n1p2 | Linux Filesystem | Remainder of the device |
-- Create partition
-<pre>
-- $ test
-</pre>
+
+```
+  - Create partition
+    - test
+```
