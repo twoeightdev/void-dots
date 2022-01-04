@@ -76,16 +76,14 @@ $ ping -c 3 voidlinux.org
 ```
 
 - Partitioning
-Check which drive you want to use
 ```
-$ lsblk -f
+$ lsblk -f  # Check which drive you want to use
 ```
 
   - Create partition
-Wipe the selected drive then use fdisk to partition the disk
 ```
-$ wipefs -af /dev/nvme0n1
-$ fdisk /dev/nvme0n1
+$ wipefs -af /dev/nvme0n1   # Wipe the drive
+$ fdisk /dev/nvme0n1        # Use fdisk to parition disk
 Type `g` to set the label to gpt
 Type `n` to create a new partition for boot
 Set last sector: `+1G`
