@@ -77,7 +77,6 @@ $ setfont LatGrkCyr-12x22
 </pre>
 
 - Partitioning
-
 **Mount point** | **Partition** | **Partition type** | **Suggested size**
 | --- | --- | --- | --- |
 | /mnt/boot | /dev/nvme0n1p1 | EFI system partition | 512 MiB |
@@ -86,7 +85,7 @@ $ setfont LatGrkCyr-12x22
 <pre>
 - $ lsblk -f    # show all drives
   - Create partition
-    - $ wipefs -af /dev/nvme0n1   <mark>Wipe the drive</mark>
-    - $ fdisk /dev/nvme0n1        <mark>Use fdisk to parition disk</mark>
+    - $ wipefs -af /dev/nvme0n1   <b>Wipe the drive</b>
+    - $ fdisk /dev/nvme0n1        <b>Use fdisk to parition disk</b>
     - Type <b>g</b> to set GPT disklabel
 </pre>
