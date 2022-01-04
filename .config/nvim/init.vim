@@ -49,10 +49,11 @@ set listchars+=nbsp:░
 " load plugins
 call plug#begin(system('echo -n "~/.config/nvim/plugged"'))
 
-Plug 'liuchengxu/vim-which-key'                                         " shows keybindings in popup
-Plug 'tpope/vim-fugitive'                                               " git integration
-Plug 'lukelbd/vim-tabline'                                              " simple buffer tabline
-Plug 'Yggdroot/indentLine'                                              " indent guidelines
+Plug 'liuchengxu/vim-which-key'   " shows keybindings in popup
+Plug 'tpope/vim-fugitive'         " git integration
+Plug 'lukelbd/vim-tabline'        " simple buffer tabline
+Plug 'Yggdroot/indentLine'        " indent guidelines
+Plug 'ellisonleao/glow.nvim'      " preview directly in buffer
 
 call plug#end()
 
@@ -71,3 +72,4 @@ source $HOME/.config/nvim/pconf/keymaps.vim
 source $HOME/.config/nvim/pconf/whichkey.vim
 source $HOME/.config/nvim/pconf/indentline.vim
 source $HOME/.config/nvim/pconf/statusline.vim
+source $HOME/.config/nvim/pconf/glow.vim
