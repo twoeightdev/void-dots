@@ -62,7 +62,7 @@ If the command gives some output it is UEFI
 Check which drive you want to use
   - `$ lsblk -f`
   - Create partition
-Wipe the selected drive then use fdisk to partition the disk
+    Wipe the selected drive then use fdisk to partition the disk
     - `$ wipefs -af /dev/nvme0n1`
     - `$ fdisk /dev/nvme0n1`
      - Type `g` to set the label to gpt
