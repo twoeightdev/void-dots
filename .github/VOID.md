@@ -86,7 +86,7 @@ $ setfont LatGrkCyr-12x22
 <pre>
 - $ lsblk -f    # show all drives
   - Create partition
-    - $ wipefs -af /dev/nvme0n1   # Wipe the drive
-    - $ fdisk /dev/nvme0n1        # Use fdisk to parition disk
+    - $ wipefs -af /dev/nvme0n1   <mark>Wipe the drive</mark>
+    - $ fdisk /dev/nvme0n1        <mark>Use fdisk to parition disk</mark>
     - Type <b>g</b> to set GPT disklabel
 </pre>
