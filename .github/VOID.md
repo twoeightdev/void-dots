@@ -50,9 +50,9 @@ _Use at your own risk._
 
 ###  Bootable Flash Drive
 
-```
+<pre>
 $ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=progress
-```
+</pre>
 
 ### Pre installation
 
