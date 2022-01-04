@@ -1,11 +1,13 @@
-# Void Installation UEFI EFISTUB Guide
+Void Installation UEFI EFISTUB Guide
+=
 
 **DISCLAIMER**
 ---
 _I am not responsible for any damages, loss of data, system corruption, or any mishap you may somehow cause by following this guide._
 _Use at your own risk._
 
-## Table of Contents
+Table of Contents
+======
 
 - Bootable Flash Drive
 - Pre installation
@@ -77,17 +79,12 @@ $ setfont LatGrkCyr-12x22
 </pre>
 
 - Partitioning
-<pre>
-- $ lsblk -f    # show all drives
-  - Create partition
-    - $ wipefs -af /dev/nvme0n1   <b>Wipe the drive</b>
-    - $ fdisk /dev/nvme0n1        <b>Use fdisk to parition disk</b>
-    - Type <b>g</b> to set GPT disklabel
-</pre>
-
-**Mount point** | **Partition** | **Partition type** | **Suggested size**
+---
+Mount point | Partition | Partition type | Suggested size
 | --- | --- | --- | --- |
 | /mnt/boot | /dev/nvme0n1p1 | EFI system partition | 512 MiB |
 | /mnt | /dev/nvme0n1p2 | Linux Filesystem | Remainder of the device |
-
-
+- Create partition
+<pre>
+- $ test
+</pre>
