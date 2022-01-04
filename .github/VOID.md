@@ -77,7 +77,7 @@ $ setfont LatGrkCyr-12x22
 </pre>
 
 - Partitioning
-#### **Mount point** | **Partition** | **Partition type** | **Suggested size** | :---: | :---: | :---: | :---: |
+**Mount point** | **Partition** | **Partition type** | **Suggested size** | :---: | :---: | :---: | :---: |
 /mnt/boot | /dev/nvme0n1p1 | EFI system partition | 512 MiB
 /mnt | /dev/nvme0n1p2 | Linux Filesystem | Remainder of the device
 
