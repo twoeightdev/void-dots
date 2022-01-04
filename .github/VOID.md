@@ -61,7 +61,7 @@ $ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=p
 > $ setfont LatGrkCyr-12x22
 
 - Check boot mode\
-Shows output if it's UEFI
+__Shows output if it's UEFI__
 > $ ls /sys/firmware/efi
 
 - Check internet connection
