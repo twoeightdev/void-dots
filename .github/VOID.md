@@ -85,7 +85,7 @@ Mount point | Partition | Partition type | Suggested size
 | /mnt | /dev/nvme0n1p2 | Linux Filesystem | Remainder of the device |
 
 - Partitioning
-  - Create partition
+  - Create partition\
     `- $ wipefs -af /dev/nvme0n1   # wipe drive`
     - $ fdisk /dev/nvme0n1        # use fdisk to partition disk
     - Type g to set GPT disklabel
