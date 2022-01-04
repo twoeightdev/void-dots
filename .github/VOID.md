@@ -64,7 +64,8 @@ $ bash
 $ setfont LatGrkCyr-12x22
 ```
 
-- Check boot mode
+- Check boot mode\
+This is a test
 ```
 $ ls /sys/firmware/efi    # Shows output if it's UEFI
 ```
