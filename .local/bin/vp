@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd /home/hoaxdream/.config/work/void-packages
+git pull --autostash --rebase
+./xbps-src show-sys-updates
+./xbsp-src update-sys
