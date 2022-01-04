@@ -49,20 +49,20 @@ _Use at your own risk._
 ####  Bootable Flash Drive
 `$ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=progress`
 #### Pre installation
-*Set shell*
+- Set shell
   - `$ bash`
-*Change font*
+- Change font
   - `$ setfont LatGrkCyr-12x22`
-*Check boot mode*
-If the command gives some output it is UEFI
+- Check boot mode
+> If the command gives some output it is UEFI
   - `$ ls /sys/firmware/efi`
-*Check internet connection*
+- Check internet connection
   - `$ ping -c 3 voidlinux.org`
-*Partitioning*
-Check which drive you want to use
+- Partitioning
+> Check which drive you want to use
   - `$ lsblk -f`
   - Create partition
-Wipe the selected drive then use fdisk to partition the disk
+> Wipe the selected drive then use fdisk to partition the disk
     - `$ wipefs -af /dev/nvme0n1`
     - `$ fdisk /dev/nvme0n1`
      - Type `g` to set the label to gpt
