@@ -82,5 +82,5 @@ $ setfont LatGrkCyr-12x22
   - Create partition
     - $ wipefs -af /dev/nvme0n1   # Wipe the drive
     - $ fdisk /dev/nvme0n1        # Use fdisk to parition disk
-    - $ type _g_ to create GPT disklabel
+    - Type *g* to set GPT disklabel
 ```
