@@ -65,9 +65,8 @@ $ setfont LatGrkCyr-12x22
 ```
 
 - Check boot mode
-If the command gives some output it is UEFI
 ```
-$ ls /sys/firmware/efi
+$ ls /sys/firmware/efi    # Shows output if it's UEFI
 ```
 
 - Check internet connection
@@ -77,7 +76,7 @@ $ ping -c 3 voidlinux.org
 
 - Partitioning
 ```
-$ lsblk -f  # Check which drive you want to use
+$ lsblk -f    # Check which drive you want to use
 ```
 
   - Create partition
