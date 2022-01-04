@@ -50,12 +50,16 @@ _Use at your own risk._
 
 ###  Bootable Flash Drive
 
-> $ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=progress
+```
+$ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=progress
+```
 
 ### Pre installation
 
 - Set shell
-> $ bash
+```
+- $ bash
+```
 
 - Change font
 > $ setfont LatGrkCyr-12x22
