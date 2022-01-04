@@ -76,7 +76,7 @@ $ setfont LatGrkCyr-12x22
 - $ ping -c 3 voidlinux.org
 </pre>
 
-- Partitioning\
+- Partitioning
 
 **Mount point** | **Partition** | **Partition type** | **Suggested size**
 | --- | --- | --- | --- |
