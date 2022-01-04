@@ -247,6 +247,6 @@ if [ -d "/home/${UID}/.local/var/service" ]; then
  chpst -u"${UID}" runsvdir /home/${UID}/.local/var/service
 fi
 ```
-  - Add services in /home/user/.config/sv
+- symlink services
   - `$ ln -s ~/.config/sv/transmission-daemon ~/.local/var/service/transmission-daemon`
   - `$ sv status ~/.local/var/service/transmission-daemon`
