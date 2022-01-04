@@ -51,16 +51,16 @@ _Use at your own risk._
 ## Pre installation
 - Set shell
 > $ bash
-### Change font
+- Change font
 > $ setfont LatGrkCyr-12x22
-### Check boot mode
+- Check boot mode
 If the command gives some output it is UEFI
 > $ ls /sys/firmware/efi
-### Check internet connection
+- Check internet connection
 > $ ping -c 3 voidlinux.org
-### Partitioning
+- Partitioning
 Check which drive you want to use
 > $ lsblk -f
-#### Create partition
+- Create partition
 In here im using fdisk
 > $ fdisk /dev/nvme0n1
