@@ -61,16 +61,17 @@ If the command gives some output it is UEFI
 - Partitioning
 Check which drive you want to use
   - `$ lsblk -f`
-- Create partition
+  - Create partition
 Wipe the selected drive then use fdisk to partition the disk
-  - `$ wipefs -af /dev/nvme0n1`
-  - `$ fdisk /dev/nvme0n1`
-    - Type `g` to set the label to gpt
-    - Type `n` to create a new partition for boot
-    - Set last sector: `+1G`
-    - Type `n` to create new partition for root
-    - Set all remainder for root partition
-    - Type `t` to change type to EFI
-    - Type `1` to choose boot partition
-    - Type `1` to set boot partition to EFI
-    - Type `w` to write and exit fdisk
+    - `$ wipefs -af /dev/nvme0n1`
+    - `$ fdisk /dev/nvme0n1`
+     - Type `g` to set the label to gpt
+     - Type `n` to create a new partition for boot
+     - Set last sector: `+1G`
+     - Type `n` to create new partition for root
+     - Set all remainder for root partition
+      - Type `t` to change type to EFI
+      - Type `1` to choose boot partition
+      - Type `1` to set boot partition to EFI
+      - Type `w` to write and exit fdisk
+  - Format partition 
