@@ -33,8 +33,6 @@ _Use at your own risk._
   - Dracut
   - Non-free repo
   - Bootloader
-    - EFISTUB
-    - GRUB
   - Finalization
 - Post installation
   - Services
@@ -156,4 +154,9 @@ no_hostonly_commandline=yes
 ```
 $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UUID=$ROOT_UUID ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose
 ```
-
+- Finalization
+  - `$ xbps-query -l | grep linux   # check major and minor; linux5.15`
+  - `$ xbps-reconfigure -fa linux<major>.<minor>`
+  - `$ exit`
+  - `$ umount -R /mnt`
+  - `$ reboot`
