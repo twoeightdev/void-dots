@@ -83,6 +83,7 @@ $ lsblk -f
 
   - Create partition
 Wipe the selected drive then use fdisk to partition the disk
+```
 $ wipefs -af /dev/nvme0n1
 $ fdisk /dev/nvme0n1
 Type `g` to set the label to gpt
@@ -94,3 +95,4 @@ Type `t` to change type to EFI
 Type `1` to choose boot partition
 Type `1` to set boot partition to EFI
 Type `w` to write and exit fdisk
+```
