@@ -1,10 +1,12 @@
 # Void Installation UEFI EFISTUB Guide
+
 **DISCLAIMER**
 ---
 _I am not responsible for any damages, loss of data, system corruption, or any mishap you may somehow cause by following this guide._
 _Use at your own risk._
 
 ## Table of Contents
+
 - Bootable Flash Drive
 - Pre installation
   - Set shell
@@ -48,9 +50,7 @@ _Use at your own risk._
 
 ####  Bootable Flash Drive
 
-```
-$ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=progress
-```
+> $ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=progress
 
 #### Pre installation
 
@@ -61,7 +61,7 @@ $ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=p
 > $ setfont LatGrkCyr-12x22
 
 - Check boot mode\
-__Shows output if it's UEFI__
+_Shows output if it's UEFI_
 > $ ls /sys/firmware/efi
 
 - Check internet connection
