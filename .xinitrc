@@ -13,4 +13,4 @@ for program in $autostart; do
   pidof -s "$program" || setsid -f "$program"
 done >/dev/null 2>&1
 
-initdwm
+exec dbus-run-session /usr/local/bin/dwm
