@@ -146,4 +146,11 @@ nofscks=yes
 no_hostonly_commandline=yes
 ```
 - Non-free repo
+  - `$ xbps-install -Su void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree`
+  - `$ xbps-install -Su`
+  - `$ xbps-install -Su intel-ucode nvidia efibootmgr`
 - Bootloader
+  - `$ ls /boot`
+  - `$ ROOT_UUID=$(blkid -s UUID -o value /dev/nvme0n1p2)`
+  - `$ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UUID=$ROOT_UUID ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose`
+
