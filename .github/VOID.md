@@ -85,6 +85,6 @@ Mount point | Partition | Partition type | Suggested size
 | /mnt | /dev/nvme0n1p2 | Linux Filesystem | Remainder of the device |
 
 ```
-  - Create partition
-    - test
+- $ Create partition
+    - $ test
 ```
