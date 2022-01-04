@@ -79,7 +79,7 @@ $ ping -c 3 voidlinux.org
 $ lsblk -f    # Check which drive you want to use
 ```
 
-  - Create partition
+1. Create partition
 ```
 $ wipefs -af /dev/nvme0n1   # Wipe the drive
 $ fdisk /dev/nvme0n1        # Use fdisk to parition disk
