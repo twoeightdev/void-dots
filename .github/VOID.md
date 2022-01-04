@@ -19,7 +19,6 @@ _Use at your own risk._
     - Format partitions
     - Mount the filesystem
 - Installation
-  - Set repository
   - Install Base meta package
   - Mount pseudo-filesystems
 - Configure system
@@ -96,3 +95,44 @@ Mount point | Partition | Partition type | Suggested size
     - `$ mount /dev/nvme0n1p2 /mnt`
     - `$ mkdir /mnt/boot`
     - `$ mount /dev/nvme0n1p1 /mnt/boot`
+
+### Installation
+- Install Base meta package
+  - `$ REPO=https://alpha.de.repo.voidlinux.org/current`
+  - `$ ARCH=x86_64`
+  - `$ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system`
+- Mount pseudo-filesystems
+  - `$ mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys`
+  - `$ mount --rbind /dev /mnt/dev && mount --make-rslave /mnt/dev`
+  - `$ mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc`
+
+### Configure system
+- Copy DNS configuration
+  - `$ cp /etc/resolv.conf /mnt/etc/`
+- Chroot
+  - `$ PS1="(chroot)# " chroot /mnt/ /bin/bash`
+- Localization
+  - `$ echo "LANG=en_PH.UTF-8" > /etc/locale.conf`
+  - `$ echo "LC_COLLATE=C" >> /etc/locale.conf`
+  - `$ echo "en_PH.UTF-8 UTF-8" >> /etc/default/libc-locales`
+  - `$ xbps-reconfigure -f glibc-locales`
+- Timezone
+  - `$ ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime`
+- Hostname
+  - `$ echo art > /etc/hostname`
+- Configure rc.conf
+  - `$ xbps-install -Su neovim`
+  - `$ nvim /etc/rc.conf`
+  - `$ FONT=LatGrkCyr-12x22   # uncomment FONT`
+- Root password
+  - `$ passwd`
+- Fstab
+  - `$ cp /proc/mounts /etc/fstab`
+  - `Delete everything except / and /boot then add tmpfs:`
+  - `Set boot 0 2`
+  - `Set root 0 1`
+  - `tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0`
+  - `efivarfs  /sys/firmware/efi/efivars  efivarfs  defaults     0 0`
+- Dracut
+- Non-free repo
+- Bootloader
