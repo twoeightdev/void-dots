@@ -133,6 +133,17 @@ Mount point | Partition | Partition type | Suggested size
   - `Set root 0 1`
   - `tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0`
   - `efivarfs  /sys/firmware/efi/efivars  efivarfs  defaults     0 0`
+  - `$ mount efivarfs`
 - Dracut
+  - `$ nvim /etc/dracut.conf.d/boot.conf`
+```
+hostonly=yes
+hostonly_cmdline=no
+use_fstab=yes
+compress="cat"
+omit_dracutmodules+=" dash i18n rpmversion btrfs lvm qemu multipatch qemu-net lunmask fstab-sys biosdevname dmraid dmsquash-live mdraid nbd nfs "
+nofscks=yes
+no_hostonly_commandline=yes
+```
 - Non-free repo
 - Bootloader
