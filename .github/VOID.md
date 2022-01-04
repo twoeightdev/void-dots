@@ -59,10 +59,10 @@ _Use at your own risk._
 - Check internet connection
   - `$ ping -c 3 voidlinux.org`
 - Partitioning
-> Check which drive you want to use
+<li>Check which drive you want to use</li>
   - `$ lsblk -f`
   - Create partition
-> Wipe the selected drive then use fdisk to partition the disk
+<li>Wipe the selected drive then use fdisk to partition the disk</li>
     - `$ wipefs -af /dev/nvme0n1`
     - `$ fdisk /dev/nvme0n1`
      - Type `g` to set the label to gpt
@@ -74,4 +74,5 @@ _Use at your own risk._
       - Type `1` to choose boot partition
       - Type `1` to set boot partition to EFI
       - Type `w` to write and exit fdisk
-  - Format partition 
+  - Format partition
+</ul>
