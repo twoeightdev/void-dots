@@ -38,6 +38,9 @@ alias \
     sdn="sudo shutdown -h now" \
     e="$FILE" \
     v="$EDITOR" \
+    xbq="sudo xbps-query -Rs" \
+    xbi="sudo xbps-install -Su" \
+    xbr="sudo xbps-remove -R" \
     z="zathura"
 
 # Git repositories
