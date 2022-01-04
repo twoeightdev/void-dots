@@ -86,8 +86,7 @@ Mount point | Partition | Partition type | Suggested size
 
 - Partitioning
   - Create partition
-
-```
-    - $ wipefs -af /dev/nvme0n1   # wipe drive
+    `- $ wipefs -af /dev/nvme0n1   # wipe drive`
     - $ fdisk /dev/nvme0n1        # use fdisk to partition disk
-```
+    - Type g to set GPT disklabel
+  - Format parition
