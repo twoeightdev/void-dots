@@ -77,14 +77,17 @@ $ setfont LatGrkCyr-12x22
 - $ ping -c 3 voidlinux.org
 ```
 
-- Partitioning
+
 
 Mount point | Partition | Partition type | Suggested size
 | --- | --- | --- | --- |
 | /mnt/boot | /dev/nvme0n1p1 | EFI system partition | 512 MiB |
 | /mnt | /dev/nvme0n1p2 | Linux Filesystem | Remainder of the device |
 
+- Partitioning
+  - Create partition
+
 ```
-- $ Create partition
-    - $ test
+    - $ wipefs -af /dev/nvme0n1   # wipe drive
+    - $ fdisk /dev/nvme0n1        # use fdisk to partition disk
 ```
