@@ -178,3 +178,56 @@ $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UU
   - `$ reboot`
 
 ### Post installation
+
+- Services
+  - `$ ln -sf /etc/sv/dhcpcd /var/service    # enable internet`
+- Users
+  - `$ xbps-install -S zsh`
+  - `$ useradd -m -G users,wheel,input,video,audio,storage,disk -s /bin/zsh hoaxdream`
+  - `$ passwd hoaxdream`
+- Sudoers
+  - `$ EDITOR=nvim visudo`
+  - Exit root and login user
+- Change mirrors
+  - `$ mkdir -p /etc/xbps.d`
+  - `$ cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/`
+  - `$ sudo sed -i 's|https://alpha.de.repo.voidlinux.org|https://void.webconverger.org|g' /etc/xbps.d/*-repository-*.conf`
+  - `$ xbps-install -Su    # update`
+  - `$ xpbs-query -L       # check new repo URL`
+
+### Dot files installation
+
+```
+  - $ sudo xbps-install -Syu git
+  - $ git clone https://github.com/hoaxdream/void-bootstrap
+  - $ cd bootstrap
+  - $ ./pkgsinstall
+  - $ ./dotsetup
+  - $ sudo ./partcore   # Run only for fresh disk
+  - $ sudo ./partdata   # Run only for fresh disk
+  - $ sudo ./postinstall
+  - $ ./fmanager
+  - $ sudo reboot
+```
+
+### Misc
+
+- void-src
+  - `$ git clone https://github.com/void-linux/void-packages.git`
+  - `$ cd void-packages`
+  - `$ ./xbps-src binary-bootstrap`
+  - `$ echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf`
+  - Builde a package:
+    - `$ ./xbps-src pkg <package_name>`
+    - `$ xbps-install -S xtools`
+    - `$ cd void-packages/masterdir`
+    - `$ xi <package_name>`
+- libxft patch
+  - `$ cd void-packages/srcpkgs/libXft`
+  - `$ mkdir patches`
+  - Copy the patch inside patches directory:
+    - `$ cd void-packages`
+    - `$ ./xbps-src pkg -f libXft`
+    - `$ sudo xbps-install -R./hostdir/binpkgs -f libXft`
+    - `$ sudo xbps-install -R./hostdir/binpkgs -f libXft-devel`
+    - `$ sudo xbps-pkgdb -m repolock libXft  # avoid overwritten by updates`
