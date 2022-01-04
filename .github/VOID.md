@@ -65,3 +65,4 @@ Check which drive you want to use
 Wipe the selected drive then use fdisk to partition the disk
   - `$ wipefs -af /dev/nvme0n1`
   - `$ fdisk /dev/nvme0n1`
+    - Type `g` to set gpt label of the disk
