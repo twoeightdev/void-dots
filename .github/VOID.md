@@ -95,35 +95,45 @@ Mount point | Partition | Partition type | Suggested size
     - `$ mount /dev/nvme0n1p1 /mnt/boot`
 
 ### Installation
+
 - Install Base meta package
   - `$ REPO=https://alpha.de.repo.voidlinux.org/current`
   - `$ ARCH=x86_64`
   - `$ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system`
+
 - Mount pseudo-filesystems
   - `$ mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys`
   - `$ mount --rbind /dev /mnt/dev && mount --make-rslave /mnt/dev`
   - `$ mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc`
 
 ### Configure system
+
 - Copy DNS configuration
   - `$ cp /etc/resolv.conf /mnt/etc/`
+
 - Chroot
   - `$ PS1="(chroot)# " chroot /mnt/ /bin/bash`
+
 - Localization
   - `$ echo "LANG=en_PH.UTF-8" > /etc/locale.conf`
   - `$ echo "LC_COLLATE=C" >> /etc/locale.conf`
   - `$ echo "en_PH.UTF-8 UTF-8" >> /etc/default/libc-locales`
   - `$ xbps-reconfigure -f glibc-locales`
+
 - Timezone
   - `$ ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime`
+
 - Hostname
   - `$ echo art > /etc/hostname`
+
 - Configure rc.conf
   - `$ xbps-install -Su neovim`
   - `$ nvim /etc/rc.conf`
   - `$ FONT=LatGrkCyr-12x22   # uncomment FONT`
+
 - Root password
   - `$ passwd`
+
 - Fstab
   - `$ cp /proc/mounts /etc/fstab`
   - `Delete everything except / and /boot then add tmpfs:`
@@ -132,8 +142,10 @@ Mount point | Partition | Partition type | Suggested size
   - `tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0`
   - `efivarfs  /sys/firmware/efi/efivars  efivarfs  defaults     0 0`
   - `$ mount efivarfs`
+
 - Dracut
   - `$ nvim /etc/dracut.conf.d/boot.conf`
+
 ```
 hostonly=yes
 hostonly_cmdline=no
@@ -143,20 +155,26 @@ omit_dracutmodules+=" dash i18n rpmversion btrfs lvm qemu multipatch qemu-net lu
 nofscks=yes
 no_hostonly_commandline=yes
 ```
+
 - Non-free repo
   - `$ xbps-install -Su void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree`
   - `$ xbps-install -Su`
   - `$ xbps-install -Su intel-ucode nvidia efibootmgr`
+
 - Bootloader
   - `$ ls /boot`
   - `$ ROOT_UUID=$(blkid -s UUID -o value /dev/nvme0n1p2)`
   - kernel parameters:
+
 ```
 $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UUID=$ROOT_UUID ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose
 ```
+
 - Finalization
   - `$ xbps-query -l | grep linux   # check major and minor; linux5.15`
   - `$ xbps-reconfigure -fa linux<major>.<minor>`
   - `$ exit`
   - `$ umount -R /mnt`
   - `$ reboot`
+
+### Post installation
