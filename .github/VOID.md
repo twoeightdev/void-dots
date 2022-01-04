@@ -62,20 +62,24 @@ $ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=p
 ```
 
 - Change font
-> $ setfont LatGrkCyr-12x22
+```
+$ setfont LatGrkCyr-12x22
+```
 
-- Check boot mode\
-_Shows output if it's UEFI_
-> $ ls /sys/firmware/efi
+- Check boot mode
+```
+- $ ls /sys/firmware/efi    # shows output if it's UEFI
+```
 
 - Check internet connection
-> $ ping -c 3 voidlinux.org
+```
+- $ ping -c 3 voidlinux.org
+```
 
-- Partitioning\
-Check which drive you want to use
-> $ lsblk -f
-
+- Partitioning
+```
+- $ lsblk -f    # show all drives
   - Create partition
-    - > $ wipefs -af /dev/nvme0n1   # Wipe the drive
-    - > $ fdisk /dev/nvme0n1        # Use fdisk to parition disk
-
+    - $ wipefs -af /dev/nvme0n1   # Wipe the drive
+    - $ fdisk /dev/nvme0n1        # Use fdisk to parition disk
+```
