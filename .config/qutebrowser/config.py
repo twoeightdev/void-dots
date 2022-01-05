@@ -3,7 +3,7 @@
 # to se all configuration type :set inside qutebrowser.
 config.load_autoconfig()
 
-c.content.blocking.method = 'adblock'
+c.content.blocking.method = 'both'
 c.content.blocking.adblock.lists = [
         "https://easylist.to/easylist/easylist.txt",
         "https://easylist.to/easylist/easyprivacy.txt",
