@@ -1,12 +1,36 @@
-# Basic
-#set previewer ~/.config/lf/scope
+# basic
+set shell bash
+set shellopts '-eu'
 set hidden true
 set drawbox true
-set icons true
+set icons
+set ifs "\n"
 set ignorecase true
+set scrolloff 10
+set period 1
+
+# single column mode
+set nopreview
+set ratios 1
+set info size:time
+
 #cmd trash %set -f; mv $fx ~/.trash
 
 # cmd functions
+cmd open ${{
+  case $(file --mime-type $f -b) in
+    text/troff) man ./ $f;;
+    text/*) $EDITOR $fx;;
+    image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 & ;;
+    image/*) rotdir $f | setsid sxiv -aio 2>/dev/null | lf-select & ;;
+    audio/*) mpv --audio-display=no $f ;;
+    video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+    application/pdf) setsid zathura $fx >/dev/null 2>&1 & ;;
+    *) for f in $fx; do setsid $OPENER $f >/dev/null 2>&1 & done;;
+  esac
+}}
+
+# extract files
 cmd extract ${{
     set -f
     case $f in
@@ -37,79 +61,79 @@ cmd zip ${{
     rm -rf $1
 }}
 
-cmd setbg ${{
-  cp "$f" ~/.config/wall.png && xwallpaper --zoom "$f"
+cmd moveto ${{
+  clear; tput cup $(($(tput lines)/3)); tput bold
+  set -f
+  clear; echo "Move to where?"
+  dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/sc | fzf | sed 's|~|$HOME|')" &&
+  for x in $fx; do
+    eval mv -iv \"$x\" \"$dest\"
+  done &&
+  notify-send "🚚 File(s) moved." "File(s) moved to $dest."
 }}
 
-cmd mkdir ${{
-  printf "Directory Name: "
-  read ans
-  mkdir $ans
+cmd copyto ${{
+  clear; tput cup $(($(tput lines)/3)); tput bold
+  set -f
+  clear; echo "Copy to where?"
+  dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/sc | fzf | sed 's|~|$HOME|')" &&
+  for x in $fx; do
+    eval cp -ivr \"$x\" \"$dest\"
+  done &&
+  notify-send "📋 File(s) copied." "File(s) copies to $dest."
 }}
 
-cmd mkfile ${{
-  printf "File Name: "
-  read ans
-  $EDITOR $ans
+cmd chmod ${{
+    if [ $# -gt 0 ]; then
+        for file in "$fx"
+        do
+          chmod $1 $file
+        done
+    fi
+    lf -remote 'send reload'
+    # or can I use lf commands here?
 }}
 
-cmd paste &{{
-  load=$(lf -remote 'load')
-  mode=$(echo "$load" | sed -n '1p')
-  list=$(echo "$load" | sed '1d')
-  if [ $mode = 'copy' ]; then
-    rsync -av --ignore-existing --progress $list . \
-    | stdbuf -i0 -o0 -e0 tr '\r' '\n' \
-    | while read line; do
-      lf -remote "send $id echo $line"
-    done
-  elif [ $mode = 'move' ]; then
-    mv -n $list .
-  fi
-  lf -remote 'send load'
-  lf -remote 'send clear'
-}}
+cmd bulkrename $vidir
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+cmd touch $touch "$(echo $* | tr ' ' '\ ')"
+cmd setbg "$1"
 
-cmd open ${{
-  case $(file --mime-type $f -b) in
-    text/troff) man ./ $f;;
-    text/*) $EDITOR $fx;;
-    image/x-xcf|image/svg+xml) setsid gimp $f >/dev/null 2>&1 & ;;
-    image/*) rotdir $f | setsid sxiv -aio 2>/dev/null | lf-select & ;;
-    audio/*) mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s) $f ;;
-    video/*) setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s) $f -quiet >/dev/null 2>&1 & ;;
-    application/pdf) setsid zathura $fx >/dev/null 2>&1 & ;;
-    *) for f in $fx; do setsid $OPENER $f >/dev/null 2>&1 & done;;
-  esac
-}}
+#map o &mimeopen $f
+#map O &mimeopen --ask $f
 
-# Basic binds
+# basic binds
 map D delete
 map p paste
 map t cut
 map y copy
-map r rename
+
 map gg top
 map G bottom
-map C clear
-map u unselect
-map bg setbg
+map C copyto
+map M moveto
 map T extract
-map O mkdir
-map o mkfile
+
+map O push :mkdir<space>
+map o push :touch<space>
+map x push :chmod<space>
+#map x push :%chmod<space>"$f"<home><a-f><space>
+map X !$f
+
 map R reload
 map <enter> shell
-map x $$f
-map X !$f
-#map o &mimeopen $f
-#map O &mimeopen --ask $f
+
+map <c-f> $lf -remote "send $id select '$(fzf)'"
+map W $setsid -f $TERMINAL >/dev/null 2>&1
+
+# renames
+map B bulkrename
+map A rename # at the very end
+map c push A<c-u> # new rename
+map I push A<c-a> # at the very beginning
+map i push A<a-b><a-b><a-f> # before extention
+map a push A<a-b> # after extention
+map bg $setbg $f
 
 # Directories
-map gh cd ~
-map gc cd ~/.config
-map gd cd ~/.config/dl
-map gb cd ~/.local/bin/
-map gmc cd /media/core
-map gmd cd /media/data
-map gmw cd /media/data/pix/walls
-map gmb cd /media/data/linux_data/backups
+source "~/.config/lf/sc"
