@@ -92,8 +92,8 @@ while true; do
   # Used and total memory
   MEMUSED=$(free --mebi | sed -n '2{p;q}' | awk '{printf ("%2.2fGiB\n", ( $3 / 1024))}')
 
-# Status    祝   
-xsetroot -name " ^c#fb4934^ﰬ^d^^c#b8bb26^${rxs}^d^KiB|^c#fb4934^ﰵ^d^^c#b8bb26^${txs}^d^KiB $(torrents) $(pulseaudio) $SEP ^c#98971a^$(mail)^d^ $SEP ^c#fb4934^$(newsup) $SEP ^c#928374^WEATHER:${WEATHER}^d^ $SEP ^c#98971a^MEM-${MEMUSED}^d^ $SEP ^c#d79921^GPU-${GPU_TEMP}°C^d^ $SEP ^c#98971a^${CPU_TEMP}^d^ $SEP $(_date) "
+# Status   ﰬ  ﰵ     祝          
+xsetroot -name " ^c#fb4934^^d^^c#b8bb26^${rxs}^d^KiB|^c#fb4934^^d^^c#b8bb26^${txs}^d^KiB $(torrents) $(pulseaudio) $SEP ^c#98971a^$(mail)^d^ $SEP ^c#fb4934^$(newsup) $SEP ^c#928374^WEATHER:${WEATHER}^d^ $SEP ^c#98971a^MEM-${MEMUSED}^d^ $SEP ^c#d79921^GPU-${GPU_TEMP}°C^d^ $SEP ^c#98971a^${CPU_TEMP}^d^ $SEP $(_date) "
 
 # internet
 
