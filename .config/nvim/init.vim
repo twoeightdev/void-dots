@@ -34,6 +34,7 @@ set expandtab                  " convert tabs to spaces
 set splitbelow                 " horizontal splits will automatically set below
 set splitright                 " vertical splits will automaticall set to the right
 set number relativenumber      " show line numbers
+set nolist
 set wildmenu                   " enable wildmenu
 set wildmode=longest:list,full " wildmenu style
 
@@ -66,6 +67,13 @@ call plug#end()
 
 " disables automatic commenting on newline:
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
+  autocmd BufWritePre * let currPos = getpos(".")
+  autocmd BufWritePre * %s/\s\+$//e
+  autocmd BufWritePre * %s/\n\+\%$//e
+  autocmd BufWritePre *.[ch] %s/\%$/\r/e
+  autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
 
 " source and load plugins configurations
 source $HOME/.config/nvim/pconf/keymaps.vim
