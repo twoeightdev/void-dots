@@ -32,7 +32,7 @@ export PAGER="less"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
 export READER="zathura"
-export FILE="nnnrun"
+export FILE="lf"
 export WM="dwm"
 
 # torrent
