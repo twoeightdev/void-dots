@@ -62,7 +62,7 @@ alias \
     ds="dot status" \
     dif="dot diff" \
     dot="git --git-dir=$HOME/.config/dots --work-tree=$HOME" \
-    mkinst="make && sudo make install" \
+    mki="make && sudo make install" \
     cb="make clean && rm -f blocks.h && git reset --hard origin/main" \
     cm="make clean && rm -f config.h && git reset --hard origin/main"
 
