@@ -1,11 +1,10 @@
 " autoinstall
 if ! filereadable(system('echo -n "$XDG_CONFIG_HOME/nvim/autoload/plug.vim"'))
-  echo "Downloading junegunn/vim-plug to manage plugins..."
-  silent !mkdir -p $XDG_CONFIG_HOME/nvim/autoload/
-  silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > $XDG_CONFIG_HOME/nvim/autoload/plug.vim
-  autocmd VimEnter * PlugInstall
+        echo "Downloading junegunn/vim-plug to manage plugins..."
+        silent !mkdir -p $XDG_CONFIG_HOME/nvim/autoload/
+        silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > $XDG_CONFIG_HOME/nvim/autoload/plug.vim
+        autocmd VimEnter * PlugInstall
 endif
-
 
 " general settings
 set nocompatible
@@ -28,8 +27,8 @@ set noruler                    " disable ruler
 set laststatus=2               " needed to show custom statusline
 set noshowcmd                  " disable line or column number
 set nowrap                     " display long lines as just one line
-set tabstop=2                  " insert 4 spaces for tab
-set shiftwidth=2               " change number of space characters inserted for indention
+set tabstop=4                  " insert 4 spaces for tab
+set shiftwidth=4               " change number of space characters inserted for indention
 set expandtab                  " convert tabs to spaces
 set splitbelow                 " horizontal splits will automatically set below
 set splitright                 " vertical splits will automaticall set to the right
@@ -38,14 +37,16 @@ set nolist
 set wildmenu                   " enable wildmenu
 set wildmode=longest:list,full " wildmenu style
 
+set listchars=tab:>\ ,trail:-,nbsp:+,eol:$
+
 " show invisibles
-set list
-set listchars=
-set listchars+=tab:.\
-set listchars+=trail:.
-set listchars+=extends:»
-set listchars+=precedes:«
-set listchars+=nbsp:░
+"set list
+"set listchars=
+"set listchars+=tab:.\
+"set listchars+=trail:.
+"set listchars+=extends:»
+"set listchars+=precedes:«
+"set listchars+=nbsp:░
 
 " load plugins
 call plug#begin(system('echo -n "~/.config/nvim/plugged"'))
@@ -59,21 +60,21 @@ Plug 'ellisonleao/glow.nvim'      " preview directly in buffer
 call plug#end()
 
 " reload programs when configuration is updated
-  autocmd BufWritePost *Xresources !xrdb %
-  autocmd BufWritePost dunstrc !pkill dunst; dunst &
-  autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
-  autocmd BufWritePost init.vim,statusline.vim source $MYVIMRC
-  autocmd BufWritePost sc !shortcuts
+    autocmd BufWritePost *Xresources !xrdb %
+    autocmd BufWritePost dunstrc !pkill dunst; dunst &
+    autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+    autocmd BufWritePost init.vim,statusline.vim source $MYVIMRC
+    autocmd BufWritePost sc !shortcuts
 
 " disables automatic commenting on newline:
-  autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
-  autocmd BufWritePre * let currPos = getpos(".")
-  autocmd BufWritePre * %s/\s\+$//e
-  autocmd BufWritePre * %s/\n\+\%$//e
-  autocmd BufWritePre *.[ch] %s/\%$/\r/e
-  autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
+    autocmd BufWritePre * let currPos = getpos(".")
+    autocmd BufWritePre * %s/\s\+$//e
+    autocmd BufWritePre * %s/\n\+\%$//e
+    autocmd BufWritePre *.[ch] %s/\%$/\r/e
+    autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
 
 " source and load plugins configurations
 source $HOME/.config/nvim/pconf/keymaps.vim
