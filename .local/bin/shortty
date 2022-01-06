@@ -1,0 +1,19 @@
+#!/bin/sh
+shell=~/.config/zsh/sc
+lf=~/.config/lf/sc
+rm "$lf"
+while read -r line; do
+  line=$(echo $line | sed "s@~@$HOME@")
+  set -- $line
+  case $line in
+    \#*|"") continue
+  esac
+  if [ -d "$2" ]; then
+    echo "alias $1='cd \"$2\"'"
+    echo "hash -d $1=\"$2\""
+    echo "map g$1 :cd \"$2\"<cr>" >>"$lf"
+  else
+    echo "alias $1='$EDITOR \"$2\"'"
+  fi
+  echo "export $1=\"$2\""
+done <"$shell" >"$shell.sh"
