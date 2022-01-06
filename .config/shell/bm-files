@@ -5,7 +5,7 @@ cfx   $XDG_CONFIG_HOME/xorg/xresources
 
 cfv   $XDG_CONFIG_HOME/nvim/init.vim
 cfz   $ZDOTDIR/.zshrc
-cfa   $ZDOTDIR/aliasrc
+cfa   $XDG_CONFIG_HOME/shell/aliasrc
 cfn   $XDG_CONFIG_HOME/newsboat/config
 cfu   $XDG_CONFIG_HOME/newsboat/urls
 cfl   $XDG_CONFIG_HOME/lf/lfrc
