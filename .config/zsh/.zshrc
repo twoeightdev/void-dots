@@ -86,9 +86,11 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 set -k               # allows comments in interactive shell
 setopt auto_cd       # cd by just typing the directory name
 setopt extendedglob  # additional syntax for filename generation
-[ ! -f "$ZDOTDIR/sc.sh" ] && shortcuts
-source $ZDOTDIR/sc.sh
-source $ZDOTDIR/aliasrc 2>/dev/null
+
+# load aliases and shortcuts if existent
+[ -f "$XDG_CONFIG_HOME/shell/shrc" ] && source "$XDG_CONFIG_HOME/shell/shrc"
+[ -f "$XDG_CONFIG_HOME/shell/aliasrc" ] && source "$XDG_CONFIG_HOME/shell/aliasrc"
+[ -f "$XDG_CONFIG_HOME/shell/zshdirrc" ] && source "$XDG_CONFIG_HOME/shell/zshdirrc"
 
 function command_not_found_handler() {
   print -P "not found: %F{red}$0%f" >&2
