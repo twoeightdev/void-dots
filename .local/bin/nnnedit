@@ -1,2 +1,0 @@
-#!/bin/sh
-$TERMINAL -e nvim "$1" > /dev/null 2>&1 &

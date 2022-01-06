@@ -1,4 +1,0 @@
-#!/bin/sh
-# search pacman packages in less
-# i prefer this instead of patching st with scrollback
-pacman -Ss --color=always "$@" | less -R

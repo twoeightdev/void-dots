@@ -1,4 +1,0 @@
-#!/bin/sh
-# temporary cheatsheat for shortcuts
-cheat=$( less ~/.local/share/misc/cheat | setsid -f dmenu -i -l 30 >/dev/null 2>&1 )
-echo "$cheat"

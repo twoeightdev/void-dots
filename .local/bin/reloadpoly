@@ -1,6 +1,0 @@
-#!/bin/sh
-if [ -z $(pidof polybar) ]; then
-  runbar &
-else
-  polybar-msg cmd restart
-fi

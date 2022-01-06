@@ -1,3 +1,0 @@
-#!/bin/sh
-# script to change file permission with keybind in nnn
-chmod +x "$1"
