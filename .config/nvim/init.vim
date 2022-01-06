@@ -60,11 +60,10 @@ Plug 'ellisonleao/glow.nvim'      " preview directly in buffer
 call plug#end()
 
 " reload programs when configuration is updated
-    autocmd BufWritePost *Xresources !xrdb %
-    autocmd BufWritePost dunstrc !pkill dunst; dunst &
+    autocmd BufWritePost *Xresources,Xdefaults !xrdb %
     autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
     autocmd BufWritePost init.vim,statusline.vim source $MYVIMRC
-    autocmd BufWritePost sc !shortcuts
+    autocmd BufWritePost bm-files,bm-dirs !shortcuts
 
 " disables automatic commenting on newline:
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -77,8 +76,8 @@ call plug#end()
     autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
 
 " source and load plugins configurations
-source $HOME/.config/nvim/pconf/keymaps.vim
-source $HOME/.config/nvim/pconf/whichkey.vim
-source $HOME/.config/nvim/pconf/indentline.vim
-source $HOME/.config/nvim/pconf/statusline.vim
-source $HOME/.config/nvim/pconf/glow.vim
+source $HOME/.config/nvim/cfg/keymaps.vim
+source $HOME/.config/nvim/cfg/whichkey.vim
+source $HOME/.config/nvim/cfg/indentline.vim
+source $HOME/.config/nvim/cfg/statusline.vim
+source $HOME/.config/nvim/cfg/glow.vim

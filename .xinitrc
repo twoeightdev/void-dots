@@ -7,7 +7,7 @@ setbg &
 dwmstatus &
 theme
 
-autostart="picom mpd dunst"
+autostart="picom mpd"
 
 for program in $autostart; do
   pidof -s "$program" || setsid -f "$program"
