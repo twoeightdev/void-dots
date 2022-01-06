@@ -1,0 +1,11 @@
+# Auto update files when edited in neovim
+bf    $XDG_CONFIG_HOME/bm/bm-files
+bd    $XDG_CONFIG_HOME/bm/bm-dirs
+cfx   $XDG_CONFIG_HOME/xorg/xresources
+
+cfv   $XDG_CONFIG_HOME/nvim/init.vim
+cfz   $ZDOTDIR/.zshrc
+cfa   $ZDOTDIR/aliasrc
+cfn   $XDG_CONFIG_HOME/newsboat/config
+cfu   $XDG_CONFIG_HOME/newsboat/urls
+cfl   $XDG_CONFIG_HOME/lf/lfrc
