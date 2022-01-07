@@ -59,7 +59,7 @@ let g:which_key_map.g = {
     \ 'c' : [':Git commit -a'                   , 'commit'],
     \ 'p' : [':Git! push -u origin main'        , 'push'],
     \ 's' : [':Git! status'                     , 'status'],
-    \ 'o' : [':Git! checkout -- '               , 'checkout'],
+    \ 'o' : [':Git! checkout -- %'               , 'checkout'],
     \}
 
 " Language server protocol is for l

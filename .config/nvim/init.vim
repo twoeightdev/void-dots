@@ -29,7 +29,7 @@ set noshowcmd                  " disable line or column number
 set nowrap                     " display long lines as just one line
 set tabstop=4                  " insert 4 spaces for tab
 set shiftwidth=4               " change number of space characters inserted for indention
-"set softtabstop=4
+set softtabstop=4
 set expandtab                  " convert tabs to spaces
 set splitbelow                 " horizontal splits will automatically set below
 set splitright                 " vertical splits will automaticall set to the right
