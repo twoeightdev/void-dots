@@ -46,6 +46,7 @@ alias \
 alias \
     rk="git checkout" \
     ra="git add" \
+    rco="git checkout -- " \
     rc="git commit -m" \
     rcm="git commit -am" \
     rp="git push -u origin main" \
@@ -55,6 +56,7 @@ alias \
     rrh="git reset --hard HEAD^" \
     rrd="git reset HEAD" \
     da="dot add" \
+    dco="dot checkout -- " \
     dc="dot commit -m" \
     dcm="dot commit -am" \
     dr="dot rebase -i HEAD~" \

@@ -12,8 +12,8 @@ filetype plugin on
 syntax on
 set encoding=utf-8
 let mapleader=' '              " map <space> as leader key
-set bg=dark                    " set background
-colorscheme gruvbox            " sets colorscheme
+set bg=light                   " set to dark if using colorscheme
+"colorscheme gruvbox           " sets colorscheme
 set clipboard+=unnamedplus     " enable pasting
 set mouse=a                    " enable mouse scrolling
 set hidden                     " this is recommended by coc
@@ -29,6 +29,7 @@ set noshowcmd                  " disable line or column number
 set nowrap                     " display long lines as just one line
 set tabstop=4                  " insert 4 spaces for tab
 set shiftwidth=4               " change number of space characters inserted for indention
+"set softtabstop=4
 set expandtab                  " convert tabs to spaces
 set splitbelow                 " horizontal splits will automatically set below
 set splitright                 " vertical splits will automaticall set to the right
@@ -51,11 +52,13 @@ set listchars=tab:>\ ,trail:-,nbsp:+,eol:$
 " load plugins
 call plug#begin(system('echo -n "~/.config/nvim/plugged"'))
 
-Plug 'liuchengxu/vim-which-key'   " shows keybindings in popup
-Plug 'tpope/vim-fugitive'         " git integration
-Plug 'lukelbd/vim-tabline'        " simple buffer tabline
-Plug 'Yggdroot/indentLine'        " indent guidelines
-Plug 'ellisonleao/glow.nvim'      " preview directly in buffer
+Plug 'liuchengxu/vim-which-key'     " shows keybindings in popup
+Plug 'tpope/vim-fugitive'           " git integration
+Plug 'lukelbd/vim-tabline'          " simple buffer tabline
+Plug 'Yggdroot/indentLine'          " indent guidelines
+Plug 'ellisonleao/glow.nvim'        " preview directly in buffer
+Plug 'ptzz/lf.vim'                  " lf file integration
+ Plug 'voldikss/vim-floaterm'       " lf.vim dependency
 
 call plug#end()
 
@@ -76,8 +79,9 @@ call plug#end()
     autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
 
 " source and load plugins configurations
+source $HOME/.config/nvim/cfg/statusline.vim
 source $HOME/.config/nvim/cfg/keymaps.vim
 source $HOME/.config/nvim/cfg/whichkey.vim
 source $HOME/.config/nvim/cfg/indentline.vim
-source $HOME/.config/nvim/cfg/statusline.vim
 source $HOME/.config/nvim/cfg/glow.vim
+source $HOME/.config/nvim/cfg/filemanager.vim

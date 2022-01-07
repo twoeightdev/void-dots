@@ -4,7 +4,7 @@ let g:which_key_sep = '-'
 " Hide status line
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
-            \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+    \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Map leader to which_key
 nnoremap <silent> <leader> :silent <c-u> :silent WhichKey '<Space>'<CR>
@@ -24,11 +24,11 @@ let g:which_key_map['w'] = [ ':wq',                   'exit save' ]
 let g:which_key_map['r'] = [ ':w',                    'save' ]
 let g:which_key_map['q'] = [ ':q!',                   'exit without save' ]
 let g:which_key_map['c'] = [ ':let @/ = ""',          'clear hlsearch' ]
-let g:which_key_map[','] = [ 'Startify',              'start screen' ]
+let g:which_key_map[','] = [ ':Startify',             'start screen' ]
 let g:which_key_map['t'] = [ ':retab',                'retab' ]
 let g:which_key_map['p'] = [ ':Glow',                 'Glow' ]
 let g:which_key_map['i'] = [ ':IndentLinesToggle',    'Toggle Indentguide' ]
-let g:which_key_map['e'] = [ ':TabVifm',              'explorer' ]
+let g:which_key_map['e'] = [ ':Lf',                   'Lf file manager' ]
 let g:which_key_map['d'] = [ ':bd!',                  'delete buffer']
 let g:which_key_map[';'] = [ 'q:',                    'commands history' ]
 let g:which_key_map['z'] = [':FZF',                   'FZF' ]
@@ -53,6 +53,14 @@ let g:which_key_map.b = {
     \ 'p' : ['bprevious' , 'previous-buffer'] ,
     \ '?' : ['Buffers'   , 'fzf-buffer']      ,
     \ }
+
+" Fugitve is for g
+let g:which_key_map.g = {
+    \ 'c' : [':Git commit -a'                   , 'commit'],
+    \ 'p' : [':Git! push -u origin main'        , 'push'],
+    \ 's' : [':Git! status'                     , 'status'],
+    \ 'o' : [':Git! checkout -- '               , 'checkout'],
+    \}
 
 " Language server protocol is for l
 let g:which_key_map.l = {
