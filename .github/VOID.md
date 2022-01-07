@@ -180,7 +180,8 @@ $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UU
 ### Post installation
 
 - Services
-  - `$ ln -sf /etc/sv/dhcpcd /var/service    # enable internet`
+  - `$ ln -sf /etc/sv/dhcpcd /var/service   # enable internet`
+  - `$ ln -sf /etc/sv/dbus /var/service`
 - Users
   - `$ xbps-install -S zsh`
   - `$ useradd -m -G users,wheel,input,video,audio,storage,disk -s /bin/zsh hoaxdream`
