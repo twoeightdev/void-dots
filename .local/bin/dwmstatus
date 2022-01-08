@@ -55,7 +55,7 @@ EOF
 
 mail() {
   unread="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
-  pidof mbsync -c $HOME/.config/mbsync/mbsyncrc >/dev/null 2>&1 && icon="ﮮ"
+  pidof mbsync -c $HOME/.config/mbsync/mbsyncrc >/dev/null 2>&1 && icon=""
   [ "$unread" = "0" ] && [ "$icon" = "" ] || echo "MAIL-$unread$icon"
 }
 
