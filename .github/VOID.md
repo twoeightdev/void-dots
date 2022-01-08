@@ -177,6 +177,16 @@ $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UU
   - `$ umount -R /mnt`
   - `$ reboot`
 
+- EFI Kernel hook
+
+```
+# Options for the kernel hook script installed by the efibootmgr package.
+MODIFY_EFI_ENTRIES=1
+OPTIONS="root=UUID=xxxx-xxxx-xxx-xxxx ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.lo
+DISK="/dev/nvme0n1"
+PART=1
+```
+
 ### Post installation
 
 - Services
