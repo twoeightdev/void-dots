@@ -65,7 +65,7 @@ cmd moveto ${{
   clear; tput cup $(($(tput lines)/3)); tput bold
   set -f
   clear; echo "Move to where?"
-  dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' $XDG_CONFIG_HOME/bm-dirs/shrc | fzf | sed 's|~|$HOME|')" &&
+  dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' $XDG_CONFIG_HOME/shell/bm-dirs | fzf | sed 's|~|$HOME|')" &&
   for x in $fx; do
     eval mv -iv \"$x\" \"$dest\"
   done &&
@@ -76,7 +76,7 @@ cmd copyto ${{
   clear; tput cup $(($(tput lines)/3)); tput bold
   set -f
   clear; echo "Copy to where?"
-  dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' $XDG_CONFIG_HOME/shell/shrc | fzf | sed 's|~|$HOME|')" &&
+  dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' $XDG_CONFIG_HOME/shell/bm-dirs | fzf | sed 's|~|$HOME|')" &&
   for x in $fx; do
     eval cp -ivr \"$x\" \"$dest\"
   done &&
