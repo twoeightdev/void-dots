@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+ffmpeg -i $1 `date +"%m-%d-%y"`.mp3
