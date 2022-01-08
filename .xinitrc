@@ -5,7 +5,6 @@ xsetroot -cursor_name left_ptr &
 mpdnotify &
 setbg &
 dwmstatus &
-theme
 
 autostart="picom mpd"
 

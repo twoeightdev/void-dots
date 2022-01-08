@@ -1,3 +1,0 @@
-#!/bin/sh
-xrdb -merge -D$(echo $1 | tr a-z A-Z)_THEME ~/.config/xorg/Xdefaults
-notify &
