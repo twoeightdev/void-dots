@@ -1,0 +1,143 @@
+*.font: xft:Terminus:pixelsize=14
+
+#ifdef LIGHT_THEME
+#define bg	#e8e9ec
+#define fg	#33374c
+
+! black
+#define ice00	#dcdfe7
+#define ice08	#8389a3
+
+! red
+#define ice01	#cc517a
+#define ice09	#cc3768
+
+! green
+#define ice02	#668e3d
+#define ice0A	#598030
+
+! yellow
+#define ice03	#c57339
+#define ice0B	#b6662d
+
+! blue
+#define ice04	#2d539e
+#define ice0C	#22478e
+
+! magenta
+#define ice05	#7759b4
+#define ice0D	#6845ad
+
+! cyan
+#define ice06	#3f83a6
+#define ice0E	#327698
+
+! white
+#define ice07	#33374c
+#define ice0F	#262a3f
+
+! special
+#define accent	ice07
+#else
+#define bg	#1d2021
+#define fg	#ebdbb2
+
+! black
+#define ice00	#1d2021
+#define ice08	#928374
+
+! red
+#define ice01	#cc241d
+#define ice09	#fb4934
+
+! green
+#define ice02	#98971a
+#define ice0A	#b8bb26
+
+! yellow
+#define ice03	#d79921
+#define ice0B	#fabd2f
+
+! blue
+#define ice04	#458588
+#define ice0C	#83a598
+
+! magenta
+#define ice05	#b16286
+#define ice0D	#d3869b
+
+! cyan
+#define ice06	#689d6a
+#define ice0E	#8ec07c
+
+! white
+#define ice07	#a89984
+#define ice0F	#ebdbb2
+
+! special
+#define accent	ice04
+#endif
+
+*background:	bg
+*foreground:	fg
+*cursorColor:	fg
+
+*color0:	ice00
+*color1:	ice01
+*color2:	ice02
+*color3:	ice03
+*color4:	ice04
+*color5:	ice05
+*color6:	ice06
+*color7:	ice07
+*color8:	ice08
+*color9:	ice09
+*color10:	ice0A
+*color11:	ice0B
+*color12:	ice0C
+*color13:	ice0D
+*color14:	ice0E
+*color15:	ice0F
+
+dmenu.foreground:    fg
+dmenu.background:    bg
+dmenu.selforeground: bg
+dmenu.selbackground: accent
+
+dwm.normfgcolor:     fg
+dwm.normbgcolor:     bg
+dwm.normbordercolor: bg
+dwm.selfgcolor:      bg
+dwm.selbgcolor:      accent
+dwm.selbordercolor:  accent
+
+tabbed.normfgcolor:     fg
+tabbed.normbgcolor:     bg
+tabbed.selfgcolor:      bg
+tabbed.selbgcolor:      accent
+
+slock.init:         bg
+slock.input:        accent
+slock.failed:       ice01
+
+! XTerm
+XTerm*termName: xterm-256color
+XTerm*saveLines: 4096
+XTerm*utf8: 1
+XTerm*loginShell: true
+XTerm*internalBorder: 17
+XTerm*faceName: Monospace:style=Medium:size=16
+Xterm*faceSize: 16
+XTerm*renderFont: true
+XTerm*cursorBlink: false
+XTerm*ScrollBar: false
+
+! XTerm bindings
+! XTerm resize font
+XTerm*vt100.translations: #override \n\
+    Ctrl <Key> j:smaller-vt-font() \n\
+    Ctrl <Key> k:larger-vt-font() \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+
+! vim: ft=xdefaults
