@@ -37,7 +37,6 @@ set number relativenumber      " Show line numbers
 set nolist
 set wildmenu                   " Enable wildmenu
 set wildmode=longest:list,full " Wildmenu style
-
 set listchars=tab:>\ ,trail:-,nbsp:+,eol:$
 
 " Show invisibles

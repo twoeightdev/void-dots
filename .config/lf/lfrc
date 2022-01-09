@@ -18,16 +18,16 @@ set info size:time
 
 # Cmd functions
 cmd open ${{
-  case $(file --mime-type $f -b) in
-    text/troff) man ./ $f;;
-    text/*) $EDITOR $fx;;
-    image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 & ;;
-    image/*) rotdir $f | setsid sxiv -aio 2>/dev/null | lf-select & ;;
-    audio/*) mpv --audio-display=no $f ;;
-    video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
-    application/pdf) setsid zathura $fx >/dev/null 2>&1 & ;;
-    *) for f in $fx; do setsid $OPENER $f >/dev/null 2>&1 & done;;
-  esac
+    case $(file --mime-type $f -b) in
+        text/troff) man ./ $f;;
+        text/*) $EDITOR $fx;;
+        image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 & ;;
+        image/*) rotdir $f | setsid sxiv -aio 2>/dev/null | lf-select & ;;
+        audio/*) mpv --audio-display=no $f ;;
+        video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+        application/pdf) setsid zathura $fx >/dev/null 2>&1 & ;;
+        *) for f in $fx; do setsid $OPENER $f >/dev/null 2>&1 & done;;
+    esac
 }}
 
 # Extract files
@@ -62,25 +62,25 @@ cmd zip ${{
 }}
 
 cmd moveto ${{
-  clear; tput cup $(($(tput lines)/3)); tput bold
-  set -f
-  clear; echo "Move to where?"
-  dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' $XDG_CONFIG_HOME/shell/bm-dirs | fzf | sed 's|~|$HOME|')" &&
-  for x in $fx; do
-    eval mv -iv \"$x\" \"$dest\"
-  done &&
-  notify-send "🚚 File(s) moved." "File(s) moved to $dest."
+    clear; tput cup $(($(tput lines)/3)); tput bold
+    set -f
+    clear; echo "Move to where?"
+    dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' $XDG_CONFIG_HOME/shell/bm-dirs | fzf | sed 's|~|$HOME|')" &&
+    for x in $fx; do
+        eval mv -iv \"$x\" \"$dest\"
+        done &&
+    notify-send "🚚 File(s) moved." "File(s) moved to $dest."
 }}
 
 cmd copyto ${{
-  clear; tput cup $(($(tput lines)/3)); tput bold
-  set -f
-  clear; echo "Copy to where?"
-  dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' $XDG_CONFIG_HOME/shell/bm-dirs | fzf | sed 's|~|$HOME|')" &&
-  for x in $fx; do
-    eval cp -ivr \"$x\" \"$dest\"
-  done &&
-  notify-send "📋 File(s) copied." "File(s) copies to $dest."
+    clear; tput cup $(($(tput lines)/3)); tput bold
+    set -f
+    clear; echo "Copy to where?"
+    dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' $XDG_CONFIG_HOME/shell/bm-dirs | fzf | sed 's|~|$HOME|')" &&
+    for x in $fx; do
+        eval cp -ivr \"$x\" \"$dest\"
+        done &&
+    notify-send "📋 File(s) copied." "File(s) copies to $dest."
 }}
 
 cmd chmod ${{
