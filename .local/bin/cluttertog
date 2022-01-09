@@ -1,8 +1,0 @@
-#!/bin/sh
-if pidof unclutter >/dev/null ;
-then
-  [ "$(printf "No\\nYes" | dmenu -i -p "Disable unclutter?")" = "Yes" ] && killall unclutter && notify-send "Unclutter disabled."
-else
-  ifinstalled unclutter || exit
-  [ "$(printf "No\\nYes" | dmenu -i -p "Enable unclutter?")" = "Yes" ] && unclutter --timeout 3 -jitter 50 --ignore-scrolling && notify-send "Unclutter enabled."
-fi
