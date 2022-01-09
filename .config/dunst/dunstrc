@@ -50,7 +50,7 @@
 # run dunst -print in order to find fitting options for rules
 
 [history-ignore-mpdnotify]
-    appname = "mdpnotify"
+    appname = "mpdnotify"
     summary = "Now playing*"
     history_ignore = yes
     timeout = 2

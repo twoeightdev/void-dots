@@ -3,6 +3,7 @@ mpd_music_dir = "/media/data/music"
 lyrics_directory = "~/.config/ncmpcpp/lyrics"
 ncmpcpp_directory ="~/.config/ncmpcpp"
 message_delay_time = "1"
+#execute_on_song_change = mpcnotify
 visualizer_type = "spectrum"
 #visualizer_look = ●●
 song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3(%l)$9}

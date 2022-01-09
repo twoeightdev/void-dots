@@ -2,9 +2,9 @@
 xset s off -dpms &
 remaps &
 xsetroot -cursor_name left_ptr &
-mpdnotify &
 setbg &
 dwmstatus &
+mpdnotify &
 
 autostart="picom mpd"
 
