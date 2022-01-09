@@ -1,4 +1,4 @@
-# basic
+# Basic
 set shell bash
 set shellopts '-eu'
 set hidden true
@@ -9,14 +9,14 @@ set ignorecase true
 set scrolloff 10
 set period 1
 
-# single column mode
+# Single column mode
 set nopreview
 set ratios 1
 set info size:time
 
 #cmd trash %set -f; mv $fx ~/.trash
 
-# cmd functions
+# Cmd functions
 cmd open ${{
   case $(file --mime-type $f -b) in
     text/troff) man ./ $f;;
@@ -30,7 +30,7 @@ cmd open ${{
   esac
 }}
 
-# extract files
+# Extract files
 cmd extract ${{
     set -f
     case $f in
@@ -43,7 +43,7 @@ cmd extract ${{
     esac
 }}
 
-# compress current file or selected files with tar and gunzip
+# Compress current file or selected files with tar and gunzip
 cmd tar ${{
     set -f
     mkdir $1
@@ -52,7 +52,7 @@ cmd tar ${{
     rm -rf $1
 }}
 
-# compress current file or selected files with zip
+# Compress current file or selected files with zip
 cmd zip ${{
     set -f
     mkdir $1
@@ -91,7 +91,6 @@ cmd chmod ${{
         done
     fi
     lf -remote 'send reload'
-    # or can I use lf commands here?
 }}
 
 cmd bulkrename $vidir
@@ -102,7 +101,7 @@ cmd setbg "$1"
 #map o &mimeopen $f
 #map O &mimeopen --ask $f
 
-# basic binds
+# Basic binds
 map D delete
 map p paste
 map t cut
@@ -126,7 +125,7 @@ map <enter> shell
 map <c-f> $lf -remote "send $id select '$(fzf)'"
 map W $setsid -f $TERMINAL >/dev/null 2>&1
 
-# renames
+# Renames
 map B bulkrename
 map A rename # at the very end
 map c push A<c-u> # new rename
