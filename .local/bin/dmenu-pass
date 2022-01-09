@@ -1,0 +1,3 @@
+#!/bin/sh
+# provides SUDO_ASKPASS variable, used as pass prompt if needed
+dmenu -P -p "$1" <&- && echo
