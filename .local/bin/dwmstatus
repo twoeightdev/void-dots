@@ -77,9 +77,6 @@ while true; do
 done &
 
 while true; do
-  # Network Interface Name
-  interface=$(ip route get 8.8.8.8 2>/dev/null| awk '{print $5}')
-
   # CPU
   CPU_TEMP=$(sensors | awk '/Core 0/ {print "CPU" $3}')
 
@@ -97,13 +94,13 @@ xsetroot -name " ^c#fb4934^^d^^c#b8bb26^${rxs}^d^KiB|^c#fb4934^^d^^c#b8bb2
 
 # internet
 
-  rx1=$(cat /sys/class/net/$interface/statistics/rx_bytes)
-  tx1=$(cat /sys/class/net/$interface/statistics/tx_bytes)
+  rx1=$(cat /sys/class/net/[ew]*/statistics/rx_bytes)
+  tx1=$(cat /sys/class/net/[ew]*/statistics/tx_bytes)
 
   sleep $interval
 
-  rx2=$(cat /sys/class/net/$interface/statistics/rx_bytes)
-  tx2=$(cat /sys/class/net/$interface/statistics/tx_bytes)
+  rx2=$(cat /sys/class/net/[ew]*/statistics/rx_bytes)
+  tx2=$(cat /sys/class/net/[ew]*/statistics/tx_bytes)
   rxs=$(expr $rx2 - $rx1)
   txs=$(expr $tx2 - $tx1)
   rxs=$(expr $rxs / $interval)
