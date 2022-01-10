@@ -1,6 +1,8 @@
 #show-read-feeds no
 show-read-feeds yes
 auto-reload yes
+confirm-mark-all-feeds-read no
+confirm-mark-feed-read no
 
 bind-key j down
 bind-key k up
