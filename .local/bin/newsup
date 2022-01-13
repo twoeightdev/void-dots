@@ -5,8 +5,7 @@
 
 pgrep -f newsboat$ && /usr/bin/xdotool key --window "$(/usr/bin/xdotool search --name "^newsboat$")" R && exit
 
-echo NEWS:ﮮ > /tmp/newsupdate
+echo NEWS: > /tmp/newsupdate
 /usr/bin/newsboat -x reload
 rm -f /tmp/newsupdate
 /usr/bin/notify-send "📰 RSS feed update complete."
-

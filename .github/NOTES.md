@@ -77,6 +77,10 @@ UUID=xxxx-xxxx /media/core ext4 rw,user,exec 0 0
     - `git push -u origin main`
   - **Commit single file**
     - dot commit -m "Message" ~/.config/path/file
+    - **Revert commit**
+        - `git log`
+        - `git reset --hard b4zad078237fa48746a4feb6517fa409f6bf238e`
+        - `git push -f origin main`
 ---
 #### Pass
   - **Store passwd**
@@ -168,4 +172,4 @@ xrandr --output HDMI-0 --mode 2560x1080 --rate 74.99
   - ipv6.disable=1
   - kernel.nmi_watchdog=0
   - mitigations=off * to be tested
-  - 
+  -

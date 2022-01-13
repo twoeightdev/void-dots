@@ -1,9 +1,9 @@
 #!/bin/sh
-xset s off -dpms &
+#xset s off -dpms &
 remaps &
 xsetroot -cursor_name left_ptr &
 setbg &
-dwmstatus &
+#dwmstatus &
 mpdnotify &
 
 autostart="picom mpd"

@@ -106,6 +106,7 @@ map D delete
 map p paste
 map t cut
 map y copy
+map r clear
 
 map gg top
 map G bottom
