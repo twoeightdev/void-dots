@@ -33,7 +33,7 @@ volbar() {
 datebar() {
     date_val=$(date "+%b-%d-%a")
 
-    printf "^c$red^ ^b$black^ $date_val"
+    printf "^c$bwhite^ ^b$black^ $date_val"
 }
 
 timebar() {
@@ -47,54 +47,54 @@ timebar() {
 cpubar() {
     cpu_val=$(sensors | awk '/Core 0/ {print $3}')
 
-    printf "^c$black^ ^b$green^ CPU"
-    printf "^c$green^ ^b$black^ $cpu_val"
+    #printf "^c$black^ ^b$green^ CPU"
+    printf "^c$bwhite^ ^b$black^ CPU$cpu_val"
 }
 
 gpubar() {
     gpu_val=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
 
-    printf "^c$black^ ^b$yellow^ GPU"
-    printf "^c$yellow^ ^b$black^ $gpu_val°C"
+    #printf "^c$black^ ^b$yellow^ GPU"
+    printf "^c$black^ ^b$yellow^ GPU:$gpu_val°C"
 }
 
 membar() {
     mem_val=$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)
 
-    printf "^c$black^ ^b$green^ MEM"
-    printf "^c$green^ ^b$black^ $mem_val"
+    #printf "^c$black^ ^b$green^ MEM"
+    printf "^c$bwhite^ ^b$black^ MEM:$mem_val"
 }
 
 xbpsbar() {
     updates=$(sudo xbps-install -un | wc -l)
 
     if [ -z "$updates" ]; then
-        printf "^c$black^ ^b$yellow^ XBPS"
+        printf "^c$black^ ^b$green^ XBPS"
     else
-        printf "^c$black^ ^b$yellow^ XBPS"
-        printf "^c$yellow^ ^b$black^ $updates"
+        #printf "^c$black^ ^b$green^ XBPS"
+        printf "^c$black^ ^b$green^ XBPS:$updates"
     fi
 }
 
 weathbar() {
     weath_val=$(cat $HOME/.cache/Weather.tmp | awk '{print $2}')
 
-    printf "^c$black^ ^b$cyan^ WEATHER"
-    printf "^c$cyan^ ^b$black^ $weath_val"
+    #printf "^c$black^ ^b$cyan^ WEATHER"
+    printf "^c$black^ ^b$green^ WEATHER$weath_val"
 }
 
 newsbar() {
     news_val=$(newsboat -x print-unread | awk '{ if($1>0) print $1}')
 
-    printf "^c$black^ ^b$red^ NEWS"
-    printf "^c$red^ ^b$black^ $news_val"
+    #printf "^c$black^ ^b$red^ NEWS"
+    printf "^c$bwhite^ ^b$black^ NEWS:$news_val"
 }
 
 mailbar() {
     mail_val=$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)
 
-    printf "^c$black^ ^b$green^ MAIL"
-    printf "^c$green^ ^b$black^ $mail_val"
+    #printf "^c$black^ ^b$green^ MAIL"
+    printf "^c$black^ ^b$yellow^ MAIL:$mail_val"
 }
 
 torrent() {
