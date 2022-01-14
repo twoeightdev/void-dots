@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# Gruvbox colorscheme
 black=#1d2021
 red=#cc241d
 green=#98971a
@@ -18,7 +17,6 @@ bmagenta=#d3869b
 bcyan=#8ec07c
 bwhite=#ebdbb2
 
-SEP='|'
 interval=0
 interval0=1
 rxs=0
@@ -47,21 +45,18 @@ timebar() {
 cpubar() {
     cpu_val=$(sensors | awk '/Core 0/ {print $3}')
 
-    #printf "^c$black^ ^b$green^ CPU"
     printf "^c$bwhite^ ^b$black^ CPU$cpu_val"
 }
 
 gpubar() {
     gpu_val=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
 
-    #printf "^c$black^ ^b$yellow^ GPU"
     printf "^c$black^ ^b$yellow^ GPU:$gpu_val°C"
 }
 
 membar() {
     mem_val=$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)
 
-    #printf "^c$black^ ^b$green^ MEM"
     printf "^c$bwhite^ ^b$black^ MEM:$mem_val"
 }
 
@@ -71,7 +66,6 @@ xbpsbar() {
     if [ -z "$updates" ]; then
         printf "^c$black^ ^b$green^ XBPS"
     else
-        #printf "^c$black^ ^b$green^ XBPS"
         printf "^c$black^ ^b$green^ XBPS:$updates"
     fi
 }
@@ -79,21 +73,18 @@ xbpsbar() {
 weathbar() {
     weath_val=$(cat $HOME/.cache/Weather.tmp | awk '{print $2}')
 
-    #printf "^c$black^ ^b$cyan^ WEATHER"
     printf "^c$black^ ^b$green^ WEATHER$weath_val"
 }
 
 newsbar() {
     news_val=$(newsboat -x print-unread | awk '{ if($1>0) print $1}')
 
-    #printf "^c$black^ ^b$red^ NEWS"
     printf "^c$bwhite^ ^b$black^ NEWS:$news_val"
 }
 
 mailbar() {
     mail_val=$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)
 
-    #printf "^c$black^ ^b$green^ MAIL"
     printf "^c$black^ ^b$yellow^ MAIL:$mail_val"
 }
 
