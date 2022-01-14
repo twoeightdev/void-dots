@@ -1,12 +1,13 @@
 #!/bin/sh
-#xset s off -dpms &
+xset s off -dpms &
 remaps &
 xsetroot -cursor_name left_ptr &
 setbg &
 #dwmstatus &
+dwmbar &
 mpdnotify &
 
-autostart="picom mpd"
+autostart="picom mpd unclutter"
 
 for program in $autostart; do
   pidof -s "$program" || setsid -f "$program"
