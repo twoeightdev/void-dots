@@ -3,9 +3,7 @@ xset s off -dpms &
 remaps &
 xsetroot -cursor_name left_ptr &
 setbg &
-#dwmstatus &
 dwmbar &
-mpdnotify &
 
 autostart="picom mpd unclutter"
 

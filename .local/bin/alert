@@ -1,6 +1,7 @@
 #!/bin/sh
 # skip alert for mpdnotify
-if [[ "$1" == "mpdnotify" ]]
+
+if [[ "$1" == "mpcnotify" ]]
 then
   exit 0
 fi

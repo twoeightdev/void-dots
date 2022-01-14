@@ -1,4 +1,4 @@
 #/bin/sh
 while true; do
-    notify-send -a mpcnotify -t 2000 "Now Playing" "$(mpc current --wait)"
+    notify-send -a mpdnotify -t 2000 "Now Playing" "$(mpc current --wait)"
 done
