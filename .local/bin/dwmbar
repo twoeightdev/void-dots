@@ -1,0 +1,146 @@
+#!/bin/sh
+
+# Gruvbox colorscheme
+black=#1d2021
+red=#cc241d
+green=#98971a
+yellow=#d79921
+blue=#458588
+magenta=#b16286
+cyan=#689d6a
+white=#a89984
+bblack=#928374
+bred=#fb4934
+bgreen=#b8bb26
+byellow=#fabd2f
+bblue=#83a598
+bmagenta=#d3869b
+bcyan=#8ec07c
+bwhite=#ebdbb2
+
+SEP='|'
+interval=0
+interval0=1
+rxs=0
+txs=0
+
+volbar() {
+    vol_val=$(pamixer --get-volume)
+
+    printf "^c$black^ ^b$yellow^  $vol_val "
+}
+
+datebar() {
+    date_val=$(date "+%b-%d-%a")
+
+    printf "^c$red^ ^b$black^ $date_val"
+}
+
+timebar() {
+    time_val0=$(TZ='Asia/Riyadh' date "+%I:%M%p")
+    time_val1=$(date "+%I:%M%p")
+
+    printf "^c$black^ ^b$yellow^ $time_val0"
+    printf "^c$black^ ^b$green^ $time_val1"
+}
+
+cpubar() {
+    cpu_val=$(sensors | awk '/Core 0/ {print $3}')
+
+    printf "^c$black^ ^b$green^ CPU"
+    printf "^c$green^ ^b$black^ $cpu_val"
+}
+
+gpubar() {
+    gpu_val=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
+
+    printf "^c$black^ ^b$yellow^ GPU"
+    printf "^c$yellow^ ^b$black^ $gpu_val°C"
+}
+
+membar() {
+    mem_val=$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)
+
+    printf "^c$black^ ^b$green^ MEM"
+    printf "^c$green^ ^b$black^ $mem_val"
+}
+
+xbpsbar() {
+    updates=$(sudo xbps-install -un | wc -l)
+
+    if [ -z "$updates" ]; then
+        printf "^c$black^ ^b$yellow^ XBPS"
+    else
+        printf "^c$black^ ^b$yellow^ XBPS"
+        printf "^c$yellow^ ^b$black^ $updates"
+    fi
+}
+
+weathbar() {
+    weath_val=$(cat $HOME/.cache/Weather.tmp | awk '{print $2}')
+
+    printf "^c$black^ ^b$cyan^ WEATHER"
+    printf "^c$cyan^ ^b$black^ $weath_val"
+}
+
+newsbar() {
+    news_val=$(newsboat -x print-unread | awk '{ if($1>0) print $1}')
+
+    printf "^c$black^ ^b$red^ NEWS"
+    printf "^c$red^ ^b$black^ $news_val"
+}
+
+mailbar() {
+    mail_val=$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)
+
+    printf "^c$black^ ^b$green^ MAIL"
+    printf "^c$green^ ^b$black^ $mail_val"
+}
+
+torrent() {
+    data=$(transmission-remote -l 2>/dev/null | grep -E "%|n/a")
+    [ "$data" ] || return
+    while read -r line; do
+        per="$(printf %s "$line" | awk '{ printf $2 }')"
+        printf %s "$line" | sed "
+            s/.*Stopped.*/  /g;
+            s/.*Seeding.*/  /g;
+            s/.*Idle.*/  /g;
+            s/.*Uploading.*/  /g;
+            s/.*Downloading.*/  /g;
+            s/.*[A-Z][a-z].*/  / g;
+            "
+        printf %s "$per"
+    done <<EOF
+    $data
+EOF
+    transmission-remote -l | grep -qE "%|n/a" && printf " %s"
+}
+
+netbar() {
+    rx1=$(cat /sys/class/net/[ew]*/statistics/rx_bytes)
+    tx1=$(cat /sys/class/net/[ew]*/statistics/tx_bytes)
+    sleep 1
+    rx2=$(cat /sys/class/net/[ew]*/statistics/rx_bytes)
+    tx2=$(cat /sys/class/net/[ew]*/statistics/tx_bytes)
+    rxs=$(expr $rx2 - $rx1)
+    txs=$(expr $tx2 - $tx1)
+    rxs=$(expr $rxs / $interval0)
+    txs=$(expr $txs / $interval0)
+    rxs=$(expr $rxs / 1024)
+    txs=$(expr $txs / 1024)
+
+    printf "^c$bwhite^ ^b$black^ $rxs KiB|$txs KiB"
+}
+
+while true; do
+    curl -s "https://wttr.in/San+Roque+San+Pedro+Laguna?format=1" > $HOME/.cache/Weather.tmp
+    sleep 300
+done &
+
+while true; do
+    [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(xbpsbar)
+    interval=$((interval + 1))
+
+    sleep 1 && xsetroot -name "$(netbar) $(torrent) $updates $(mailbar) $(newsbar) $(weathbar) $(membar) $(gpubar) $(cpubar) $(timebar) $(datebar) $(volbar)"
+done
