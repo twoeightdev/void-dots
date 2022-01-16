@@ -48,29 +48,29 @@ _Use at your own risk._
 
 ###  Bootable Flash Drive
 
-```
+```sh
 $ dd bs=4M if=path/to/voidlinux.iso of=/dev/sdx conv=fsync oflag=direct status=progress
 ```
 
 ### Pre installation
 
 - Set shell
-```
+```sh
 - $ bash
 ```
 
 - Change font
-```
+```sh
 $ setfont LatGrkCyr-12x22
 ```
 
 - Check boot mode
-```
+```sh
 - $ ls /sys/firmware/efi    # shows output if it's UEFI
 ```
 
 - Check internet connection
-```
+```sh
 - $ ping -c 3 voidlinux.org
 ```
 
@@ -146,7 +146,7 @@ Mount point | Partition | Partition type | Suggested size
 - Dracut
     - `$ nvim /etc/dracut.conf.d/boot.conf`
 
-```
+```sh
 hostonly=yes
 hostonly_cmdline=no
 use_fstab=yes
@@ -166,7 +166,7 @@ no_hostonly_commandline=yes
     - `$ ROOT_UUID=$(blkid -s UUID -o value /dev/nvme0n1p2)`
     - kernel parameters:
 
-```
+```sh
 $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UUID=$ROOT_UUID ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose
 ```
 
@@ -180,7 +180,7 @@ $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UU
 - EFI Kernel hook
     - `$ nvim /etc/default/efibootmgr-kernel-hook`
 
-```
+```sh
 # Options for the kernel hook script installed by the efibootmgr package.
 MODIFY_EFI_ENTRIES=1
 OPTIONS="root=UUID=xxxx-xxxx-xxx-xxxx ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3"
@@ -209,7 +209,7 @@ PART=1
 
 ### Dot files installation
 
-```
+```sh
     - $ sudo xbps-install -Syu git
     - $ git clone https://github.com/hoaxdream/void-bootstrap
     - $ cd bootstrap
@@ -249,7 +249,7 @@ PART=1
     - `$ sudo chmod +x /etc/sv/hoaxdream/run`
     - `$ sudo -E nvim /etc/sv/hoaxdream/run`
     - run:
-```
+```sh
 #!/bin/sh
 
 UID=$(pwd -P)
