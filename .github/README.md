@@ -17,9 +17,9 @@
 - $ git --git-dir=$HOME/.config/dots/ --work-tree=$HOME config --local status.showUntrackedFiles no
 ```
 
-## Personal Suckless build
+## Personal suckless build
 
-### [dwm](https://github.com/hoaxdream/void-dwm)
+### [Dwm](https://github.com/hoaxdream/void-dwm)
 - Patches:
     - vainitygaps
     - cfacts
@@ -37,21 +37,21 @@
     - titlecolor
     - enabled color emoji
 
-### [st](https://github.com/hoaxdream/void-st)
+### [St](https://github.com/hoaxdream/void-st)
 - Patches:
     - disable bold italics
     - font2
     - scrollback
 
-### [slock](https://github.com/hoaxdream/void-slock)
+### [Slock](https://github.com/hoaxdream/void-slock)
 - Patches:
     - blurred
     - Xft font
 
-### [dwmblocks](https://github.com/hoaxdream/void-dwmblocks)
+### [Dwmblocks](https://github.com/hoaxdream/void-dwmblocks)
 - [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) by UtkarshVerma
 
-### [dmenu](https://github.com/hoaxdream/void-dmenu)
+### [Dmenu](https://github.com/hoaxdream/void-dmenu)
 - enabled color emoji
 
 Link on how to patch [libxft-bgra](https://github.com/hoaxdream/void-dots/blob/main/.github/VOID.md) for void linux.
