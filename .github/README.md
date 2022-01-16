@@ -35,7 +35,7 @@
     - alwayscenter
     - status2d
     - titlecolor
-    - enabled color emoji - you need libxft-bgra
+    - enabled color emoji
 
 ### [st](https://github.com/hoaxdream/void-st)
 - Patches:
@@ -48,5 +48,10 @@
     - blurred
     - Xft font
 
-### [dmenu](https://github.com/hoaxdream/void-dmenu)
 ### [dwmblocks](https://github.com/hoaxdream/void-dwmblocks)
+- [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) by UtkarshVerma
+
+### [dmenu](https://github.com/hoaxdream/void-dmenu)
+- enabled color emoji
+
+Link on how to patch [libxft-bgra](https://github.com/hoaxdream/void-dots/blob/main/.github/VOID.md) for void linux.
