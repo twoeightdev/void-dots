@@ -120,6 +120,9 @@ UUID=xxxx-xxxx /media/core ext4 rw,user,exec 0 0
 - git fetch --all
 - git checkout origin/main -- ~/.config/file
 ---
+#### Diff
+- Create patch file between two files
+    - `diff -u file1.html file2.html > patchfile.patch`
 #### Keybind XFree86 keysym path
 - `/usr/include/X11/XF86keysym.h
 ---
