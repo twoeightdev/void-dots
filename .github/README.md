@@ -19,8 +19,34 @@
 
 ## Personal Suckless build
 
-- [dwm](https://github.com/hoaxdream/void-dwm)
-- [st](https://github.com/hoaxdream/void-st)
-- [dmenu](https://github.com/hoaxdream/void-dmenu)
-- [dwmblocks](https://github.com/hoaxdream/void-dwmblocks)
-- [slock](https://github.com/hoaxdream/void-slock)
+### [dwm](https://github.com/hoaxdream/void-dwm)
+- Patches:
+    - vainitygaps
+    - cfacts
+    - colorfultag
+    - pertag
+    - scratchpads
+    - statusallmons
+    - statuscmd
+    - steamfix
+    - tagmonfixfs
+    - togglefullscreen
+    - underlinetags
+    - alwayscenter
+    - status2d
+    - titlecolor
+    - enabled color emoji - you need libxft-bgra
+
+### [st](https://github.com/hoaxdream/void-st)
+- Patches:
+    - disable bold italics
+    - font2
+    - scrollback
+
+### [slock](https://github.com/hoaxdream/void-slock)
+- Patches:
+    - blurred
+    - Xft font
+
+### [dmenu](https://github.com/hoaxdream/void-dmenu)
+### [dwmblocks](https://github.com/hoaxdream/void-dwmblocks)
