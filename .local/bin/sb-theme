@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# Gruvbox colorscheme
+color1="#1d2021"    # black
+color2="#cc241d"    # red
+color3="#98971a"    # green
+color4="#d79921"    # yellow
+color5="#458588"    # blue
+color6="#b16286"    # magenta
+color7="#689d6a"    # cyan
+color8="#a89984"    # white
+
+display() {
+    args=""
+    case $1 in
+        -n) args="-n"; shift ;;
+    esac
+
+    if [ -n "${2+x}" ]; then
+        color=$2
+	else
+		case "$(basename $0)" in
+            sb-torrent) color="$color8" ;;
+            sb-net) color="$color6" ;;
+            sb-xbps) color="$color5" ;;
+            sb-audio) color="$color4" ;;
+            sb-mail) color="$color5" ;;
+            sb-news) color="$color2" ;;
+            sb-forecast) color="$color7" ;;
+            sb-mem) color="$color3" ;;
+            sb-gpu) color="$color4" ;;
+            sb-cpu) color="$color3" ;;
+            sb-time) color="$color4" ;;
+            sb-date) color="$color2" ;;
+            *) color="$color8" ;;
+        esac
+    fi
+    echo $args "^c$color^$1"
+}

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+. sb-theme
+display "$(echo "$(newsboat -x print-unread | awk '{ if($1>0) print "NEWS:" $1}')")"

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+torrent() {
+    data=$(transmission-remote -l 2>/dev/null | grep -E "%|n/a")
+    [ "$data" ] || return
+    while read -r line; do
+        per="$(printf %s "$line" | awk '{ printf $2 }')"
+        printf %s "$line" | sed "
+            s/.*Stopped.*/  /g;
+            s/.*Seeding.*/  /g;
+            s/.*Idle.*/  /g;
+            s/.*Uploading.*/  /g;
+            s/.*Downloading.*/  /g;
+            s/.*[A-Z][a-z].*/  / g;
+            "
+        printf %s "$per"
+    done <<EOF
+    $data
+EOF
+    transmission-remote -l | grep -qE "%|n/a" && printf " %s"
+}
+
+. sb-theme
+display "$(torrent)"
