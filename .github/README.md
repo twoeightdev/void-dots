@@ -19,39 +19,39 @@
 
 ## Personal suckless build
 
-### [Dwm](https://github.com/hoaxdream/void-dwm)
-- Patches:
-    - vainitygaps
-    - cfacts
-    - colorfultag
-    - pertag
-    - scratchpads
-    - statusallmons
-    - statuscmd
-    - steamfix
-    - tagmonfixfs
-    - togglefullscreen
-    - underlinetags
-    - alwayscenter
-    - status2d
-    - titlecolor
+- [Dwm](https://github.com/hoaxdream/void-dwm)
+    - Patches:
+        - vainitygaps
+        - cfacts
+        - colorfultag
+        - pertag
+        - scratchpads
+        - statusallmons
+        - statuscmd
+        - steamfix
+        - tagmonfixfs
+        - togglefullscreen
+        - underlinetags
+        - alwayscenter
+        - status2d
+        - titlecolor
+        - enabled color emoji
+
+- [St](https://github.com/hoaxdream/void-st)
+    - Patches:
+        - disable bold italics
+        - font2
+        - scrollback
+
+- [Slock](https://github.com/hoaxdream/void-slock)
+    - Patches:
+        - blurred
+        - Xft font
+
+- [Dwmblocks](https://github.com/hoaxdream/void-dwmblocks)
+    - [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) by UtkarshVerma
+
+- [Dmenu](https://github.com/hoaxdream/void-dmenu)
     - enabled color emoji
-
-### [St](https://github.com/hoaxdream/void-st)
-- Patches:
-    - disable bold italics
-    - font2
-    - scrollback
-
-### [Slock](https://github.com/hoaxdream/void-slock)
-- Patches:
-    - blurred
-    - Xft font
-
-### [Dwmblocks](https://github.com/hoaxdream/void-dwmblocks)
-- [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) by UtkarshVerma
-
-### [Dmenu](https://github.com/hoaxdream/void-dmenu)
-- enabled color emoji
 
 Link on how to patch [libxft-bgra](https://github.com/hoaxdream/void-dots/blob/main/.github/VOID.md) for void linux.
