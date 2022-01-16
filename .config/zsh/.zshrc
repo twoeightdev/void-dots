@@ -3,6 +3,7 @@ setopt extended_history         # Record timestamp of command in HISTFILE
 setopt hist_expire_dups_first   # Delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_all_dups     # Ignore all duplicates in history
 setopt share_history            # Shares all history
+stty stop undef                 # Disable ctrl-s to freeze terminal
 
 # Automaticly escape urls special characters
 autoload -Uz url-quote-magic bracketed-paste-magic
@@ -74,6 +75,18 @@ zle -N zle-line-init
 
 print -n $cursor_insert # Use beam shape cursor on startup
 function preexec() { print -n $cursor_insert; } # Use beam shape cursor for each new prompt
+
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp" >/dev/null
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'lfcd\n'
 
 # Use vim keys in tab complete menu:
 zmodload zsh/complist
