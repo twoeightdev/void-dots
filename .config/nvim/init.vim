@@ -11,33 +11,35 @@ set nocompatible
 filetype plugin on
 syntax on
 set encoding=utf-8
-let mapleader=' '              " Map <space> as leader key
-set bg=light                   " Set to dark if using colorscheme
-"colorscheme gruvbox           " Sets colorscheme
-set clipboard+=unnamedplus     " Enable pasting
-set mouse=a                    " Enable mouse scrolling
-set hidden                     " This is recommended by coc
-set nobackup                   " This is recommended by coc
-set nowritebackup              " This is recommended by coc
-set shortmess+=icw             " Avoid message and prompts
-set noswapfile                 " Disable swaps
-set nohlsearch                 " Highlighted search
-set noshowmode                 " Disable INSERT mode showing up
-set noruler                    " Disable ruler
-set laststatus=2               " Needed to show custom statusline
-set noshowcmd                  " Disable line or column number
-set nowrap                     " Display long lines as just one line
-set tabstop=4                  " Insert 4 spaces for tab
-set shiftwidth=4               " Change number of space characters inserted for indention
+let mapleader=' '                           " Map <space> as leader key
+set bg=light                                 " Set to dark if using colorscheme
+"set termguicolors                           " Needed by colorizer
+set clipboard+=unnamedplus                  " Enable pasting
+set mouse=a                                 " Enable mouse scrolling
+set hidden                                  " This is recommended by coc
+set nobackup                                " This is recommended by coc
+set nowritebackup                           " This is recommended by coc
+set shortmess+=icw                          " Avoid message and prompts
+set noswapfile                              " Disable swaps
+set nohlsearch                              " Highlighted search
+set noshowmode                              " Disable INSERT mode showing up
+set noruler                                 " Disable ruler
+set laststatus=2                            " Needed to show custom statusline
+set noshowcmd                               " Disable line or column number
+set nowrap                                  " Display long lines as just one line
+set tabstop=4                               " Insert 4 spaces for tab
+set shiftwidth=4                            " Change number of space characters inserted for indention
 set softtabstop=4
-set expandtab                  " Convert tabs to spaces
-set splitbelow                 " Horizontal splits will automatically set below
-set splitright                 " Vertical splits will automaticall set to the right
-set number relativenumber      " Show line numbers
+set expandtab                               " Convert tabs to spaces
+set splitbelow                              " Horizontal splits will automatically set below
+set splitright                              " Vertical splits will automaticall set to the right
+set number relativenumber                   " Show line numbers
 set nolist
-set wildmenu                   " Enable wildmenu
-set wildmode=longest:list,full " Wildmenu style
+set wildmenu                                " Enable wildmenu
+set wildmode=longest:list,full              " Wildmenu style
 set listchars=tab:>\ ,trail:-,nbsp:+,eol:$
+"let g:gruvbox_material_background='hard'    " gruvbox contrast hard/medium/soft
+"colorscheme gruvbox-material                " Sets colorscheme
 
 " Show invisibles
 "set list
@@ -57,6 +59,8 @@ Plug 'lukelbd/vim-tabline'          " Simple buffer tabline
 Plug 'Yggdroot/indentLine'          " Indent guidelines
 Plug 'ptzz/lf.vim'                  " Lf file integration
 Plug 'voldikss/vim-floaterm'        " Lf.vim dependency
+Plug 'chrisbra/Colorizer'
+
 
 call plug#end()
 
@@ -78,6 +82,7 @@ call plug#end()
 
 " Source and load plugins configurations
 source $HOME/.config/nvim/cfg/statusline.vim
+source $HOME/.config/nvim/cfg/colorizer.vim
 source $HOME/.config/nvim/cfg/keymaps.vim
 source $HOME/.config/nvim/cfg/whichkey.vim
 source $HOME/.config/nvim/cfg/indentline.vim
