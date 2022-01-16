@@ -19,18 +19,19 @@ let g:which_key_sep = '-'
 let g:which_key_use_floating_win = 0
 
 " Single leader mappings
-let g:which_key_map['.'] = [ ':e $MYVIMRC',           'open init' ]
-let g:which_key_map['w'] = [ ':wq',                   'exit save' ]
-let g:which_key_map['r'] = [ ':w',                    'save' ]
-let g:which_key_map['q'] = [ ':q!',                   'exit without save' ]
-let g:which_key_map['c'] = [ ':let @/ = ""',          'clear hlsearch' ]
-let g:which_key_map[','] = [ ':Startify',             'start screen' ]
-let g:which_key_map['t'] = [ ':retab',                'retab' ]
-let g:which_key_map['i'] = [ ':IndentLinesToggle',    'Toggle Indentguide' ]
-let g:which_key_map['e'] = [ ':Lf',                   'Lf file manager' ]
-let g:which_key_map['d'] = [ ':bd!',                  'delete buffer']
-let g:which_key_map[';'] = [ 'q:',                    'commands history' ]
-let g:which_key_map['z'] = [':FZF',                   'FZF' ]
+let g:which_key_map['.'] = [ ':e $MYVIMRC',         'open init' ]
+let g:which_key_map['w'] = [ ':wq',                 'exit save' ]
+let g:which_key_map['r'] = [ ':w',                  'save' ]
+let g:which_key_map['q'] = [ ':q!',                 'exit without save' ]
+let g:which_key_map['c'] = [ ':let @/ = ""',        'clear hlsearch' ]
+let g:which_key_map[','] = [ ':Startify',           'start screen' ]
+let g:which_key_map['t'] = [ ':retab',              'retab' ]
+let g:which_key_map['h'] = [ ':ColorToggle',        'Colorizer' ]
+let g:which_key_map['i'] = [ ':IndentLinesToggle',  'Toggle Indentguide' ]
+let g:which_key_map['e'] = [ ':Lf',                 'Lf file manager' ]
+let g:which_key_map['d'] = [ ':bd!',                'delete buffer']
+let g:which_key_map[';'] = [ 'q:',                  'commands history' ]
+let g:which_key_map['z'] = [':FZF',                 'FZF' ]
 
 " Actions is for a
 let g:which_key_map.a = {
