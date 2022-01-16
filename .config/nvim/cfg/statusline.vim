@@ -160,17 +160,17 @@ set statusline+=\%#Filetype#%{SetFiletype(&filetype)}
 set statusline+=\ \%#Separator#▒
 
 " tabline colors
-call g:C("TabLine", g:none, g:dark.magenta, "none")
-call g:C("TabLineSel", g:none, g:dark.blue, "none")
-call g:C("TabLineFill", g:none, g:dark.yellow, "none")
+call g:C("TabLine",     g:none, g:dark.magenta, "none")
+call g:C("TabLineSel",  g:none, g:dark.blue,    "none")
+call g:C("TabLineFill", g:none, g:dark.yellow,  "none")
 
 " statusline colors
-call g:C("Reset", g:none, g:dark.black, "none")
-call g:C("Separator", g:none, g:dark.black, "none")
-call g:C("Git", g:dark.black, g:dark.white, "none")
-call g:C("Modified", g:dark.black, g:dark.black, "none")
-call g:C("LineCol", g:dark.black, g:dark.yellow, "none")
-call g:C("LinePerc", g:dark.black, g:dark.green, "none")
-call g:C("Filetype", g:dark.black, g:dark.magenta, "italic")
+call g:C("Reset",       g:none,         g:dark.black,   "none")
+call g:C("Separator",   g:none,         g:dark.black,   "none")
+call g:C("Git",         g:dark.black,   g:dark.white,   "none")
+call g:C("Modified",    g:dark.black,   g:dark.black,   "none")
+call g:C("LineCol",     g:dark.black,   g:dark.yellow,  "none")
+call g:C("LinePerc",    g:dark.black,   g:dark.green,   "none")
+call g:C("Filetype",    g:dark.black,   g:dark.magenta, "italic")
 
 " vim: fdm=marker
