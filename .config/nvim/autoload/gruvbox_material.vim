@@ -18,10 +18,14 @@ function! gruvbox_material#get_configuration() "{{{
         \ 'visual': get(g:, 'gruvbox_material_visual', 'grey background'),
         \ 'menu_selection_background': get(g:, 'gruvbox_material_menu_selection_background', 'grey'),
         \ 'sign_column_background': get(g:, 'gruvbox_material_sign_column_background', 'default'),
+        \ 'ui_contrast': get(g:, 'gruvbox_material_ui_contrast', 'low'),
+        \ 'show_eob': get(g:, 'gruvbox_material_show_eob', 1),
         \ 'current_word': get(g:, 'gruvbox_material_current_word', get(g:, 'gruvbox_material_transparent_background', 0) == 0 ? 'grey background' : 'bold'),
         \ 'statusline_style': get(g:, 'gruvbox_material_statusline_style', 'default'),
         \ 'lightline_disable_bold': get(g:, 'gruvbox_material_lightline_disable_bold', 0),
+        \ 'diagnostic_text_highlight': get(g:, 'gruvbox_material_diagnostic_text_highlight', 0),
         \ 'diagnostic_line_highlight': get(g:, 'gruvbox_material_diagnostic_line_highlight', 0),
+        \ 'diagnostic_virtual_text': get(g:, 'gruvbox_material_diagnostic_virtual_text', 'grey'),
         \ 'better_performance': get(g:, 'gruvbox_material_better_performance', 0),
         \ }
 endfunction "}}}
@@ -61,13 +65,13 @@ function! gruvbox_material#get_palette(background, palette) "{{{
             \ 'bg_statusline1':   ['#f5edca',   '223'],
             \ 'bg_statusline2':   ['#f3eac7',   '223'],
             \ 'bg_statusline3':   ['#eee0b7',   '250'],
-            \ 'bg_diff_green':    ['#e3f6b4',   '194'],
+            \ 'bg_diff_green':    ['#e4edc8',   '194'],
             \ 'bg_visual_green':  ['#dde5c2',   '194'],
-            \ 'bg_diff_red':      ['#ffdbcc',   '217'],
-            \ 'bg_visual_red':    ['#f6d2ba',   '217'],
-            \ 'bg_diff_blue':     ['#cff1f6',   '117'],
+            \ 'bg_diff_red':      ['#f8e4c9',   '217'],
+            \ 'bg_visual_red':    ['#f0ddc3',   '217'],
+            \ 'bg_diff_blue':     ['#e0e9d3',   '117'],
             \ 'bg_visual_blue':   ['#d9e1cc',   '117'],
-            \ 'bg_visual_yellow': ['#f1e2b7',   '226'],
+            \ 'bg_visual_yellow': ['#f9eabf',   '226'],
             \ 'bg_current_word':  ['#f3eac7',   '229']
             \ }
     endif "}}}
@@ -103,17 +107,17 @@ function! gruvbox_material#get_palette(background, palette) "{{{
             \ 'bg_statusline1':   ['#f2e5bc',   '223'],
             \ 'bg_statusline2':   ['#f2e5bc',   '223'],
             \ 'bg_statusline3':   ['#e5d5ad',   '250'],
-            \ 'bg_diff_green':    ['#daf0a7',   '194'],
+            \ 'bg_diff_green':    ['#e6eabc',   '194'],
             \ 'bg_visual_green':  ['#dee2b6',   '194'],
-            \ 'bg_diff_red':      ['#fbcdb9',   '217'],
-            \ 'bg_visual_red':    ['#f7cfae',   '217'],
-            \ 'bg_diff_blue':     ['#c6eaf0',   '117'],
+            \ 'bg_diff_red':      ['#f9e0bb',   '217'],
+            \ 'bg_visual_red':    ['#f1d9b5',   '217'],
+            \ 'bg_diff_blue':     ['#e2e6c7',   '117'],
             \ 'bg_visual_blue':   ['#dadec0',   '117'],
-            \ 'bg_visual_yellow': ['#f2dfab',   '226'],
+            \ 'bg_visual_yellow': ['#fae7b3',   '226'],
             \ 'bg_current_word':  ['#f2e5bc',   '228']
             \ }
     endif "}}}
-  elseif a:background ==# 'soft' "{{{
+  else "{{{
     if &background ==# 'dark'
       let palette1 = {
             \ 'bg0':              ['#32302f',   '236'],
@@ -145,13 +149,13 @@ function! gruvbox_material#get_palette(background, palette) "{{{
             \ 'bg_statusline1':   ['#ebdbb2',   '223'],
             \ 'bg_statusline2':   ['#ebdbb2',   '223'],
             \ 'bg_statusline3':   ['#dac9a5',   '250'],
-            \ 'bg_diff_green':    ['#d1ea9b',   '194'],
+            \ 'bg_diff_green':    ['#dfe1b4',   '194'],
             \ 'bg_visual_green':  ['#d7d9ae',   '194'],
-            \ 'bg_diff_red':      ['#fbcab5',   '217'],
-            \ 'bg_visual_red':    ['#f0c6a6',   '217'],
-            \ 'bg_diff_blue':     ['#bee4ea',   '117'],
+            \ 'bg_diff_red':      ['#f7d9b9',   '217'],
+            \ 'bg_visual_red':    ['#efd2b3',   '217'],
+            \ 'bg_diff_blue':     ['#dbddbf',   '117'],
             \ 'bg_visual_blue':   ['#d3d5b8',   '117'],
-            \ 'bg_visual_yellow': ['#ecd6a3',   '226'],
+            \ 'bg_visual_yellow': ['#f3deaa',   '226'],
             \ 'bg_current_word':  ['#ebdbb2',   '227']
             \ }
     endif
@@ -220,7 +224,7 @@ function! gruvbox_material#get_palette(background, palette) "{{{
             \ 'bg_yellow':        ['#a96b2c',   '130']
             \ }
     endif "}}}
-  elseif a:palette ==# 'original' "{{{
+  else "{{{
     if &background ==# 'dark'
       let palette2 = {
             \ 'fg0':              ['#ebdbb2',   '223'],
@@ -277,11 +281,7 @@ function! gruvbox_material#highlight(group, fg, bg, ...) "{{{
         \ 'ctermfg=' . a:fg[1]
         \ 'ctermbg=' . a:bg[1]
         \ 'gui=' . (a:0 >= 1 ?
-          \ (a:1 ==# 'undercurl' ?
-            \ (executable('tmux') && $TMUX !=# '' ?
-              \ 'underline' :
-              \ 'undercurl') :
-            \ a:1) :
+          \ a:1 :
           \ 'NONE')
         \ 'cterm=' . (a:0 >= 1 ?
           \ (a:1 ==# 'undercurl' ?
@@ -319,7 +319,7 @@ function! gruvbox_material#ft_write(rootpath, ft, content) "{{{
   if !filereadable(ft_path)
     call mkdir(a:rootpath . '/after/ftplugin/' . a:ft, 'p')
     call writefile([
-          \ "if g:colors_name !=# 'gruvbox-material'",
+          \ "if !exists('g:colors_name') || g:colors_name !=# 'gruvbox-material'",
           \ '    finish',
           \ 'endif'
           \ ], ft_path, 'a') " Abort if the current color scheme is not gruvbox-material.
@@ -334,15 +334,20 @@ function! gruvbox_material#ft_write(rootpath, ft, content) "{{{
   " If there is something like `call gruvbox_material#highlight()`, then add
   " code to initialize the palette and configuration.
   if matchstr(a:content, 'gruvbox_material#highlight') !=# ''
-    call writefile(['let s:configuration = gruvbox_material#get_configuration()', 'let s:palette = gruvbox_material#get_palette(s:configuration.background, s:configuration.palette)'], ft_path, 'a')
+    call writefile([
+          \ 'let s:configuration = gruvbox_material#get_configuration()',
+          \ 'let s:palette = gruvbox_material#get_palette(s:configuration.background, s:configuration.palette)'
+          \ ], ft_path, 'a')
   endif
   " Append the content.
   call writefile(split(a:content, "\n"), ft_path, 'a')
+  " Add modeline.
+  call writefile(['" vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker fmr={{{,}}}:'], ft_path, 'a')
 endfunction "}}}
 function! gruvbox_material#ft_rootpath(path) "{{{
   " Get the directory where `after/ftplugin` is generated.
   if (matchstr(a:path, '^/usr/share') ==# '') || has('win32') " Return the plugin directory. The `after/ftplugin` directory should never be generated in `/usr/share`, even if you are a root user.
-    return substitute(a:path, '/colors/gruvbox-material\.vim$', '', '')
+    return fnamemodify(a:path, ':p:h:h')
   else " Use vim home directory.
     if has('nvim')
       return stdpath('config')
