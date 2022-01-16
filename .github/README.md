@@ -9,7 +9,7 @@
 ## Dotfiles installation
 *Dwm is the default wm, just change xinitrc if you want to use bspwm or xmonad.*
 *Read the commented lines in bootstrap scripts and change accordingly for your system*
-```javascript
+```sh
 - Remove stock configuration in $HOME, else error will occur.
 - $ echo "dots" >> .gitignore
 - $ git clone --bare https://github.com/hoaxdream/void-dots.git $HOME/.config/dots
