@@ -17,6 +17,7 @@ bmagenta=#d3869b
 bcyan=#8ec07c
 bwhite=#ebdbb2
 
+sep='|'
 interval=0
 interval0=1
 rxs=0
@@ -25,67 +26,67 @@ txs=0
 volbar() {
     vol_val=$(pamixer --get-volume)
 
-    printf "^c$black^ ^b$yellow^  $vol_val "
+    printf "^c$yellow^ ^b$black^  $vol_val "
 }
 
 datebar() {
     date_val=$(date "+%b-%d-%a")
 
-    printf "^c$bwhite^ ^b$black^ $date_val"
+    printf "^c$red^ ^b$black^ $date_val"
 }
 
 timebar() {
     time_val0=$(TZ='Asia/Riyadh' date "+%I:%M%p")
     time_val1=$(date "+%I:%M%p")
 
-    printf "^c$black^ ^b$yellow^ $time_val0"
-    printf "^c$black^ ^b$green^ $time_val1"
+    printf "^c$yellow^ ^b$black^ $time_val0"
+    printf "^c$green^ ^b$black^ $time_val1"
 }
 
 cpubar() {
     cpu_val=$(sensors | awk '/Core 0/ {print $3}')
 
-    printf "^c$bwhite^ ^b$black^ CPU$cpu_val"
+    printf "^c$green^ ^b$black^ CPU$cpu_val"
 }
 
 gpubar() {
     gpu_val=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
 
-    printf "^c$black^ ^b$yellow^ GPU:$gpu_val°C"
+    printf "^c$yellow^ ^b$black^ GPU:$gpu_val°C"
 }
 
 membar() {
     mem_val=$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)
 
-    printf "^c$bwhite^ ^b$black^ MEM:$mem_val"
+    printf "^c$green^ ^b$black^ MEM:$mem_val"
 }
 
 xbpsbar() {
     updates=$(sudo xbps-install -un | wc -l)
 
     if [ -z "$updates" ]; then
-        printf "^c$black^ ^b$green^ XBPS"
+        printf "^c$cyan^ ^b$black^ XBPS"
     else
-        printf "^c$black^ ^b$green^ XBPS:$updates"
+        printf "^c$cyan^ ^b$black^ XBPS:$updates"
     fi
 }
 
 weathbar() {
     weath_val=$(cat $HOME/.cache/Weather.tmp | awk '{print $2}')
 
-    printf "^c$black^ ^b$green^ WEATHER$weath_val"
+    printf "^c$bwhite^ ^b$black^ WEATHER$weath_val"
 }
 
 newsbar() {
     news_val=$(newsboat -x print-unread | awk '{ if($1>0) print $1}')
 
-    printf "^c$bwhite^ ^b$black^ NEWS:$news_val"
+    printf "^c$red^ ^b$black^ NEWS:$news_val"
 }
 
 mailbar() {
     mail_val=$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)
 
-    printf "^c$black^ ^b$yellow^ MAIL:$mail_val"
+    printf "^c$green^ ^b$black^ MAIL:$mail_val"
 }
 
 torrent() {
