@@ -16,3 +16,10 @@
 - $ git --git-dir=$HOME/.config/dots/ --work-tree=$HOME checkout
 - $ git --git-dir=$HOME/.config/dots/ --work-tree=$HOME config --local status.showUntrackedFiles no
 ```
+
+## Personal Suckless build
+[dwm](https://github.com/hoaxdream/void-dwm)
+[st](https://github.com/hoaxdream/void-st)
+[dmenu](https://github.com/hoaxdream/void-dmenu)
+[dwmblocks](https://github.com/hoaxdream/void-dwmblocks)
+[slock](https://github.com/hoaxdream/void-slock)
