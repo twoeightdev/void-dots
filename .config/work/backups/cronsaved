@@ -1,2 +1,2 @@
 */15 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zshenv; /usr/bin/mbsync -ac $HOME/.config/mbsync/mbsyncrc
-*/15 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zshenv; /home/hoaxdream/.local/bin/newsup
+*/15 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zshenv; /home/hoaxdream/.local/bin/rssup

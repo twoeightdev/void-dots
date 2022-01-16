@@ -1,8 +1,6 @@
 #!/bin/sh
 # set as a cron job to check for new RSS entries for newsboat
 # if newsboat is open, sends it an "R" key to refresh
-ping -q -c 1 1.1.1.1 >/dev/null 2>&1 || exit
-
 notify-send "updating RSS feeds..."
 
 if pgrep newsboat$ >/dev/null 2>&1; then
@@ -10,7 +8,10 @@ if pgrep newsboat$ >/dev/null 2>&1; then
   exit
 fi
 
+echo 🔃 > ~/.cache/news_unread
+pkill -RTMIN+19 dwblocks
 newsboat -x reload
-newsboat -x print-unread | cut -d' ' -f1 >~/.cache/news_unread
+rm -f ~/.cache/news_unread
+pkill -RTMIN+19 dwmblocks
 
-notify-send "RSS feed update complete" "$(cat ~/.cache/news_unread) news unreded"
+notify-send "RSS feed update complete"
