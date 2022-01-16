@@ -37,6 +37,7 @@ export WM="dwm"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export INPUTRC="$ZDOTDIR/inputrc"
+export MBSYNCRC="HOME/.config/mbsync/mbsyncrc"
 
 # Misc
 export HISTSIZE=1000
@@ -82,13 +83,13 @@ export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS --preview 'preview {}'"
 # Less
 export PAGER='less'
 export LESS='-R'
-export LESS_TERMCAP_mb=$'\e[1;34m'
-export LESS_TERMCAP_md=$'\e[1;34m'
+export LESS_TERMCAP_mb=$'\e[1;31m'
+export LESS_TERMCAP_md=$'\e[1;36m'
 export LESS_TERMCAP_me=$'\e[0m'
 export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[0;44;30m'
+export LESS_TERMCAP_so=$'\e[01;44;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[0;32m'
+export LESS_TERMCAP_us=$'\e[1;32m'
 #export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
 
 # Set Qt to use GTK theme
