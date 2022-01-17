@@ -79,6 +79,7 @@ call plug#end()
 
 " Source and load plugins configurations
 source $HOME/.config/nvim/cfg/statusline.vim
+source $HOME/.config/nvim/cfg/colors.vim
 source $HOME/.config/nvim/cfg/colorizer.vim
 source $HOME/.config/nvim/cfg/keymaps.vim
 source $HOME/.config/nvim/cfg/whichkey.vim
