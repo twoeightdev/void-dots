@@ -5,6 +5,6 @@ op="$(printf "%s\n" "$@" | dmenu -m 0 -p 'System')"
 case "$op" in
 	lock) slock & mpc pause;;
 	exit) kill -TERM "$(pgrep -u "$USER" "\bdwm$")" ;;
-	shutdown) $ctl shutdown now;;
+	shutdown) $ctl poweroff;;
 	reboot) $ctl reboot;;
 esac
