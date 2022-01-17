@@ -9,14 +9,15 @@ new="$(find $maildirnew -type f | wc -l)"
 maildirold="$HOME/.local/share/mail/*/INBOX/cur/"
 old="$(find $maildirold -type f | wc -l)"
 
-#mbsync -ac $HOME/.config/mbsync/mbsyncrc >/dev/null 2>&1
 mbsync -ac $HOME/.config/mbsync/mbsyncrc
 
-export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u)/bus"
 export DISPLAY=:0
-#export XAUTHORITY=~/.Xauthority
 
 if [ $new -gt 0 ]
 then
     notify-send "New mail!" "New: $new Old: $old" && pkill -RTMIN+18 dwmblocks
 fi
+
+wait
+
+notmuch --config ~/.config/notmuchrc new  2>/dev/null
