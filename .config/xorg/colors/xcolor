@@ -38,6 +38,26 @@
 *.color14:    #8ec07c
 *.color15:    #ebdbb2
 
+!!! Catppuccin Xresources palette */
+!*.foreground: #dadae8 */
+!*.background: #1e1e28 */
+!*.color0:     #6e6c7e */
+!*.color1:     #e38c8f */
+!*.color2:     #b1e3ad */
+!*.color3:     #ebddaa */
+!*.color4:     #a4b9ef */
+!*.color5:     #c6aae8 */
+!*.color6:     #e5b4e2 */
+!*.color7:     #dadae8 */
+!*.color8:     #6e6c7e */
+!*.color9:     #e38c8f */
+!*.color10:    #b1e3ad */
+!*.color11:    #ebddaa */
+!*.color12:    #a4b9ef */
+!*.color13:    #c6aae8 */
+!*.color14:    #e5b4e2 */
+!*.color15:    #dadae8 */
+
 !!! Iceberg Xresources palette */
 !*.foreground: #c6c8d1 */
 !*.background: #22262e */
