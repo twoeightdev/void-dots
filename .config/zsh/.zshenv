@@ -95,11 +95,5 @@ export LESS_TERMCAP_us=$'\e[1;32m'
 # Set Qt to use GTK theme
 export QT_QPA_PLATFORMTHEME="gtk2"
 
-# Theme
-# GTK theme
-export GTK_THEME="$(grep gtk-theme-name $GTK2_RC_FILES | cut -d'"' -f 2)"
-gtk_theme_rc="$XDG_DATA_HOME/themes/$GTK_THEME/gtk-2.0/gtkrc"
-[ -f "$gtk_theme_rc" ] && export GTK2_RC_FILES="$GTK2_RC_FILES:$gtk_theme_rc"; unset gtk_theme_rc
-
 # Shortcuts
 [ ! -f $XDG_CONFIG_HOME/shell/shrc ] && shortcuts >/dev/null 2>&1 &
