@@ -24,7 +24,7 @@ display() {
             sb-net) color="$color6" ;;
             sb-xbps) color="$color5" ;;
             sb-audio) color="$color4" ;;
-            sb-mail) color="$color5" ;;
+            sb-mail) color="$color3" ;;
             sb-news) color="$color2" ;;
             sb-forecast) color="$color7" ;;
             sb-mem) color="$color3" ;;
