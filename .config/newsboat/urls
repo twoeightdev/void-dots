@@ -1,6 +1,7 @@
 -NEWSFEEDS
 https://www.archlinux.org/feeds/news/ "~Arch Linux (Tech)"
 https://www.archlinux.org/feeds/packages/ "~Arch Packages Update (Tech)
+https://github.com/void-linux/void-packages/commits/master.atom "~VoidLinux Packages Update (Tech)
 -YOUTUBE
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~DistroTube (Youtube)"
