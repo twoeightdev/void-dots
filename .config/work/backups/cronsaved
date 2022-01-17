@@ -1,2 +1,2 @@
-0 */1 * * * export DISPLAY=:0; . $HOME/.zshenv; /home/hoaxdream/.local/bin/rssup
-*/30 * * * * export DISPLAY=:0; . $HOME/.zshenv; /home/hoaxdream/.local/bin/mailup && pkill -RTMIN+18 dwmblocks
+0 */1 * * * /home/hoaxdream/.local/bin/rssup
+*/30 * * * * /home/hoaxdream/.local/bin/mailup
