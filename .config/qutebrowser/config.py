@@ -89,11 +89,11 @@ c.zoom.default = 150
 
 # Font and define colors values
 #monospace = "14px 'IBM Plex Mono'"
-c.fonts.default_family = 'IBM Plex Mono'
+c.fonts.default_family = 'Inconsolata'
 c.fonts.default_size = '18px'
-c.fonts.web.family.cursive = 'IBM Plex Mono'
-c.fonts.web.family.sans_serif = 'IBM Plex Mono'
-c.fonts.web.family.serif = 'IBM Plex Mono'
+c.fonts.web.family.cursive = 'Inconsolata'
+c.fonts.web.family.sans_serif = 'Inconsolata'
+c.fonts.web.family.serif = 'Inconsolata'
 c.fonts.completion.category = 'bold 16px default_family'
 c.fonts.contextmenu = '16px default_family'
 #c.fonts.completion.category = f"bold {monospace}"
