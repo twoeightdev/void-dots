@@ -2,7 +2,5 @@
 
 unread="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
 
-pidof mbsync -ac $HOME/.config/mbsync/mbsyncrc >/dev/null 2>&1 && icon="🔃"
-
 . sb-theme
-[ "$unread" = "0" ] && [ "$icon" = "" ] || echo "MAIL:$unread$icon"
+[ "$unread" = "0" ] || display "$(echo "MAIL:$unread")"
