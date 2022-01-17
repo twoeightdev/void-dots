@@ -38,6 +38,7 @@ alias \
     e="$FILE" \
     v="$EDITOR" \
     xbq="sudo xbps-query -Rs" \
+    xbf="sudo xbps-query -f" \
     xbi="sudo xbps-install -Su" \
     xbr="sudo xbps-remove -R" \
     z="zathura"
