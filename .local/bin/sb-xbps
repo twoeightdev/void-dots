@@ -1,16 +1,11 @@
 #!/bin/sh
 
-PREFIX='Updates:'
+count="$(xbps-install -un | wc -l)"
+icon="Updates:"
 
-get_updates()
-{
-    if ! updates=$(xbps-install -Mun 2> /dev/null | wc -l ); then
-        updates=0
-    fi
-
-    #echo "^c#fb4934^ $PREFIX$updates"
+if [ $count -lt 4 ];then
+	exit
+else
     . sb-theme
-    display "$(echo $PREFIX$updates)"
-}
-
-get_updates
+    display "$(echo $icon$count)"
+fi
