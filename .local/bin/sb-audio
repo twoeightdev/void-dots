@@ -1,4 +1,21 @@
 #!/bin/sh
 
 . sb-theme
-display " $(pamixer --get-volume)"
+if [ $(pamixer --get-mute) = true ]; then
+	display "MUTED" "$color2"
+	exit
+fi
+
+vol="$(pamixer --get-volume)"
+
+if [ "$vol" -gt 70 ]; then
+	icon=" "
+elif [ "$vol" -gt 40 ]; then
+	icon="墳 "
+elif [ "$vol" -gt 10 ]; then
+	icon=" "
+else
+	icon="奄 "
+fi
+
+display "$icon$vol%"
