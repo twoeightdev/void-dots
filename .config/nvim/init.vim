@@ -13,7 +13,6 @@ syntax on
 set encoding=utf-8
 let mapleader=' '                           " Map <space> as leader key
 set bg=light                                 " Set to dark if using colorscheme
-"set termguicolors                           " Needed by colorizer
 set clipboard+=unnamedplus                  " Enable pasting
 set mouse=a                                 " Enable mouse scrolling
 set hidden                                  " This is recommended by coc
@@ -38,8 +37,6 @@ set nolist
 set wildmenu                                " Enable wildmenu
 set wildmode=longest:list,full              " Wildmenu style
 set listchars=tab:>\ ,trail:-,nbsp:+,eol:$
-"let g:gruvbox_material_background='hard'    " gruvbox contrast hard/medium/soft
-"colorscheme gruvbox-material                " Sets colorscheme
 
 " Show invisibles
 "set list
@@ -65,7 +62,7 @@ Plug 'chrisbra/Colorizer'
 call plug#end()
 
 " Reload programs when configuration is updated
-    autocmd BufWritePost *Xresources,Xdefaults !xrdb %
+    autocmd BufWritePost *Xresources,Xdefaults,xresources,xcolor !xrdb %
     autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
     autocmd BufWritePost init.vim,statusline.vim source $MYVIMRC
     autocmd BufWritePost bm-files,bm-dirs !shortcuts
