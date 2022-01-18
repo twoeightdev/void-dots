@@ -12,10 +12,10 @@ if [ "$vol" -gt 70 ]; then
 	icon=" "
 elif [ "$vol" -gt 40 ]; then
 	icon="墳 "
-elif [ "$vol" -gt 10 ]; then
+elif [ "$vol" -gt 0 ]; then
 	icon=" "
 else
-	icon="奄 "
+	icon="MUTED "
 fi
 
 display "$icon$vol%"
