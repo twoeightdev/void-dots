@@ -1,0 +1,7 @@
+#!/bin/sh
+
+file=$1
+
+filename="${file%.*}"
+
+pandoc $file -o $filename.pdf -V geometry:margin=1in --highlight-style tango --pdf-engine=xelatex --toc && echo "Successfully converted $file to $filename.pdf"

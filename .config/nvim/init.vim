@@ -57,7 +57,7 @@ Plug 'Yggdroot/indentLine'          " Indent guidelines
 Plug 'ptzz/lf.vim'                  " Lf file integration
 Plug 'voldikss/vim-floaterm'        " Lf.vim dependency
 Plug 'chrisbra/Colorizer'           " Color highlighter
-
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()
 
@@ -86,3 +86,4 @@ source $HOME/.config/nvim/cfg/keymaps.vim
 source $HOME/.config/nvim/cfg/whichkey.vim
 source $HOME/.config/nvim/cfg/indentline.vim
 source $HOME/.config/nvim/cfg/filemanager.vim
+source $HOME/.config/nvim/cfg/markdownpreview.vim
