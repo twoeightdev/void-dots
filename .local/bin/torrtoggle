@@ -1,0 +1,11 @@
+#!/bin/sh
+# transmission-daemon toggle
+
+if pgrep -x transmission-da > /dev/null
+then
+    pkill -3 transmission-da && notify-send "Transmission deactivated"
+else
+    transmission-daemon && notify-send "Transmission enabled"
+fi
+
+sleep 3 && pkill -RTMIN+14 dwmblocks

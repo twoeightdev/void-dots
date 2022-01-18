@@ -1,3 +1,0 @@
-#!/bin/sh
-# script to have a trash in nnn file manager, need del script
-del "$1"

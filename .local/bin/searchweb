@@ -23,4 +23,3 @@ case "$DMENU" in
     youtube)      $BROWSER https://www.youtube.com                  ;;
     gmail)        $BROWSER https://gmail.com                        ;;
 esac
-https://www.foodpanda.ph/

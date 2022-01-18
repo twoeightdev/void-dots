@@ -1,7 +1,8 @@
 #!/bin/sh
+# picom toggle
 if pgrep -x "picom" > /dev/null
 then
-  pkill picom && notify-send "Picom deactivated"
+    pkill picom && notify-send "Picom deactivated"
 else
-  picom -b && notify-send "Picom enabled"
+    picom -b && notify-send "Picom enabled"
 fi

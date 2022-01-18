@@ -3,17 +3,17 @@
 
 if [[ "$1" == "mpcnotify" ]]
 then
-  exit 0
+    exit 0
 fi
 
 if [[ "$1" == "volume" ]]
 then
-  exit 0
+    exit 0
 fi
 
 if [[ "$1" == "Signal" ]]
 then
-  exit 0
+    exit 0
 fi
 
 # alsa

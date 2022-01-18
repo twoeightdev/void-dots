@@ -1,0 +1,19 @@
+#!/bin/sh
+TORRENTLIST=`transmission-remote --list | sed -e '1d;$d;s/^ *//' | cut --only-delimited -d ' ' --fields=1`
+
+for TORRENTID in $TORRENTLIST
+do
+    # removes asterisk * from torrent ID# which had error associated with it
+    TORRENTID=`echo $TORRENTID | sed 's:*::'`
+    # check if torrent download is completed
+    DL_COMPLETED=`transmission-remote -t $TORRENTID -i | grep "Percent Done: 100%"`
+    # check torrent’s current state is "Stopped", "Finished", or "Idle"
+    STATE_STOPPED=`transmission-remote -t $TORRENTID -i | grep "State: Stopped\|Finished\|Idle"`
+    # if the torrent is "Stopped", "Finished", or "Idle" after downloading 100%…
+    if [ "$DL_COMPLETED" != "" ] && [ "$STATE_STOPPED" != "" ]; then
+        # remove completed torrent from Transmission
+        transmission-remote -t $TORRENTID -r && notify-send "Completed torrent $TORRENTID removed."
+    else
+        notify-send "Torrent $TORRENTID is not yet completed. Ignoring"
+    fi
+done

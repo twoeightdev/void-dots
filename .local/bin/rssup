@@ -6,8 +6,8 @@ export DISPLAY=:0
 notify-send "updating RSS feeds..."
 
 if pgrep newsboat$ >/dev/null 2>&1; then
-  xdotool key --window "$(xdotool search --class newsboat)" R
-  exit
+    xdotool key --window "$(xdotool search --class newsboat)" R
+    exit
 fi
 
 echo 🔃 > ~/.cache/news_unread
