@@ -1,0 +1,16 @@
+#!/bin/sh
+
+rx1=$(cat /sys/class/net/[ew]*/statistics/rx_bytes)
+tx1=$(cat /sys/class/net/[ew]*/statistics/tx_bytes)
+
+rx2=$(cat /sys/class/net/[ew]*/statistics/rx_bytes)
+tx2=$(cat /sys/class/net/[ew]*/statistics/tx_bytes)
+rxs=$(expr $rx2 - $rx1)
+txs=$(expr $tx2 - $tx1)
+rxs=$(expr $rxs / $interval)
+txs=$(expr $txs / $interval)
+rxs=$(expr $rxs / 1024)
+txs=$(expr $txs / 1024)
+
+. sb-theme
+display "${rxs} ${txs}"

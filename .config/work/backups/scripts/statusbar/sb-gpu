@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) notify-send "$(nvidia-smi --query-gpu=gpu_name,memory.free,memory.used --format=csv,noheader)"
+esac
+
+. sb-theme
+display "GPU-$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)°C"
