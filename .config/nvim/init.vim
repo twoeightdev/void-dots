@@ -56,7 +56,7 @@ Plug 'lukelbd/vim-tabline'          " Simple buffer tabline
 Plug 'Yggdroot/indentLine'          " Indent guidelines
 Plug 'ptzz/lf.vim'                  " Lf file integration
 Plug 'voldikss/vim-floaterm'        " Lf.vim dependency
-Plug 'chrisbra/Colorizer'
+Plug 'chrisbra/Colorizer'           " Color highlighter
 
 
 call plug#end()
@@ -79,7 +79,8 @@ call plug#end()
 
 " Source and load plugins configurations
 source $HOME/.config/nvim/cfg/statusline.vim
-source $HOME/.config/nvim/cfg/colors.vim
+source $HOME/.config/nvim/cfg/visualcolors.vim
+source $HOME/.config/nvim/cfg/floaterm.vim
 source $HOME/.config/nvim/cfg/colorizer.vim
 source $HOME/.config/nvim/cfg/keymaps.vim
 source $HOME/.config/nvim/cfg/whichkey.vim
