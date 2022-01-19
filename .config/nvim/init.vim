@@ -80,6 +80,7 @@ call plug#end()
 source $HOME/.config/nvim/cfg/statusline.vim
 source $HOME/.config/nvim/cfg/visualcolors.vim
 source $HOME/.config/nvim/cfg/colorizer.vim
+source $HOME/.config/nvim/cfg/fzf.vim
 source $HOME/.config/nvim/cfg/keymaps.vim
 source $HOME/.config/nvim/cfg/whichkey.vim
 source $HOME/.config/nvim/cfg/indentline.vim

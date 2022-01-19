@@ -20,7 +20,7 @@ let g:which_key_use_floating_win = 0
 
 " Single leader mappings
 let g:which_key_map['.'] = [ ':e $MYVIMRC',             'open init' ]
-let g:which_key_map['w'] = [ ':wq',                     'exit save' ]
+let g:which_key_map['w'] = [ ':x',                      'exit save' ]
 let g:which_key_map['r'] = [ ':w',                      'save' ]
 let g:which_key_map['q'] = [ ':q!',                     'exit without save' ]
 let g:which_key_map['c'] = [ ':let @/ = ""',            'clear hlsearch' ]
