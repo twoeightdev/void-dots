@@ -64,7 +64,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 
 # Fzf
-export PATH="$HOME/.config/fzf/bin:$PATH"
+#export PATH="$HOME/.config/fzf/bin:$PATH"
 export FZF_DEFAULT_OPTS='
 --color fg:7,hl:4,fg+:15,bg+:0,hl+:3
 --color pointer:1,info:8,spinner:3,header:8,prompt:4,marker:8
