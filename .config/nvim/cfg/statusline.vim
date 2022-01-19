@@ -172,5 +172,3 @@ call g:C("Modified",    g:dark.black,   g:dark.black,   "none")
 call g:C("LineCol",     g:dark.black,   g:dark.yellow,  "none")
 call g:C("LinePerc",    g:dark.black,   g:dark.green,   "none")
 call g:C("Filetype",    g:dark.black,   g:dark.magenta, "italic")
-
-" vim: fdm=marker
