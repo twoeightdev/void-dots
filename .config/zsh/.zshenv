@@ -42,11 +42,13 @@ export MBSYNCRC="HOME/.config/mbsync/mbsyncrc"
 # Misc
 export HISTSIZE=1000
 export SAVEHIST=1000
-export HISTFILE="${ZDOTDIR}/.history"
+export HISTFILE="$ZDOTDIR/.history"
+export LESSHISTFILE="-"
+export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenu-pass"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 export _JAVA_AWT_WM_NONREPARENTING=1
-export LESSHISTFILE="-"
+export BAT_THEME="gruvbox-dark"
 
 # X11
 #export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
@@ -65,20 +67,21 @@ export WINEPREFIX="$XDG_DATA_HOME/wine"
 
 # Fzf
 #export PATH="$HOME/.config/fzf/bin:$PATH"
+
 export FZF_DEFAULT_OPTS='
 --color fg:7,hl:4,fg+:15,bg+:0,hl+:3
 --color pointer:1,info:8,spinner:3,header:8,prompt:4,marker:8
 --info=inline
---height 60%
+--height 20%
 --cycle
 --reverse
---pointer=" "
+--pointer=">"
 '
 export FZF_DEFAULT_COMMAND="find . -mindepth 1 2>/dev/null"
 export FZF_ALT_C_COMMAND="find . -mindepth 1 -type d 2>/dev/null"
-export FZF_ALT_C_OPTS="$FZF_DEFAULT_OPTS --preview 'preview {}'"
+export FZF_ALT_C_OPTS="$FZF_DEFAULT_OPTS"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS --preview 'preview {}'"
+export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
 
 # Less
 export PAGER='less'

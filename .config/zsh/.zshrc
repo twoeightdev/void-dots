@@ -122,18 +122,17 @@ fi
 # Rebind fzf alt+c to alt+x
 bindkey '\ex' fzf-cd-widget
 
-# Find file with fzf and open with editor
-se() {
-  file="$(find "$HOME" -type f,l | fzf)"
-  [ "$file" ] && fzfeditor "$file"
+# Rebind fzf ctrl+t to alt+z
+bindkey '\ez' fzf-file-widget
+
+# cd to any directory in $HOME
+sd() {
+  cd "$(find $HOME -type d 2>/dev/null | fzf)" && ls -a
 }
-# Jump to directory in home
-gdc() {
-  cd "$(find -type d | fzf)"
-}
-# Jump to directory in /media/data
-gdd() {
-  cd "$(find "/media/data/" -type d | fzf)"
+
+# cd to any directory in /media
+sm() {
+  cd "$(find "/media/" -type d 2>/dev/null | fzf)" && ls -a
 }
 
 # Syntax highlighting
