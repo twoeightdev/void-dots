@@ -12,7 +12,7 @@ filetype plugin on
 syntax on
 set encoding=utf-8
 let mapleader=' '                           " Map <space> as leader key
-set bg=light                                 " Set to dark if using colorscheme
+set bg=light                                " Set to dark if using colorscheme
 set clipboard+=unnamedplus                  " Enable pasting
 set mouse=a                                 " Enable mouse scrolling
 set hidden                                  " This is recommended by coc
@@ -56,7 +56,7 @@ Plug 'tpope/vim-fugitive'           " Git integration
 Plug 'lukelbd/vim-tabline'          " Simple buffer tabline
 Plug 'Yggdroot/indentLine'          " Indent guidelines
 Plug 'chrisbra/Colorizer'           " Color highlighter
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'             " Fuzzy finder
 
 call plug#end()
 
