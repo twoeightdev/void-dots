@@ -24,7 +24,8 @@ alias \
     grep="grep --color=auto" \
     diff="diff --color=auto" \
     sp="stat -c '%a'" \
-    ccat="highlight --out-format=ansi"
+    ccat="highlight --out-format=ansi" \
+    bat="bat -n"
 
 # These common commands are just too long! abbreviate them
 alias \
