@@ -17,3 +17,6 @@
 
 " Enter to open file in new tab in fzf instead of ctrl+t
 let g:fzf_action = {'enter': 'tab split'}
+
+" Set fzf below instead of floating
+let g:fzf_layout = { 'down': '40%' }

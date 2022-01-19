@@ -159,7 +159,7 @@ set statusline+=%#Separator#░▒▓
 set statusline+=\%#Filetype#%{SetFiletype(&filetype)}
 set statusline+=\ \%#Separator#▒
 
-" tabline colors
+" tabline colors; disable plugin/tabline.vim last 3 lines to use this
 call g:C("TabLine",     g:none, g:dark.magenta, "none")
 call g:C("TabLineSel",  g:none, g:dark.blue,    "none")
 call g:C("TabLineFill", g:none, g:dark.yellow,  "none")
