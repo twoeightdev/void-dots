@@ -37,6 +37,7 @@ set nolist
 set wildmenu                                " Enable wildmenu
 set wildmode=longest:list,full              " Wildmenu style
 set listchars=tab:>\ ,trail:-,nbsp:+,eol:$
+set rtp+=~/.config/fzf
 
 " Show invisibles
 "set list
@@ -54,10 +55,8 @@ Plug 'liuchengxu/vim-which-key'     " Shows keybindings in popup
 Plug 'tpope/vim-fugitive'           " Git integration
 Plug 'lukelbd/vim-tabline'          " Simple buffer tabline
 Plug 'Yggdroot/indentLine'          " Indent guidelines
-Plug 'ptzz/lf.vim'                  " Lf file integration
-Plug 'voldikss/vim-floaterm'        " Lf.vim dependency
 Plug 'chrisbra/Colorizer'           " Color highlighter
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -80,10 +79,7 @@ call plug#end()
 " Source and load plugins configurations
 source $HOME/.config/nvim/cfg/statusline.vim
 source $HOME/.config/nvim/cfg/visualcolors.vim
-source $HOME/.config/nvim/cfg/floaterm.vim
 source $HOME/.config/nvim/cfg/colorizer.vim
 source $HOME/.config/nvim/cfg/keymaps.vim
 source $HOME/.config/nvim/cfg/whichkey.vim
 source $HOME/.config/nvim/cfg/indentline.vim
-source $HOME/.config/nvim/cfg/filemanager.vim
-source $HOME/.config/nvim/cfg/markdownpreview.vim
