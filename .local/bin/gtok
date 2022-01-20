@@ -1,5 +1,5 @@
 #!/bin/sh
-gtkn=$(cat ~/.config/work/backups/gtoken | dmenu -i -l 5)
+gtkn=$(cat ~/.config/personal/gtoken | dmenu -i -l 5)
 
 # exit if none chosen
 [ -z "$gtkn" ] && exit
