@@ -110,7 +110,6 @@ function command_not_found_handler() {
   return 127
 }
 
-# Pluginz
 # Fzf
 if [ ! -d ~/.config/fzf ]; then
   git clone --depth 1 https://github.com/junegunn/fzf ~/.config/fzf
@@ -125,15 +124,14 @@ bindkey '\ex' fzf-cd-widget
 # Rebind fzf ctrl+t to alt+z
 bindkey '\ez' fzf-file-widget
 
+# Editor + fzf
+e() { fzf | xargs -r $EDITOR ;}
+
 # cd to any directory in $HOME
-sd() {
-  cd "$(find $HOME -type d 2>/dev/null | fzf)" && ls -a
-}
+sd() { cd "$(find $HOME -type d 2>/dev/null | fzf)" && ls -a ;}
 
 # cd to any directory in /media
-sm() {
-  cd "$(find "/media/" -type d 2>/dev/null | fzf)" && ls -a
-}
+sm() { cd "$(find "/media/" -type d 2>/dev/null | fzf)" && ls -a ;}
 
 # Syntax highlighting
 if [ ! -d ~/.config/zsh/zplug/zsh-syntax-highlighting ]; then

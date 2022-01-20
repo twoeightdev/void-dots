@@ -36,7 +36,7 @@ alias \
     trd="transmission-remote -t all -r" \
     YT="youtube-viewer" \
     sdn="sudo shutdown -h now" \
-    e="$FILE" \
+    o="$FILE" \
     v="$EDITOR" \
     xbq="sudo xbps-query -Rs" \
     xbf="sudo xbps-query -f" \
