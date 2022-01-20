@@ -2,7 +2,7 @@ a   $HOME/.cache
 c   $HOME/.config
 s   $HOME/.local/share
 d   $HOME/.config/dl
-w   $HOME/.config/work
+w   $HOME/.config/dev
 b   $HOME/.local/bin
 u   $HOME/.config/mnt
 i   /mnt
@@ -10,5 +10,4 @@ x   /media/core
 f   /media/data
 p   /media/data/walls
 m   /media/data/vids
-l   /media/data/linux_data/backups
 h   $HOME

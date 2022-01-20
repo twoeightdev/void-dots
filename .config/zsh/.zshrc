@@ -128,10 +128,10 @@ bindkey '\ez' fzf-file-widget
 e() { fzf | xargs -r $EDITOR ;}
 
 # cd to any directory in $HOME
-sd() { cd "$(find $HOME -type d 2>/dev/null | fzf)" && ls -a ;}
+q() { cd "$(find $HOME -type d 2>/dev/null | fzf)" && ls -a ;}
 
 # cd to any directory in /media
-sm() { cd "$(find "/media/" -type d 2>/dev/null | fzf)" && ls -a ;}
+qm() { cd "$(find "/media/" -type d 2>/dev/null | fzf)" && ls -a ;}
 
 # Syntax highlighting
 if [ ! -d ~/.config/zsh/zplug/zsh-syntax-highlighting ]; then
