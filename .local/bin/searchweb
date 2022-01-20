@@ -1,25 +1,26 @@
 #!/bin/sh
 # open web page via dmenu and open on $BROWSER
-TEXT="duckduckgo\ngithub\ntorrent\n9901\nshopee\nshopee-wish\nfoodpanda\nludeon\nsuckless\narch\nanimix\nwallhaven\nunixporn\nyoutube\ngmail"
+TEXT="duckduckgo\ngithub\ntorrent\n9901\nshopee\nshopee-wish\nfoodpanda\nludeon\nsuckless\narch\ngoanime\nanimix\nwallhaven\nunixporn\nyoutube\ngmail"
 
-DMENU="$( echo $TEXT | dmenu -l 7 -p web )"
+DMENU="$( echo $TEXT | dmenu -l 16 -p web )"
 
 BROWSER="/usr/bin/qutebrowser" #Change this to your preference
 
 case "$DMENU" in
-    duckduckgo)   $BROWSER https://duckduckgo.com                   ;;
-    github)       $BROWSER https://github.com                       ;;
-    torrent)      $BROWSER https://1337x.to/home/                   ;;
-    9901)         $BROWSER http://localhost:9091/transmission/web/  ;;
-    shopee)       $BROWSER https://shopee.ph/                       ;;
-    shopee-wish)  $BROWSER https://shopee.ph/buyer/likes            ;;
-    foodpanda)    $BROWSER https://www.foodpanda.ph/                ;;
-    ludeon)       $BROWSER https://ludeon.com/forums/index.php      ;;
-    suckless)     $BROWSER https://suckless.org                     ;;
-    arch)         $BROWSER https://bbs.archlinux.org/index.php      ;;
-    animix)       $BROWSER https://animixplay.to                    ;;
-    wallhaven)    $BROWSER https://wallhaven.cc                     ;;
-    unixporn)     $BROWSER https://www.reddit.com/r/unixporn        ;;
-    youtube)      $BROWSER https://www.youtube.com                  ;;
-    gmail)        $BROWSER https://gmail.com                        ;;
+    duckduckgo)     $BROWSER https://duckduckgo.com                     ;;
+    github)         $BROWSER https://github.com                         ;;
+    torrent)        $BROWSER https://1337x.to/home/                     ;;
+    9901)           $BROWSER http://localhost:9091/transmission/web/    ;;
+    shopee)         $BROWSER https://shopee.ph/                         ;;
+    shopee-wish)    $BROWSER https://shopee.ph/buyer/likes              ;;
+    foodpanda)      $BROWSER https://www.foodpanda.ph/                  ;;
+    ludeon)         $BROWSER https://ludeon.com/forums/index.php        ;;
+    suckless)       $BROWSER https://suckless.org                       ;;
+    arch)           $BROWSER https://bbs.archlinux.org/index.php        ;;
+    goanime)        $BROWSER https://gogoanime.film/                    ;;
+    animix)         $BROWSER https://animixplay.to                      ;;
+    wallhaven)      $BROWSER https://wallhaven.cc                       ;;
+    unixporn)       $BROWSER https://www.reddit.com/r/unixporn          ;;
+    youtube)        $BROWSER https://www.youtube.com                    ;;
+    gmail)          $BROWSER https://gmail.com                          ;;
 esac

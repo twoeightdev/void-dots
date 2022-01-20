@@ -32,6 +32,7 @@ display() {
             sb-cpu) color="$color3" ;;
             sb-time) color="$color4" ;;
             sb-date) color="$color2" ;;
+            sb-uptime) color="$color8" ;;
             *) color="$color8" ;;
         esac
     fi
