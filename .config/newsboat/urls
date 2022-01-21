@@ -1,20 +1,12 @@
 -NEWSFEEDS
-https://www.archlinux.org/feeds/news/ "~Arch Linux (Tech)"
-https://www.archlinux.org/feeds/packages/ "~Arch Packages Update (Tech)
 https://github.com/void-linux/void-packages/commits/master.atom "~VoidLinux Packages Update (Tech)
 -YOUTUBE
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~DistroTube (Youtube)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCxhygwqQ1ZMoBGQM2yEcNug "~RaffyTulfo (Youtube)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "~Brodie Robertston (Youtube)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC95pSgGOrWclOheq6cchfPw "~Bitag (Youtube)"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCrqAGUPPMOdo0jfQ6grikZw "~Colt Steele (Youtube)"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC1szFCBUWXY3ESff8dJjjzw "~Loi Liang Yang (Youtube)"
 -REDDIT
 https://www.reddit.com/r/unixporn.rss "~r/unixporn (Reddit)"
--GIT
-https://github.com/LukeSmithxyz.atom "~LukeSmithxyz (Github)"
-https://gitlab.com/dwt1.atom "~Distrotube (Gitlab)"
 -WEBTOON
 https://www.webtoons.com/en/super-hero/unordinary/rss?title_no=679 "~Unordinary (Webtoon)"
 https://www.webtoons.com/en/sports/wind-breaker/rss?title_no=372 "~Wind Breaker (Webtoon)"
