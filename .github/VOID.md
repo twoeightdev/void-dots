@@ -212,12 +212,12 @@ PART=1
     - $ sudo xbps-install -Syu git
     - $ git clone https://github.com/hoaxdream/void-bootstrap
     - $ cd bootstrap
-    - $ ./pkgsinstall
-    - $ ./dotsetup
-    - $ sudo ./partcore   # Run only for fresh disk
-    - $ sudo ./partdata   # Run only for fresh disk
-    - $ sudo ./postinstall
-    - $ ./fmanager
+    - $ ./1_pkgsinstall
+    - $ ./2_dotsetup
+    - $ sudo ./2a_partcore   # Run only for fresh disk
+    - $ sudo ./2b_partdata   # Run only for fresh disk
+    - $ sudo ./3_postinstall
+    - $ ./4_fmanager
     - $ sudo reboot
 ```
 
