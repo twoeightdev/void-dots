@@ -64,7 +64,7 @@ c.aliases = {
 #c.colors.webpage.preferred_color_scheme = 'dark'
 #c.colors.webpage.bg = 'black'
 
-c.url.start_pages = ['~/.config/startpage/index.html']
+c.url.start_pages = ['~/.config/dev/startpage/index.html']
 #c.url.start_pages = ['~/.config/qutebrowser/start.html']
 c.editor.command = ["st", "-e", "nvim '{}'"]
 c.downloads.location.directory = '~/.config/dl'
