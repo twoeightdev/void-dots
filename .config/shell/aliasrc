@@ -23,19 +23,11 @@ alias \
     lh="ls -A" \
     grep="grep --color=auto" \
     diff="diff --color=auto" \
-    sp="stat -c '%a'" \
-    ccat="highlight --out-format=ansi" \
     bat="bat -n"
 
 # These common commands are just too long! abbreviate them
 alias \
-    ka="killall" \
     pk="pkill -9" \
-    trx="transmission-remote -t all -S" \
-    trg="transmission-remote -t all -s" \
-    trd="transmission-remote -t all -r" \
-    YT="youtube-viewer" \
-    sdn="sudo shutdown -h now" \
     o="$FILE" \
     v="$EDITOR" \
     xbq="sudo xbps-query -Rs" \
@@ -63,7 +55,6 @@ alias \
     prm="shred -zvu -n 5" \
     xtar="tar xfv" \
     sysinfo="echo "" && sysinfo" \
-    lfetch="echo "" && lfetch" \
     ifont="fc-cache -f -v" \
     gip="curl ipinfo.io/ip" \
     civ="convert +append" \
@@ -71,4 +62,3 @@ alias \
     covidph="curl https://corona-stats.online/philippines" \
     covid="curl https://corona-stats.online/" \
     xrec="xmonad --recompile" \
-    ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/sc.sh" \
