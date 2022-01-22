@@ -97,7 +97,7 @@ Mount point | Partition | Partition type | Suggested size
 ### Installation
 
 - Install Base meta package
-    - `$ REPO=https://alpha.de.repo.voidlinux.org/current`
+    - `$ REPO=https://mirrors.servercentral.com/voidlinux/current`
     - `$ ARCH=x86_64`
     - `$ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system`
 
@@ -129,6 +129,7 @@ Mount point | Partition | Partition type | Suggested size
 - Configure rc.conf
     - `$ xbps-install -Su neovim`
     - `$ nvim /etc/rc.conf`
+    - `$ KEYMAP="us"            # uncomment KEYMAP
     - `$ FONT=LatGrkCyr-12x22   # uncomment FONT`
 
 - Root password
@@ -137,10 +138,10 @@ Mount point | Partition | Partition type | Suggested size
 - Fstab
     - `$ cp /proc/mounts /etc/fstab`
     - `Delete everything except / and /boot then add tmpfs:`
-    - `Set boot 0 2`
     - `Set root 0 1`
-    - `tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0`
-    - `efivarfs  /sys/firmware/efi/efivars  efivarfs  defaults     0 0`
+    - `Set boot 0 2`
+    - `tmpfs    /tmp    tmpfs   defaults,nosuid,nodev   0 0`
+    - `efivarfs /sys/firmware/efi/efivars   efivarfs    defaults    0 0`
     - `$ mount efivarfs`
 
 - Dracut
@@ -202,7 +203,7 @@ PART=1
 - Change mirrors
     - `$ mkdir -p /etc/xbps.d`
     - `$ cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/`
-    - `$ sudo sed -i 's|https://alpha.de.repo.voidlinux.org|https://void.webconverger.org|g' /etc/xbps.d/*-repository-*.conf`
+    - `$ sudo sed -i 's|https://alpha.de.repo.voidlinux.org|https://https://mirrors.servercentral.com/voidlinux|g' /etc/xbps.d/*-repository-*.conf`
     - `$ xbps-install -Su    # update`
     - `$ xpbs-query -L       # check new repo URL`
 
