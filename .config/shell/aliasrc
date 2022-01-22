@@ -57,15 +57,6 @@ alias \
     rd="git diff" \
     rrh="git reset --hard HEAD^" \
     rrd="git reset HEAD" \
-    da="dot add" \
-    dco="dot checkout -- " \
-    dc="dot commit -m" \
-    dcm="dot commit -am" \
-    dr="dot rebase -i HEAD~" \
-    dp="dot push -u origin main" \
-    ds="dot status" \
-    dif="dot diff" \
-    dot="git --git-dir=$HOME/.config/dots --work-tree=$HOME" \
     mki="make && sudo make install" \
     cb="make clean && rm -f blocks.h && git reset --hard origin/main" \
     cm="make clean && rm -f config.h && git reset --hard origin/main"
