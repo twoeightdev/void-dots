@@ -44,19 +44,8 @@ alias \
     xbr="sudo xbps-remove -R" \
     z="zathura"
 
-# Git repositories
+# Make
 alias \
-    rk="git checkout" \
-    ra="git add" \
-    rco="git checkout -- " \
-    rc="git commit -m" \
-    rcm="git commit -am" \
-    rp="git push -u origin main" \
-    rb="git branch" \
-    rs="git status" \
-    rd="git diff" \
-    rrh="git reset --hard HEAD^" \
-    rrd="git reset HEAD" \
     mki="make && sudo make install" \
     cb="make clean && rm -f blocks.h && git reset --hard origin/main" \
     cm="make clean && rm -f config.h && git reset --hard origin/main"
