@@ -1,0 +1,13 @@
+#!/bin/sh
+# warper for dotfiles
+dotfiles() { git --git-dir=$HOME/.config/dots --work-tree=$HOME "$@"; }
+if [ $1 = 'up' ]; then
+dotfiles pull &&
+    dotfiles update-index --assume-unchanged ~/LICENSE ~/README.md &&
+    rm -rf ~/LICENSE ~/README.md
+elif [ $1 = 'res' ]; then
+    dotfiles update-index --no-assume-unchanged ~/LICENSE ~/README.md &&
+        dotfiles checkout -f
+        else
+        dotfiles $*
+fi
