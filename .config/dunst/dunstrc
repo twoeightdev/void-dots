@@ -37,7 +37,7 @@
     ignore_newline = no
     stack_duplicates = true
     hide_duplicate_count = false
-    show_indicators = yes
+    show_indicators = false
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:
@@ -69,6 +69,14 @@
     foreground = "#ebdbb2"
     frame_color = "#fabd2f"
     timeout = 0
+
+[history-ignore-audiobar]
+    appname = "audiobar"
+    history_ignore = yes
+
+[history-ignore-mpcnotify]
+    appname = "mpcnotify"
+    history_ignore = yes
 
 [play_sound]
     summary = "*"

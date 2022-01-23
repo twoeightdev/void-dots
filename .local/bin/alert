@@ -1,23 +1,14 @@
 #!/bin/sh
-# skip alert for mpdnotify
-
-if [[ "$1" == "mpcnotify" ]]
-then
-    exit 0
-fi
-
-if [[ "$1" == "volume" ]]
-then
-    exit 0
-fi
-
-if [[ "$1" == "Signal" ]]
-then
-    exit 0
-fi
-
+# skip alert for dunst scripts
 # alsa
 #aplay ~/.local/share/audio/beep.wav
 
-# pulseaudio
-paplay ~/.local/share/audio/beep.wav
+if [ $1 = 'mpcnotify' ]; then
+    exit 0
+elif [ $1 = 'audiobar' ];then
+    exit 0
+elif [ $1 = 'Signal' ]; then
+    exit 0
+else
+    paplay ~/.local/share/audio/beep.wav
+fi

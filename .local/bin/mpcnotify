@@ -1,3 +1,10 @@
 #!/bin/sh
 
-notify-send -t 2000 -a mpcnotify "Now Playing" "$(mpc current)"
+msgId="280307"
+
+msong=$(mpc current)
+
+dunstify -a "mpcnotify" \
+    -u low \
+    -r "$msgId" \
+    "Now Playing $msong"
