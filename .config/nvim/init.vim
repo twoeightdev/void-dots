@@ -63,6 +63,7 @@ call plug#end()
 " Reload programs when configuration is updated
     autocmd BufWritePost *Xresources,Xdefaults,xresources,xcolor !xrdb %
     autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+    autocmd BufWritePost dunstrc !pkill dunst; dunst &
     autocmd BufWritePost init.vim,statusline.vim source $MYVIMRC
     autocmd BufWritePost bm-files,bm-dirs !shortcuts
 
