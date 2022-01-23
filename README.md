@@ -35,4 +35,4 @@
 
 - [Dmenu](https://github.com/hoaxdream/void-dmenu)
 
-Link [libxft-bgra](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/patches/libXft-bgra/change.patch) patch for void linux.
+Check the [Guide](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md) on how to patch [libxft-bgra](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/patches/libXft-bgra/change.patch) for void linux.
