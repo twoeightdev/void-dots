@@ -33,7 +33,7 @@ alias \
     xbq="sudo xbps-query -Rs" \
     xbf="sudo xbps-query -f" \
     xbi="sudo xbps-install -Su" \
-    xbr="sudo xbps-remove -R" \
+    xbr="sudo xbps-remove -ROo" \
     z="zathura"
 
 # Make
@@ -55,7 +55,7 @@ alias \
     prm="shred -zvu -n 5" \
     xtar="tar xfv" \
     sysinfo="echo "" && sysinfo" \
-    ifont="fc-cache -f -v" \
+    ifn="fc-cache -f -v" \
     gip="curl ipinfo.io/ip" \
     civ="convert +append" \
     cih="convert -append" \
