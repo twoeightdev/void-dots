@@ -1,4 +1,4 @@
-### Overview
+## Overview
 
 * Void linux dotfiles for [dwm](http://suckless.org/)
 * EFISTUB Void Linux Installation [Guide](https://github.com/hoaxdream/void-dots/blob/main/.github/VOID.md)
