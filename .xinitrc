@@ -5,7 +5,7 @@ xsetroot -cursor_name left_ptr &
 setbg &
 dwmblocks &
 
-autostart="picom mpd unclutter"
+autostart="picom mpd dunst unclutter"
 
 for program in $autostart; do
   pidof -s "$program" || setsid -f "$program"
