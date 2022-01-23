@@ -22,10 +22,10 @@
 - $ sudo reboot
 - $ dot up                  # this command do --assumed-unchanged and delete LICENSE, README.md in $HOME
 - $ dot res                 # this command do --no-assumed-unchanged and restore LICENSE, README.md in $HOME
-- $ dot status              # check git status
-- $ dot add                 # add file
-- $ dot commit              # to commit
-- $ dot push                # to push
+- $ dot status
+- $ dot add
+- $ dot commit
+- $ dot push
 ```
 
 ## Personal suckless build
