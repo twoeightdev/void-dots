@@ -11,9 +11,9 @@ vol="$(pamixer --get-volume)"
 if [ "$vol" -gt 70 ]; then
 	icon=" "
 elif [ "$vol" -gt 40 ]; then
-	icon="墳 "
-elif [ "$vol" -gt 0 ]; then
 	icon=" "
+elif [ "$vol" -gt 0 ]; then
+	icon=" "
 else
 	icon="MUTED "
 fi
