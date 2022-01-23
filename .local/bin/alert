@@ -1,7 +1,6 @@
 #!/bin/sh
-# skip alert for dunst scripts
-# alsa
-#aplay ~/.local/share/audio/beep.wav
+# This script gives audio notification in dunst
+# except for the following:
 
 if [ $1 = 'mpcnotify' ]; then
     exit 0
