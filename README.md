@@ -1,7 +1,7 @@
 ## Overview
 
 * Void linux dotfiles for [dwm](http://suckless.org/)
-* EFISTUB Void Linux Installation [Guide](https://github.com/hoaxdream/void-dots/blob/main/.github/VOID.md)
+* EFISTUB Void Linux Installation [Guide](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md)
 
 ## Dwm
 ![Rice screen preview0001](https://i.imgur.com/O9IjRg3.png)
@@ -15,6 +15,12 @@
 - $ git clone --bare https://github.com/hoaxdream/void-dots.git $HOME/.config/dots
 - $ git --git-dir=$HOME/.config/dots/ --work-tree=$HOME checkout
 - $ git --git-dir=$HOME/.config/dots/ --work-tree=$HOME config --local status.showUntrackedFiles no
+- $ dot up  # this command do --assumed-unchanged and delete LICENSE, README.md in $HOME
+- $ dot res # this command do --no-assumed-unchanged and restore LICENSE, README.md in $HOME
+- $ dot status  # check git status
+- $ dot add     # add file
+- $ dot commit  # to commit
+- $ dot push    # to push
 ```
 
 ## Personal suckless build
