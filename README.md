@@ -5,6 +5,8 @@
 
 ## Dwm
 ![Rice screen preview0001](https://i.imgur.com/O9IjRg3.png)
+![Rice screen preview0002](https://i.imgur.com/heuJTQJ.png)
+![Rice screen preview0003](https://i.imgur.com/JPoX6H9.png)
 
 ## Dotfiles installation
 *Dwm is the default wm, just change xinitrc if you want to use bspwm or xmonad.*
