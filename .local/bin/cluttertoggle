@@ -1,4 +1,5 @@
 #!/bin/sh
+# Script to toggle unclutter on/off.
 if pidof unclutter >/dev/null ;
 then
     [ "$(printf "No\\nYes" | dmenu -i -p "Disable unclutter?")" = "Yes" ] && killall unclutter && notify-send "Unclutter disabled."

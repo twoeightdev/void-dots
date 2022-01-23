@@ -1,5 +1,5 @@
 #!/bin/sh
-# This script gives audio notification in dunst
+# This script gives audio notification in dunst,
 # except for the following:
 
 if [ $1 = 'mpcnotify' ]; then
