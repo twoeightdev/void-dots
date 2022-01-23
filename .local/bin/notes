@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NOTESDIR="$HOME/.config/personal/notes"
+NOTESDIR="$HOME/.config/dev/personal/notes"
 EDITOR="$EDITOR"
 
 new() {
