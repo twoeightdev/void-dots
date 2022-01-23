@@ -12,17 +12,20 @@
 *Dwm is the default wm, just change xinitrc if you want to use bspwm or xmonad.*
 *Read the commented lines in [bootstrap](https://github.com/hoaxdream/void-bootstrap) scripts and change accordingly for your system*
 ```sh
-- Remove stock configuration in $HOME, else error will occur.
-- $ echo "dots" >> .gitignore
-- $ git clone --bare https://github.com/hoaxdream/void-dots.git $HOME/.config/dots
-- $ git --git-dir=$HOME/.config/dots/ --work-tree=$HOME checkout
-- $ git --git-dir=$HOME/.config/dots/ --work-tree=$HOME config --local status.showUntrackedFiles no
-- $ dot up  # this command do --assumed-unchanged and delete LICENSE, README.md in $HOME
-- $ dot res # this command do --no-assumed-unchanged and restore LICENSE, README.md in $HOME
-- $ dot status  # check git status
-- $ dot add     # add file
-- $ dot commit  # to commit
-- $ dot push    # to push
+- $ xbps-install -Syu git
+- $ git clone https://github.com/hoaxdream/void-bootstrap.git
+- $ cd void-bootstrap
+- $ ./1_pkginstall          # edit according to packages you want to install.
+- $ ./2_dotsetup            # clone my dotfiles, including suckless builds and install them.
+- $ sudo ./3_postinstall    # set UUID of my spare drive to fstab, edit accordingly.
+- $ sudo ./4_finalize       # set dbus, also delete and make directory.
+- $ sudo reboot
+- $ dot up                  # this command do --assumed-unchanged and delete LICENSE, README.md in $HOME
+- $ dot res                 # this command do --no-assumed-unchanged and restore LICENSE, README.md in $HOME
+- $ dot status              # check git status
+- $ dot add                 # add file
+- $ dot commit              # to commit
+- $ dot push                # to push
 ```
 
 ## Personal suckless build
