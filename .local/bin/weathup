@@ -1,0 +1,13 @@
+#!/bin/sh
+
+export DISPLAY=:0
+
+weatherreport="$HOME/.local/share/weatherreport"
+
+getforecast() {
+    curl -sf "wttr.in/?format=1" > "$weatherreport"
+}
+
+getforecast
+
+notify-send "Weather updated" && pkill -RTMIN+20 dwmblocks
