@@ -12,7 +12,7 @@
 Xcursor*theme: Adwaita
 
 ! XTerm
-XTerm*termName: xterm-256color
+!XTerm*termName: xterm-256color
 XTerm*saveLines: 4096
 XTerm*utf8: 1
 XTerm*loginShell: true
