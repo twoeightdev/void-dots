@@ -1,11 +1,6 @@
 #!/bin/sh
 
 . sb-theme
-if [ $(pamixer --get-mute) = true ]; then
-	display "MUTED" "$color2"
-	exit
-fi
-
 vol="$(pamixer --get-volume)"
 
 if [ "$vol" -gt 70 ]; then
