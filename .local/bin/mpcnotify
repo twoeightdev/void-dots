@@ -1,4 +1,6 @@
 #!/bin/sh
+# Script to be used with ncmpcpp.
+# Shows current played song.
 
 msgId="280307"
 

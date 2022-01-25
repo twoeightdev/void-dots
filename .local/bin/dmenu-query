@@ -1,4 +1,5 @@
 #!/bin/sh
+# Use dmenu to search in google.
 
 URL='https://google.com/search?q='
 QUERY=$(echo '' | dmenu -p "Search:")

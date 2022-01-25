@@ -1,4 +1,4 @@
 #!/bin/sh
-# search manpage in dmenu and open it on zathura
+# Search manpage in dmenu and open it on zathura
 manpage=$(man -k . | dmenu -i -l 10 | awk '{ print $1 }')
 if [ -z "$manpage" ]; then exit; else man -Tpdf "$manpage" | zathura - & fi

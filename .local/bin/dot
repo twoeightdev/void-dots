@@ -1,5 +1,5 @@
 #!/bin/sh
-# warper for dotfiles
+# Warper for dotfiles
 dotfiles() { git --git-dir=$HOME/.config/dots --work-tree=$HOME "$@"; }
 if [ $1 = 'up' ]; then
 dotfiles pull &&

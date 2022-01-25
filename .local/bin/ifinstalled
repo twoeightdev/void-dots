@@ -1,6 +1,6 @@
 #!/bin/sh
-# check to see if a command exists and if it doesn't
-# it informs the user that they need that command to continue
+# Check to see if a command exists and if it doesn't
+# It informs the user that they need that command to continue
 for x in "$@";do
   xbps-query -Rs "$x" >/dev/null 2>&1 ||
     { notify-send "Package: $x" "must be installed for this function." && exit 1 ;}

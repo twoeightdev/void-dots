@@ -1,5 +1,5 @@
 #!/bin/sh
-# add RSS feed
+# Add RSS feed
 if ! echo "$1" | grep -q "https*://\S\+\.[A-Za-z]\+\S*"; then
     notify-send "That doesn't look like a full URL."
     exit

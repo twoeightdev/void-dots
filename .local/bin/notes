@@ -1,4 +1,5 @@
 #!/bin/sh
+# Script for my notes.
 
 NOTESDIR="$HOME/.config/dev/personal/notes"
 EDITOR="$EDITOR"

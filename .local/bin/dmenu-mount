@@ -1,5 +1,5 @@
 #!/bin/sh -e
-# mount disk
+# Mount disk
 set -- $(lsblk -rno name,mountpoint,fstype | grep -i '  [a-rt-z]' | dmenu -i -p 'Mount')
 [ "$1" ]
 mkdir -p "$HOME/.config/mnt/$1"

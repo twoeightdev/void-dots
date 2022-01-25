@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # Reads file names from stdin and selects them in lf.
 
 while read -r file; do

@@ -1,11 +1,11 @@
 #!/bin/sh
-# emojis selection via dmenu
+# Emojis selection via dmenu
 chosen=$(cut -d ';' -f1 ~/.local/share/misc/emoji | dmenu -i -l 10 | sed "s/ .*//")
 
-# exit if none chosen
+# Exit if none chosen
 [ -z "$chosen" ] && exit
 
-# if you run this command with an argument, it will automatically insert the
+# If you run this command with an argument, it will automatically insert the
 # character. Otherwise, show a message that the emoji has been copied
 if [ -n "$1" ]; then
     xdotool type "$chosen"

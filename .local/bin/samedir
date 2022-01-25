@@ -1,5 +1,5 @@
 #!/bin/sh
-# open a terminal in the same directory as current
+# Open a terminal in the same directory as current
 wpid=$(xdotool getactivewindow getwindowpid)
 
 if [ -n "$wpid" ]; then

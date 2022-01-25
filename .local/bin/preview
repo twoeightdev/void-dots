@@ -1,5 +1,5 @@
 #!/bin/sh
-# preview script for shell utilities
+# Preview script for shell utilities
 case "$1" in
 *.png|*.jpg |*.jpeg |*.mkv |*.mp4 |*.mp3) mediainfo "$1";;
 *.pdf) pdftotext "$1" -;;

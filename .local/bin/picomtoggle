@@ -1,5 +1,5 @@
 #!/bin/sh
-# picom toggle
+# Picom toggle
 if pgrep -x "picom" > /dev/null
 then
     pkill picom && notify-send "Picom deactivated"
