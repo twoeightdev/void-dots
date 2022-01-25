@@ -1,14 +1,10 @@
 #!/bin/sh
 
-weatherreport="${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport"
-getforecast() { curl -sf "wttr.in/?format=1" > "$weatherreport" || exit 1 ;}
-
-showweather() {
-    cat "$weatherreport" | awk '{print $2}'
-}
-
-[ "$(stat -c %y "$weatherreport" 2>/dev/null | cut -d' ' -f1)" = "$(date '+%Y-%m-%d')" ] ||
-    getforecast
+weatherreport="$HOME/.local/share/weatherreport"
 
 . sb-theme
+showweather() {
+    cat "$weatherreport" | sed 's/.* //'
+}
+
 display W:$(showweather)
