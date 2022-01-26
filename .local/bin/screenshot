@@ -1,5 +1,5 @@
 #!/bin/sh
-# take screenshot
+# Take screenshot
 type="$(printf "Screen\nWindow/Area\n" | dmenu -l 2 -p 'Type')"
 [ "$type" ] || exit
 time="$(printf "0.5\n5\n10\n" | dmenu -p 'Seconds to wait')"

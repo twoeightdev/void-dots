@@ -1,4 +1,4 @@
 #!/bin/sh
-# search music playlist in dmenu and play it on mpd
+# Search music playlist in dmenu and play it on mpd
 track=`mpc playlist -f "%position% - %title% - %artist% - %album%" | dmenu -i -l 10 -p "Track"` && mpc play "${track%% *}"
 echo "$track"

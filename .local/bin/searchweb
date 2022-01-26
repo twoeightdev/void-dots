@@ -1,5 +1,5 @@
 #!/bin/sh
-# open web page via dmenu and open on $BROWSER
+# Open web page via dmenu and open on $BROWSER
 TEXT="duckduckgo\ngithub\ntorrent\n9901\nshopee\nshopee-wish\nfoodpanda\nludeon\nsuckless\narch\ngoanime\nanimix\nwallhaven\nunixporn\nyoutube\ngmail"
 
 DMENU="$( echo $TEXT | dmenu -l 16 -p web )"

@@ -1,4 +1,5 @@
 #!/bin/sh
+# Set as a cronjob for dwmblocks weather script.
 
 export DISPLAY=:0
 

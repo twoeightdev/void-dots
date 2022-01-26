@@ -1,5 +1,5 @@
 #!/bin/sh
-# original artwork by http://www.sanderfocus.nl/#/portfolio/tech-heroes
+# Original artwork by http://www.sanderfocus.nl/#/portfolio/tech-heroes
 # converted to shell by #nixers @ irc.unix.chat
 
 cat << 'eof'

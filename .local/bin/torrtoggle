@@ -1,5 +1,5 @@
 #!/bin/sh
-# transmission-daemon toggle
+# Transmission-daemon toggle
 
 if pgrep -x transmission-da > /dev/null
 then

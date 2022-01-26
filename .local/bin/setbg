@@ -1,6 +1,5 @@
 #!/bin/sh
-# set wallpaper and location of link to wallpaper link
-#bgloc="${XDG_DATA_HOME:-$HOME/.local/share/}/bg"
+# Set wallpaper and copy to $HOME/.local/share/bg
 
 if [ -f "$1" ]; then
     cp "$1" "${XDG_DATA_HOME:-$HOME/.local/share/}/bg"
