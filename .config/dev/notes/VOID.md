@@ -192,7 +192,9 @@ PART=1
 ### Post installation
 
 - Services
-    - `$ ln -sf /etc/sv/dhcpcd /var/service   # enable internet`
+    - `$ cp -R /etc/sv/dhcpcd-eth0 /etc/sv/dhcpcd-enp0s31f6`
+    - `$ sed -i 's/eth0/enp0s31f6/' /etc/sv/dhcpcd-enp0s31f6/run`
+    - `$ ln -sf /etc/sv/dhcpcd-enp0s31f6 /var/service   # enable internet`
 - Users
     - `$ xbps-install -S zsh`
     - `$ useradd -m -G users,wheel,input,video,audio,storage,disk -s /bin/zsh hoaxdream`
