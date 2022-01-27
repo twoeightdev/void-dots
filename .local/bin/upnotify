@@ -1,0 +1,7 @@
+#!/bin/sh
+# Check for xbps package updates the show notification in dunst.
+
+xbpsupdate=$(xbps-install -Mun | awk -F'-' '{printf $1}')
+
+notify-send "$xbpsupdate"
+pkill -RTMIN+16 dwmblocks
