@@ -1,2 +1,2 @@
 #!/bin/sh
-/media/core/drm-free/rimworld/./start_RimWorld.sh > /dev/null 2>&1 &
+/media/core/drmfree/rimworld/./start_RimWorld.sh > /dev/null 2>&1 &
