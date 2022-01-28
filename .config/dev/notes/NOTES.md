@@ -176,3 +176,8 @@ xrandr --output HDMI-0 --mode 2560x1080 --rate 74.99
   - kernel.nmi_watchdog=0
   - mitigations=off * to be tested
   -
+#### Efiboot entry
+- Edit the following:
+- grep "Void ${major_version}" to grep "Void"
+    - /etc/kernel.d/post-install/50-efibootmgr
+    - /etc/kernel.d/post-remove/50-efibootmgr
