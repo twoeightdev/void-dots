@@ -256,7 +256,9 @@ no_hostonly_commandline=yes
 - EFI Kernel hook
 ```sh
     - $ nvim /etc/default/efibootmgr-kernel-hook
+```
 
+```sh
 # Options for the kernel hook script installed by the efibootmgr package.
 MODIFY_EFI_ENTRIES=1
 OPTIONS="root=UUID=xxxx-xxxx-xxx-xxxx ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3"
