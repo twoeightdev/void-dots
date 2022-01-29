@@ -164,7 +164,8 @@ Mount point | Partition | Partition type | Suggested size
 - Fstab
 ```sh
     - $ cp /proc/mounts /etc/fstab
-    - Delete everything except / and /boot then add tmpfs:
+    - Delete everything except / and /boot then add tmpfs and efivarfs:
+    - Get UUID inside nvim with :r !blkid /dev/nvme0n1p2
     - Set root 0 1
     - Set boot 0 2
     - tmpfs    /tmp    tmpfs   defaults,nosuid,nodev   0 0
