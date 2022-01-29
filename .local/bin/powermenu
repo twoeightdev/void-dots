@@ -3,8 +3,8 @@ set -- lock exit shutdown reboot
 ctl='sudo loginctl'
 op="$(printf "%s\n" "$@" | dmenu -m 0 -p 'System')"
 case "$op" in
-	lock) slock & mpc pause;;
+	lock) slock & mpc pause ;;
 	exit) kill -TERM "$(pgrep -u "$USER" "\bdwm$")" ;;
-	shutdown) $ctl poweroff;;
-	reboot) $ctl reboot;;
+	shutdown) $ctl poweroff -i ;;
+	reboot) $ctl reboot -i ;;
 esac
