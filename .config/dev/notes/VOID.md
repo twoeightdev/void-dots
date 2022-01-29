@@ -9,7 +9,7 @@ _Use at your own risk._
 ## Table of Contents
 
 - [Bootable Flash Drive](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md#bootable-flash-drive)
-- Pre installation
+- [Pre installation](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md#pre-installation)
     - Set shell
     - Change font
     - Check boot mode
@@ -18,10 +18,10 @@ _Use at your own risk._
         - Create partitions
         - Format partitions
         - Mount the filesystem
-- Installation
+- [Installation](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md#installation)
     - Install Base meta package
     - Mount pseudo-filesystems
-- Configure system
+- [Configure system](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md#configure-system)
     - Copy DNS configuration
     - Chroot
     - Localization
@@ -35,12 +35,12 @@ _Use at your own risk._
     - Multilib and mirrors
     - Bootloader
     - Finalization
-- Post installation
+- [Post installation](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md#post-installation)
     - Services
     - Users
     - Sudoers
-- Dot files installation
-- Misc
+- [Dot files installation](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md#dot-files-installation)
+- [Misc](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md#misc)
     - EFI kernel hook
     - void-src
     - libxft patch
