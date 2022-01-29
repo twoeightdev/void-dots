@@ -193,7 +193,7 @@ no_hostonly_commandline=yes
 - Bootloader
 ```sh
     - $ ls /boot
-    - $ blkid -s UUID -o value /dev/nvme0n1p2   # root parition
+    - $ blkid -s UUID -o value /dev/nvme0n1p2   # root parition UUID
     - $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UUID=root_uuid ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose
 ```
 
