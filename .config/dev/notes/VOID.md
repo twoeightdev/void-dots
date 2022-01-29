@@ -142,7 +142,7 @@ Mount point | Partition | Partition type | Suggested size
     - $ echo art > /etc/hostname
 ```
 
-- Hosts _/etc/hosts_
+- Hosts
 ```sh
 127.0.0.1   localhost.localdomain   localhost   art
 ::1         localhost.localdomain   localhost   art
