@@ -14,10 +14,7 @@
 - $ xbps-install -Syu git
 - $ git clone https://github.com/hoaxdream/void-bootstrap.git
 - $ cd void-bootstrap
-- $ ./1_pkginstall          # edit according to packages you want to install.
-- $ ./2_dotsetup            # clone my dotfiles, including suckless builds and install them.
-- $ sudo ./3_postinstall    # set UUID of my spare drive to fstab, edit accordingly.
-- $ sudo ./4_finalize       # set dbus, also delete and make directory.
+- $ ./setup.sh              # install dot first
 - $ sudo reboot
 - $ dot up                  # this command do --assumed-unchanged and delete LICENSE, README.md in $HOME
 - $ dot res                 # this command do --no-assumed-unchanged and restore LICENSE, README.md in $HOME
