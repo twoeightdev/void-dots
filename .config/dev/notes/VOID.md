@@ -44,6 +44,7 @@ _Use at your own risk._
     - EFI kernel hook
     - void-src
     - libxft patch
+    - run as user service
 
 ---
 
