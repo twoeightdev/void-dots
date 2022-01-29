@@ -145,8 +145,8 @@ Mount point | Partition | Partition type | Suggested size
 
 - Hosts
 ```sh
-127.0.0.1   localhost.localdomain   localhost   art
-::1         localhost.localdomain   localhost   art
+127.0.0.1   art.localdomain art localhost
+::1         art.localdomain art localhost
 
 ```
 

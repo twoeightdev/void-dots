@@ -119,6 +119,15 @@ UUID=xxxx-xxxx /media/core ext4 rw,user,exec 0 0
 - revert back single file
 - git fetch --all
 - git checkout origin/main -- ~/.config/file
+- add gitlab:
+    - git remote add gitlab https://gitlab.com/hoaxdream/testrepo.git
+    - git push -u gitlab --all
+    - git push -u gitlab --tags
+- add single remote to push:
+    - git remote add all https://github.com/hoaxdream/testrepo.git
+    - git remote set-url all --add --push https://github.com/hoaxdream/testrepo.git
+    - git remote set-url all --add --push https://gitlab.com/hoaxdream/testrepo.git
+    - git push all main
 ---
 #### Diff
 - Create patch file between two files
