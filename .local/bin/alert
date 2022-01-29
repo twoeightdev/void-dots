@@ -2,12 +2,8 @@
 # This script gives audio notification in dunst,
 # except for the following:
 
-if [ $1 = 'mpcnotify' ]; then
-    exit 0
-elif [ $1 = 'audiobar' ];then
-    exit 0
-elif [ $1 = 'Signal' ]; then
-    exit 0
-else
-    paplay ~/.local/share/audio/beep.wav
-fi
+[ $1 = "audiobar" ] && exit 0
+[ $1 = "mpcnotify" ] && exit 0
+[ $1 = "Signal" ] && exit 0
+
+paplay ~/.local/share/audio/beep.wav
