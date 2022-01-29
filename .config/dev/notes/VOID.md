@@ -41,6 +41,7 @@ _Use at your own risk._
     - Sudoers
 - Dot files installation
 - Misc
+    - EFI kernel hook
     - void-src
     - libxft patch
 
@@ -215,17 +216,6 @@ no_hostonly_commandline=yes
     - $ reboot
 ```
 
-- EFI Kernel hook
-```sh
-    - $ nvim /etc/default/efibootmgr-kernel-hook
-
-# Options for the kernel hook script installed by the efibootmgr package.
-MODIFY_EFI_ENTRIES=1
-OPTIONS="root=UUID=xxxx-xxxx-xxx-xxxx ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3"
-DISK="/dev/nvme0n1"
-PART=1
-```
-
 ### Post installation
 
 - Services
@@ -262,6 +252,17 @@ PART=1
 ```
 
 ### Misc
+
+- EFI Kernel hook
+```sh
+    - $ nvim /etc/default/efibootmgr-kernel-hook
+
+# Options for the kernel hook script installed by the efibootmgr package.
+MODIFY_EFI_ENTRIES=1
+OPTIONS="root=UUID=xxxx-xxxx-xxx-xxxx ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3"
+DISK="/dev/nvme0n1"
+PART=1
+```
 
 - void-src
 ```sh
