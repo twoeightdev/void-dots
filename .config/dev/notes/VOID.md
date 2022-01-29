@@ -27,6 +27,7 @@ _Use at your own risk._
     - Localization
     - Timezone
     - Hostname
+    - Hosts
     - Configure rc.conf
     - Root password
     - Fstab
@@ -138,6 +139,13 @@ Mount point | Partition | Partition type | Suggested size
 - Hostname
 ```sh
     - $ echo art > /etc/hostname
+```
+
+- Hosts
+```sh
+127.0.0.1   localhost.localdomain   localhost   art
+::1         localhost.localdomain   localhost   art
+
 ```
 
 - Configure rc.conf
