@@ -245,10 +245,10 @@ no_hostonly_commandline=yes
     - $ sudo xbps-install -Syu git
     - $ git clone https://github.com/hoaxdream/void-bootstrap
     - $ cd void-bootstrap
-    - $ ./setup.sh              # Install dot first
-    - $ sudo ./root.sh    # Needs to be run as root
-    - $ sudo ./ssd.sh     # Run only for fresh disk
-    - $ sudo ./hhd.sh     # Run only for fresh disk
+    - $ ./setup.sh          # You only need this, install dot first
+    - $ sudo ./root.sh      # Needs to be run as root configured for my system
+    - $ sudo ./ssd.sh       # Run only for fresh disk configured for my system
+    - $ sudo ./hhd.sh       # Run only for fresh disk configured for my system
     - $ sudo reboot
 ```
 
