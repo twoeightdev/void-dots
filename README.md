@@ -5,6 +5,7 @@
 
 ## Dwm
 ![Rice screen preview01](https://i.imgur.com/CgCDqQq.png)
+
 ![Rice screen preview02](https://i.imgur.com/JPoX6H9.png)
 
 ## Dotfiles installation
