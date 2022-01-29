@@ -4,8 +4,8 @@
 * EFISTUB Void Linux Installation [Guide](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md)
 
 ## Dwm
-![Rice screen preview00001](https://i.imgur.com/O9IjRg3.png)
-![Rice screen preview00002](https://i.imgur.com/JPoX6H9.png)
+![Rice screen preview01](https://i.imgur.com/CgCDqQq.png)
+![Rice screen preview02](https://i.imgur.com/JPoX6H9.png)
 
 ## Dotfiles installation
 *Dwm is the default wm, just change xinitrc if you want to use bspwm or xmonad.*
