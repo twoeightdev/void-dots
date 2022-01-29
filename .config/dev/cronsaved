@@ -1,0 +1,3 @@
+0 */1 * * * /home/hoaxdream/.local/bin/rssup
+*/30 * * * * /home/hoaxdream/.local/bin/mailup
+0 */6 * * * /home/hoaxdream/.local/bin/weathup
