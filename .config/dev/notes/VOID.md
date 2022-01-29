@@ -31,14 +31,13 @@ _Use at your own risk._
     - Root password
     - Fstab
     - Dracut
-    - Non-free repo
+    - Multilib and mirrors
     - Bootloader
     - Finalization
 - Post installation
     - Services
     - Users
     - Sudoers
-    - Change mirrors
 - Dot files installation
 - Misc
     - void-src
@@ -74,37 +73,42 @@ $ setfont LatGrkCyr-12x22
 - $ ping -c 3 voidlinux.org
 ```
 
-
-
 Mount point | Partition | Partition type | Suggested size
 | --- | --- | --- | --- |
 | /mnt/boot | /dev/nvme0n1p1 | EFI system partition | 512 MiB |
 | /mnt | /dev/nvme0n1p2 | Linux Filesystem | Remainder of the device |
 
+
 - Partitioning
+```sh
     - Create partition
-        - `$ wipefs -af /dev/nvme0n1   # wipe drive`
-        - `$ fdisk /dev/nvme0n1        # use fdisk to partition disk`
+        - $ wipefs -af /dev/nvme0n1   # wipe drive
+        - $ fdisk /dev/nvme0n1        # use fdisk to partition disk
         - <code>Type <b>g</b> to set GPT disklabel</code>
     - Format parition
-        - `$ mkfs.vfat /dev/nvme0n1p1`
-        - `$ mkfs.ext4 /dev/nvme0n1p2`
+        - $ mkfs.vfat /dev/nvme0n1p1
+        - $ mkfs.ext4 /dev/nvme0n1p2
     - Mount the filesystem
-        - `$ mount /dev/nvme0n1p2 /mnt`
-        - `$ mkdir /mnt/boot`
-        - `$ mount /dev/nvme0n1p1 /mnt/boot`
+        - $ mount /dev/nvme0n1p2 /mnt
+        - $ mkdir /mnt/boot
+        - $ mount /dev/nvme0n1p1 /mnt/boot
+```
 
 ### Installation
 
+```sh
 - Install Base meta package
-    - `$ REPO=https://mirrors.servercentral.com/voidlinux/current`
-    - `$ ARCH=x86_64`
-    - `$ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system`
+    - $ REPO=https://mirrors.servercentral.com/voidlinux/current
+    - $ ARCH=x86_64
+    - $ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system
+```
 
+```sh
 - Mount pseudo-filesystems
-    - `$ mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys`
-    - `$ mount --rbind /dev /mnt/dev && mount --make-rslave /mnt/dev`
-    - `$ mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc`
+    - $ mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
+    - $ mount --rbind /dev /mnt/dev && mount --make-rslave /mnt/dev
+    - $ mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc
+```
 
 ### Configure system
 
@@ -160,6 +164,10 @@ no_hostonly_commandline=yes
 - Non-free repo
     - `$ xbps-install -Su void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree`
     - `$ xbps-install -Su`
+    - `$ cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/` # copy mirrors
+    - `$ sudo sed -i 's|https://alpha.de.repo.voidlinux.org|https://mirrors.servercentral.com/voidlinux|g' /etc/xbps.d/*-repository-*.conf` # change mirrors
+    - `$ xbps-install -Su`  # update
+    - `$ xpbs-query -L`     # check new repo URL
     - `$ xbps-install -Su intel-ucode nvidia efibootmgr`
 
 - Bootloader
@@ -202,12 +210,6 @@ PART=1
 - Sudoers
     - `$ EDITOR=nvim visudo`
     - Exit root and login user
-- Change mirrors
-    - `$ mkdir -p /etc/xbps.d`
-    - `$ cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/`
-    - `$ sudo sed -i 's|https://alpha.de.repo.voidlinux.org|https://https://mirrors.servercentral.com/voidlinux|g' /etc/xbps.d/*-repository-*.conf`
-    - `$ xbps-install -Su    # update`
-    - `$ xpbs-query -L       # check new repo URL`
 
 ### Dot files installation
 
