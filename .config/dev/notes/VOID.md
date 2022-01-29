@@ -8,7 +8,7 @@ _Use at your own risk._
 
 ## Table of Contents
 
-- Bootable Flash Drive
+- [Bootable Flash Drive](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md#bootable-flash-drive)
 - Pre installation
     - Set shell
     - Change font
