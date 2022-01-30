@@ -103,6 +103,8 @@ Mount point | Partition | Partition type | Suggested size
 ```sh
     - $ REPO=https://mirrors.servercentral.com/voidlinux/current
     - $ ARCH=x86_64
+    - $ mkdir -p /mnt/var/db/xbps/keys
+    - $ cp /var/db/xbps/keys/* /mnt/var/db/xbps/keys/   # copy RSA keys
     - $ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system
 ```
 
