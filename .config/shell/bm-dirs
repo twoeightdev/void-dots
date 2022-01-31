@@ -5,6 +5,7 @@ d   $HOME/.config/dl
 w   $HOME/.config/dev
 b   $HOME/.local/bin
 u   $HOME/.config/mnt
+t   $HOME/.config/ss
 i   /mnt
 x   /media/core
 f   /media/data
