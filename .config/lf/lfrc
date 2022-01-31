@@ -61,6 +61,7 @@ cmd zip ${{
     rm -rf $1
 }}
 
+
 cmd moveto ${{
     clear; tput cup $(($(tput lines)/3)); tput bold
     set -f
@@ -112,7 +113,7 @@ map gg top
 map G bottom
 map C copyto
 map M moveto
-map T extract
+map E extract
 
 map O push :mkdir<space>
 map o push :touch<space>
