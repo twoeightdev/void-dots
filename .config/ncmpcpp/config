@@ -32,3 +32,4 @@ progressbar_color = black:b
 progressbar_elapsed_color = blue:b
 statusbar_color = red
 statusbar_time_color = cyan:b
+ask_before_clearing_playlists = yes
