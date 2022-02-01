@@ -1,10 +1,10 @@
 #!/bin/sh
 name=$USER
 host=$(cat /proc/sys/kernel/hostname)
-distro=$(tail -n 1 /etc/lsb-release | sed s/DISTRIB_DESCRIPTION=//g | sed s/\"//g)
+distro=$(tail -n 1 /etc/os-release | sed s/PRETTY_NAME=//g | sed s/\"//g)
 kernel=$(uname -r)
-kernel=${kernel%%-*}
-pkgs=$(pacman -Qqs | wc -l)
+kernel=$(uname -r | head -c7)
+pkgs=$(xbps-query -l | wc -l)
 font=$(fc-match monospace | awk '{printf $2$3}' | tr -d \")
 ui=$(echo $WM)
 shell=$(basename "$SHELL")
