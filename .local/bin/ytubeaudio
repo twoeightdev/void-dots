@@ -1,0 +1,11 @@
+#!/bin/sh
+
+url="$1"
+
+notify-send --urgency low "Youtube download" "started $url"~
+if yt-dlp -x --audio-format mp3 --audio-quality 0 --restrict-filenames -o "$HOME/.config/dl/youtube-dl/audio/%(title)s.%(ext)s" "$url"
+    then
+        notify-send --urgency normal "Youtube download" "finished $url"
+    else
+        notify-send --urgency critical "Youtube download" "failed $url"
+fi

@@ -100,7 +100,7 @@ c.content.autoplay = False
 c.content.pdfjs = True
 c.content.fullscreen.overlay_timeout = 3000
 c.content.fullscreen.window = True
-c.zoom.default = '150%'
+c.zoom.default = '140%'
 
 # Font and define colors values
 c.fonts.default_family = ['Inconsolata']
@@ -268,6 +268,8 @@ config.bind("h", "scroll-px -300 0")
 config.bind("j", "scroll-px 0 300")
 config.bind("k", "scroll-px 0 -300")
 config.bind("l", "scroll-px 300 0")
+config.bind('ya', 'spawn ytubeaudio {url}')
+config.bind('yv', 'spawn ytubevideo {url}')
 config.bind("<Alt-f>", "hint links spawn --detach mpv --profile=M60 {hint-url}")
 config.bind("<Alt-Shift-f>", "hint links spawn --detach mpv --profile=H60 {hint-url}")
 #config.bind("<Alt-f>", "hint links spawn --detach mpv --force-window yes {hint-url}")
