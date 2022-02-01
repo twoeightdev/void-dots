@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ffmpeg -hide_banner -i $1 -c copy `date +"%m-%d-%y"`.mp4 >/dev/null 2>&1
