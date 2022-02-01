@@ -73,6 +73,7 @@
 [history-ignore-audiobar]
     appname = "audiobar"
     history_ignore = yes
+    timeout = 1
 
 [history-ignore-mpcnotify]
     appname = "mpcnotify"
