@@ -4,13 +4,15 @@
 * EFISTUB Void Linux Installation [Guide](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md)
 
 ## Dwm
+
 ![Rice screen preview01](https://i.imgur.com/CgCDqQq.png)
 
 ![Rice screen preview02](https://i.imgur.com/JPoX6H9.png)
 
 ## Dotfiles installation
-*Type ./setup.sh and pick what you want to install.*
-*Do ./setup.sh dot first before everything else.*
+
+*Install my dotfiles first with ./setup.sh dot, then type ./setup.sh to pick whatever you want to install.*
+
 ```sh
 - $ xbps-install -Syu git
 - $ git clone https://github.com/hoaxdream/void-bootstrap.git
