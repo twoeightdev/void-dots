@@ -1,8 +1,8 @@
 #!/bin/sh
-git checkout master &&
-make clean && rm -f config.h && git reset --hard origin/master && git pull &&
+git checkout main &&
+make clean && rm -f config.h && git reset --hard origin/main && git pull &&
 for branch in $(git for-each-ref --format='%(refname)' refs/heads/ | cut -d'/' -f3); do
-    if [ "$branch" != "master" ];then
-        git checkout $branch && git rebase --preserve-merges master
+    if [ "$branch" != "main" ];then
+        git checkout $branch && git rebase --preserve-merges main
     fi
 done
