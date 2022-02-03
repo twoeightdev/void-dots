@@ -15,7 +15,7 @@
 - $ xbps-install -Syu git
 - $ git clone https://github.com/hoaxdream/void-bootstrap.git
 - $ cd void-bootstrap
-- $ ./setup.sh              # install dot first
+- $ ./setup.sh              # do ./setup.sh dot first before everything else.
 - $ sudo reboot
 - $ dot up                  # this command do --assumed-unchanged and delete LICENSE, README.md in $HOME
 - $ dot res                 # this command do --no-assumed-unchanged and restore LICENSE, README.md in $HOME
