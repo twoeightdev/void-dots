@@ -9,13 +9,13 @@
 ![Rice screen preview02](https://i.imgur.com/JPoX6H9.png)
 
 ## Dotfiles installation
-*Dwm is the default wm, just change xinitrc if you want to use bspwm or xmonad.*
-*Read the commented lines in [bootstrap](https://github.com/hoaxdream/void-bootstrap) scripts and change accordingly for your system*
+*Type ./setup.sh and pick what you want to install.*
+*Do ./setup.sh dot first before everything else.*
 ```sh
 - $ xbps-install -Syu git
 - $ git clone https://github.com/hoaxdream/void-bootstrap.git
 - $ cd void-bootstrap
-- $ ./setup.sh              # do ./setup.sh dot first before everything else.
+- $ ./setup.sh
 - $ sudo reboot
 - $ dot up                  # this command do --assumed-unchanged and delete LICENSE, README.md in $HOME
 - $ dot res                 # this command do --no-assumed-unchanged and restore LICENSE, README.md in $HOME
