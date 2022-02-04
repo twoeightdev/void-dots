@@ -1,3 +1,13 @@
 #!/bin/sh
 
-sudo vkpurge rm all && sudo xbps-reconfigure -f linux<kernel-version-major.minor>
+version=$(uname -r)
+
+major=`echo $version | cut -d. -f1`
+minor=`echo $version | cut -d. -f2`
+
+updatekernel() {
+    sudo vkpurge rm all
+    sudo xbps-reconfigure -f linux$major.$minor
+}
+
+updatekernel
