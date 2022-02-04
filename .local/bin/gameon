@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if pgrep -x "unclutter" > /dev/null && pgrep -x "picom" > /dev/null
+then
+    pkill unclutter && pkill picom && notify-send "Game on!"
+else
+    unclutter --timeout 3 -jitter 50 --ignore-scrolling &
+    picom -b &
+    notify-send "Unclutter and picom enabled"
+fi
