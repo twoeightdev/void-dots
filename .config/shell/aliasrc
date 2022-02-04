@@ -34,6 +34,8 @@ alias \
     xbf="sudo xbps-query -f" \
     xbi="sudo xbps-install -Su" \
     xbr="sudo xbps-remove -ROo" \
+    vkls="sudo vkpurge list" \
+    vkrm="sudo vkpurge rm all" \
     z="zathura"
 
 # Make
