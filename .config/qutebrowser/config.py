@@ -1,5 +1,6 @@
 # Load settings added with ui
 # See <https://github.com/qutebrowser/qutebrowser/blob/master/doc/help/configuring.asciidoc#loading-autoconfigyml>
+# See list of userscripts: https://github.com/qutebrowser/qutebrowser/blob/master/misc/userscripts/README.md
 # To se all configuration type :set inside qutebrowser
 config.load_autoconfig(True)
 
@@ -8,8 +9,11 @@ c.content.blocking.adblock.lists = [
         'https://easylist.to/easylist/easylist.txt',
         'https://easylist.to/easylist/easyprivacy.txt',
         'https://easylist.to/easylist/fanboy-social.txt',
-        'https://secure.fanboy.co.nz/fanboy-annoyance.txt',
+        'https://easylist-downloads.adblockplus.org/easylistdutch.txt',
         'https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt',
+        'https://www.i-dont-care-about-cookies.eu/abp/',
+        'https://secure.fanboy.co.nz/fanboy-cookiemonster.txt',
+        'https://secure.fanboy.co.nz/fanboy-annoyance.txt',
         #'https://gitlab.com/curben/urlhaus-filter/-/raw/master/urlhaus-filter.txt',
         'https://pgl.yoyo.org/adservers/serverlist.php?showintro=0;hostformat=hosts',
         'https://github.com/uBlockOrigin/uAssets/raw/master/filters/legacy.txt',
@@ -21,8 +25,6 @@ c.content.blocking.adblock.lists = [
         'https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt',
         'https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt',
         'https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt',
-        'https://www.i-dont-care-about-cookies.eu/abp/',
-        'https://secure.fanboy.co.nz/fanboy-cookiemonster.txt',
         'https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt'
 ]
 
@@ -96,7 +98,7 @@ c.completion.show = 'always'
 c.content.cookies.accept = 'all'
 c.content.dns_prefetch = True
 c.hints.scatter = True
-c.content.autoplay = False
+c.content.autoplay = True
 c.content.pdfjs = True
 c.content.fullscreen.overlay_timeout = 3000
 c.content.fullscreen.window = True
