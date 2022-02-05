@@ -61,6 +61,10 @@ c.aliases = {
     'suck': "open -t http://suckless.org/",
 }
 
+# Startpage
+c.url.start_pages = ['~/.config/dev/startpage/index.html']
+#c.url.start_pages = ['~/.config/qutebrowser/start.html']
+
 # Enable this if using style2.css in startpage
 #c.colors.webpage.darkmode.enabled = True  # This will break my startpage
 #c.colors.webpage.preferred_color_scheme = 'dark'
@@ -74,35 +78,42 @@ c.aliases = {
 #c.colors.webpage.darkmode.threshold.text = 256
 
 # General settings
-c.backend = 'webengine'                     # value: webengine, webkit
-c.content.geolocation = 'ask'               # value: true, false, ask
-c.content.notifications.enabled = 'ask'     # value: true, false, ask
-c.content.notifications.presenter = 'auto'  # value: auto, qt, libnotify, systray, messages, herbe(experimental)
-c.content.notifications.show_origin = True
-c.auto_save.session = False
-c.changelog_after_upgrade = 'never'
-
-c.url.start_pages = ['~/.config/dev/startpage/index.html']
-#c.url.start_pages = ['~/.config/qutebrowser/start.html']
+c.backend = 'webengine'                             # value: webengine, webkit
 c.editor.command = ["st", "-e", "nvim '{}'"]
-c.downloads.location.directory = '~/.config/dl'
-c.downloads.location.prompt = False
-c.downloads.remove_finished = 1000
 c.scrolling.smooth = False
 c.qt.highdpi = False
-c.tabs.last_close = 'close'
-c.tabs.select_on_remove = 'prev'
 c.confirm_quit = ['downloads']
 c.completion.height = '20%'
 c.completion.show = 'always'
+c.hints.scatter = True
+c.zoom.default = '140%'
+c.auto_save.session = False
+c.changelog_after_upgrade = 'never'
+c.qt.force_software_rendering = 'software-opengl'
+c.content.geolocation = 'ask'                       # value: true, false, ask
+c.content.prefers_reduced_motion = True             # minimize non-essentials animations and motion in websites.
 c.content.cookies.accept = 'all'
 c.content.dns_prefetch = True
-c.hints.scatter = True
 c.content.autoplay = True
 c.content.pdfjs = True
 c.content.fullscreen.overlay_timeout = 3000
 c.content.fullscreen.window = True
-c.zoom.default = '140%'
+
+# Tabs
+c.tabs.last_close = 'close'
+c.tabs.select_on_remove = 'prev'
+c.tabs.new_position.unrelated = 'next'
+c.tabs.position = 'top'
+
+# Notification
+c.content.notifications.enabled = 'ask'             # value: true, false, ask
+c.content.notifications.presenter = 'libnotify'     # value: auto, qt, libnotify, systray, messages, herbe(experimental)
+c.content.notifications.show_origin = True
+
+# Downloads
+c.downloads.location.directory = '~/.config/dl'
+c.downloads.location.prompt = False
+c.downloads.remove_finished = 1000
 
 # Font and define colors values
 c.fonts.default_family = ['Inconsolata']
