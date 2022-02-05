@@ -205,9 +205,10 @@ no_hostonly_commandline=yes
 
 - Bootloader
 ```sh
-    - $ ls /boot
+    - $ ls /boot    # show kernel version
     - $ blkid -s UUID -o value /dev/nvme0n1p2   # root parition UUID
-    - $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=UUID=root_uuid ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose
+    - $ in my case i use nvme so i'll just do /dev/nvme0n1p2    # root nvme partition
+    - $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=/dev/nvme0n1p2 rw quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose
 ```
 
 - Finalization
@@ -264,7 +265,7 @@ no_hostonly_commandline=yes
 ```sh
 # Options for the kernel hook script installed by the efibootmgr package.
 MODIFY_EFI_ENTRIES=1
-OPTIONS="root=UUID=xxxx-xxxx-xxx-xxxx ro quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3"
+OPTIONS="root=/dev/nvme0n1p2 rw quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 udev.log_level=3"
 DISK="/dev/nvme0n1"
 PART=1
 ```
