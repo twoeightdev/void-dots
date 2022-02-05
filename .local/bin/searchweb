@@ -1,6 +1,6 @@
 #!/bin/sh
 # Open web page via dmenu and open on $BROWSER
-TEXT="duckduckgo\ngithub\ntorrent\n9901\nshopee\nshopee-wish\nfoodpanda\nludeon\nsuckless\narch\ngoanime\nanimix\nwallhaven\nunixporn\nyoutube\ngmail"
+TEXT="duckduckgo\ngithub\ntorrent\n9901\nshopee\nshopee-wish\nfoodpanda\nludeon\nsuckless\narch\ngoanime\nanimix\nwallhaven\nunixporn\nyewtu\nyoutube\ngmail"
 
 DMENU="$( echo $TEXT | dmenu -l 16 -p web )"
 
@@ -21,6 +21,7 @@ case "$DMENU" in
     animix)         $BROWSER https://animixplay.to                      ;;
     wallhaven)      $BROWSER https://wallhaven.cc                       ;;
     unixporn)       $BROWSER https://www.reddit.com/r/unixporn          ;;
+    yewtu)          $BROWSER https://yewtu.be/feed/popular              ;;
     youtube)        $BROWSER https://www.youtube.com                    ;;
     gmail)          $BROWSER https://gmail.com                          ;;
 esac
