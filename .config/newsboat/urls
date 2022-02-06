@@ -1,16 +1,16 @@
--NEWSFEEDS
-https://github.com/void-linux/void-packages/commits/master.atom "~VoidLinux Packages Update (Tech)
--YOUTUBE
-https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~DistroTube (Youtube)"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCxhygwqQ1ZMoBGQM2yEcNug "~RaffyTulfo (Youtube)"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "~Brodie Robertston (Youtube)"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC95pSgGOrWclOheq6cchfPw "~Bitag (Youtube)"
--REDDIT
-https://www.reddit.com/r/unixporn.rss "~r/unixporn (Reddit)"
--WEBTOON
-https://www.webtoons.com/en/super-hero/unordinary/rss?title_no=679 "~Unordinary (Webtoon)"
-https://www.webtoons.com/en/sports/wind-breaker/rss?title_no=372 "~Wind Breaker (Webtoon)"
-https://www.webtoons.com/en/action/weakhero/rss?title_no=1726 "~Weak Hero (Webtoon)"
-https://www.webtoons.com/en/action/eleceed/rss?title_no=1571 "~Eleceed (Webtoon)"
-https://www.webtoons.com/en/sf/rebirth/rss?title_no=1412 "~Rebirth (Webtoon)"
-https://www.webtoons.com/en/horror/tales-of-the-unusual/rss?title_no=68 "~Tales of the Unusual (Webtoon)"
+"query:Distro News :tags # \"distro\""
+https://github.com/void-linux/void-packages/commits/master.atom "~. VoidLinux Packages Update" "distro"
+"query:Youtube :tags # \"youtube\""
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~. DistroTube" "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCxhygwqQ1ZMoBGQM2yEcNug "~. RaffyTulfo" "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "~. Brodie Robertston" "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC95pSgGOrWclOheq6cchfPw "~. Bitag" "youtube"
+"query:Subreddits :tags # \"reddit\""
+https://www.reddit.com/r/unixporn.rss "~. r/unixporn" "reddit"
+"query:Webtoon :tags # \"webtoon\""
+https://www.webtoons.com/en/super-hero/unordinary/rss?title_no=679 "~. Unordinary" "webtoon"
+https://www.webtoons.com/en/sports/wind-breaker/rss?title_no=372 "~. Wind Breaker" "webtoon"
+https://www.webtoons.com/en/action/weakhero/rss?title_no=1726 "~. Weak Hero" "webtoon"
+https://www.webtoons.com/en/action/eleceed/rss?title_no=1571 "~. Eleceed" "webtoon"
+https://www.webtoons.com/en/sf/rebirth/rss?title_no=1412 "~. Rebirth" "webtoon"
+https://www.webtoons.com/en/horror/tales-of-the-unusual/rss?title_no=68 "~. Tales of the Unusual" "webtoon"
