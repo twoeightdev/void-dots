@@ -22,7 +22,7 @@
     horizontal_padding = 8
     text_icon_padding = 0
     frame_width = 3
-    frame_color = "#ebdbb2"
+    frame_color = "#d4be98"
     separator_color = frame
     sort = yes
 
@@ -55,19 +55,19 @@
 
 [urgency_low]
     background = "#1d2021"
-    foreground = "#ebdbb2"
-    highlight = "#fabd2f"
+    foreground = "#d4be98"
+    highlight = "#e78a4e"
     timeout = 2
 
 [urgency_normal]
     background = "#1d2021"
-    foreground = "#ebdbb2"
+    foreground = "#d4be98"
     timeout = 5
 
 [urgency_critical]
-    background = "#1cc24d"
-    foreground = "#ebdbb2"
-    frame_color = "#fabd2f"
+    background = "#a9b665"
+    foreground = "#d4be98"
+    frame_color = "#e78a4e"
     timeout = 0
 
 [history-ignore-audiobar]
