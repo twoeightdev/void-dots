@@ -1,9 +1,11 @@
-#show-read-feeds no
+# General
 show-read-feeds yes
-auto-reload yes
+auto-reload no
 confirm-mark-all-feeds-read no
 confirm-mark-feed-read no
+max-items 50
 
+# Bindings
 bind-key j down
 bind-key k up
 bind-key j next articlelist
@@ -23,29 +25,40 @@ bind-key D pb-download
 bind-key U show-urls
 bind-key x pb-delete
 
-color listnormal cyan default
-color listnormal_unread blue default
+# Formats
+feedlist-format "%t %u"
+articlelist-format "%4i %f %D %?T?|%-17T| ?%t"
+feedlist-title-format "%N feeds with new articles(%u) "
+articlelist-title-format "%T"
+
+# Feed list
+highlight feedlist "(Distro News|Youtube|Subreddits)" red black bold
+highlight feedlist "(Webtoon)" red black bold
+
+# Colors
+color listnormal color244 default
+color listnormal_unread yellow default
 color listfocus blue default
-color listfocus_unread yellow default bold
-color info red black bold
+color listfocus_unread blue default bold
+color info cyan black bold
 color article white default bold
 
-browser linkhandler
-macro d set browser "setsid -f menuhandler"; open-in-browser; set browser linkhandler
-macro c set browser "xclip -sel clip <<<" ; open-in-browser; set browser linkhandler
-macro m set browser "setsid mpv --profile=H60"; open-in-browser ; set browser linkhandler
-macro v set browser "youtube-viewer --comments=%u" ; open-in-browser ; set browser linkhandler
-macro b set browser "$BROWSER"; open-in-browser ; set browser linkhandler
-
 highlight all "---.*---" yellow
-highlight feedlist ".*(0/0))" black
+highlight feedlist ".*(0/0))" red black bold
 highlight article "(^Feed:.*|^Title:.*|^Author:.*)" cyan default bold
-highlight article "(^Link:.*|^Date:.*)" default default
+highlight article "(^Link:.*|^Date:.*)" default default underline
 highlight article "https?://[^ ]+" green default
-highlight article "^(Title):.*$" blue default
 highlight article "\\[[0-9][0-9]*\\]" magenta default bold
-highlight article "\\[image\\ [0-9]+\\]" green default bold
+highlight article "\\[image [0-9][0-9]*\\]" green default bold
 highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
 highlight article ":.*\\(link\\)$" cyan default
 highlight article ":.*\\(image\\)$" blue default
 highlight article ":.*\\(embedded flash\\)$" magenta default
+
+# Macros
+bind-key ` macro-prefix
+unbind-key ,
+browser linkhandler
+macro d set browser "setsid -f dmenu-handler"; open-in-browser; set browser linkhandler
+macro c set browser "echo %u | xclip -r -sel c"; open-in-browser ; set browser linkhandler
+macro b set browser "$BROWSER"; open-in-browser; set browser linkhandler
