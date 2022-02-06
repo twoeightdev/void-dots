@@ -1,23 +1,23 @@
 " palette
 let g:dark = {}
 let g:dark.black    =  [0,  '#1d2021']
-let g:dark.red      =  [1,  '#cc241d']
-let g:dark.green    =  [2,  '#98971a']
-let g:dark.yellow   =  [3,  '#d79921']
-let g:dark.blue     =  [4,  '#458588']
-let g:dark.magenta  =  [5,  '#b16286']
-let g:dark.cyan     =  [6,  '#689d6a']
-let g:dark.white    =  [7,  '#a89984']
+let g:dark.red      =  [1,  '#ea6962']
+let g:dark.green    =  [2,  '#a9b665']
+let g:dark.yellow   =  [3,  '#e78a4e']
+let g:dark.blue     =  [4,  '#7daea3']
+let g:dark.magenta  =  [5,  '#d3869b']
+let g:dark.cyan     =  [6,  '#89b482']
+let g:dark.white    =  [7,  '#d4be98']
 
 let g:light = {}
-let g:light.black   =  [8,  '#928374']
-let g:light.red     =  [9,  '#fb4934']
-let g:light.green   =  [10, '#b8bb26']
-let g:light.yellow  =  [11, '#fabd2f']
-let g:light.blue    =  [12, '#83a598']
+let g:light.black   =  [8,  '#32302f']
+let g:light.red     =  [9,  '#ea6962']
+let g:light.green   =  [10, '#a9b665']
+let g:light.yellow  =  [11, '#e78a4e']
+let g:light.blue    =  [12, '#7daea3']
 let g:light.magenta =  [13, '#d3869b']
-let g:light.cyan    =  [14, '#8ec07c']
-let g:light.white   =  [15, '#ebdbb2']
+let g:light.cyan    =  [14, '#89b482']
+let g:light.white   =  [15, '#d4be98']
 
 let g:none          = ["none", "none"]
 

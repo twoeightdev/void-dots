@@ -2,13 +2,13 @@
 
 # Gruvbox colorscheme
 color1="#1d2021"    # black
-color2="#cc241d"    # red
-color3="#98971a"    # green
-color4="#d79921"    # yellow
-color5="#458588"    # blue
-color6="#b16286"    # magenta
-color7="#689d6a"    # cyan
-color8="#a89984"    # white
+color2="#ea6962"    # red
+color3="#a9b665"    # green
+color4="#e78a4e"    # yellow
+color5="#7daea3"    # blue
+color6="#d3869b"    # magenta
+color7="#89b482"    # cyan
+color8="#d4be98"    # white
 
 display() {
     args=""

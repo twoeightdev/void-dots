@@ -125,23 +125,23 @@ c.fonts.contextmenu = '16px default_family'
 
 # Colors
 bg = "#1d2021"
-fg = "#ebdbb2"
+fg = "#d4be98"
 base01 = "#1d2021" # black
-base02 = "#cc241d" # red
-base03 = "#98971a" # green
-base04 = "#d79921" # yellow
-base05 = "#458588" # blue
-base06 = "#b16286" # magenta
-base07 = "#689d6a" # cyan
-base08 = "#a89984" # white
-base09 = "#928374" # black
-base10 = "#fb4934" # red
-base11 = "#b8bb26" # green
-base12 = "#fabd2f" # yellow
-base13 = "#83a598" # blue
+base02 = "#ea6962" # red
+base03 = "#a9b665" # green
+base04 = "#e78a4e" # yellow
+base05 = "#7daea3" # blue
+base06 = "#d3869b" # magenta
+base07 = "#89b482" # cyan
+base08 = "#d4be98" # white
+base09 = "#32302f" # black
+base10 = "#ea6962" # red
+base11 = "#a9b665" # green
+base12 = "#e78a4e" # yellow
+base13 = "#7daea3" # blue
 base14 = "#d3869b" # magenta
-base15 = "#8ec07c" # cyan
-base16 = "#ebdbb2" # white
+base15 = "#89b482" # cyan
+base16 = "#d4be98" # white
 
 # Context menu colors
 c.colors.contextmenu.menu.bg = bg
