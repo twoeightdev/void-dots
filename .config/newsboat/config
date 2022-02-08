@@ -4,6 +4,12 @@ auto-reload no
 confirm-mark-all-feeds-read no
 confirm-mark-feed-read no
 max-items 50
+reload-threads 8
+show-read-feeds yes
+show-read-articles yes
+error-log "~/.config/newsboat/error.log"
+goto-first-unread no
+goto-next-feed no
 
 # Bindings
 bind-key j down
@@ -28,12 +34,12 @@ bind-key x pb-delete
 # Formats
 feedlist-format "%t %u"
 articlelist-format "%4i %f %D %?T?|%-17T| ?%t"
-feedlist-title-format "%N feeds with new articles(%u) "
+feedlist-title-format "%N feeds with new articles(%u/%t) "
 articlelist-title-format "%T"
 
 # Feed list
 highlight feedlist "(Distro News|Youtube|Subreddits)" red black bold
-highlight feedlist "(Webtoon)" red black bold
+highlight feedlist "(Webtoon|Tech News)" red black bold
 
 # Colors
 color listnormal color244 default
