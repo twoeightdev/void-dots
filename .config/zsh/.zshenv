@@ -38,6 +38,7 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export INPUTRC="$ZDOTDIR/inputrc"
 export MBSYNCRC="HOME/.config/mbsync/mbsyncrc"
+export SVDIR="$HOME/.local/var/service"
 
 # Misc
 export HISTSIZE=1000
