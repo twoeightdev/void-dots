@@ -1,0 +1,141 @@
+#+TITLE: Emacs configuration
+:PROPERTIES:
+#+AUTHOR: hoaxdream
+#+STARTUP: fold
+#+PROPERTY: header-args:emacs-lisp :results silent
+#+HTML_HEAD: <link rel="stylesheet" href="https://sandyuraz.com/styles/org.min.css">
+#+SEQ_TODO: TODO(t) | DISABLED(d)
+:END:
+
+* Things to try
+  + doom-modeline
+
+* Meta
+  This file contains my wip Emacs configuration.
+
+** Exported file note
+   The following is exported to the top of the tangled init.el file as a note.
+
+#+BEGIN_SRC emacs-lisp :tangle yes
+  ;; -*- lexical-binding: t; -*-
+  ;;;
+  ;;; hoaxdream's Emacs Configuration
+  ;;;
+
+  ;; Copyright (C) hoaxdream
+  ;; Author: hoaxdream
+  ;; URL: https://github.com/hoaxdream
+  ;; This file is not part of GNU Emacs.
+  ;; This file is free software.
+
+  ;; ------- The following code was auto-tangled from an Orgmode file. ------- ;;
+#+END_SRC
+
+** Vim keys for emacs
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package evil
+    :ensure t
+    :config
+    (evil-mode 1))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package which-key
+    :config
+    (setq which-key-idle-delay 0.3)
+    (setq which-key-popup-type 'frame)
+    (which-key-mode)
+    (which-key-setup-minibuffer)
+    (set-face-attribute 'which-key-local-map-description-face nil
+        :weight 'bold)
+    :ensure t)
+#+END_SRC
+
+** On-the-fly syntax checking.
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package flycheck
+    :ensure t
+    :init
+    (global-flycheck-mode t))
+#+END_SRC
+
+** Autocompletion
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package auto-complete
+    :ensure t
+    :config
+    (ac-config-default))
+#+END_SRC
+
+** Install gnuchess or crafty to play chess.
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package chess
+    :ensure t)
+#+END_SRC
+
+** Hide mode line
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package hide-mode-line
+      :ensure t
+      :commands (hide-mode-line-mode))
+#+END_SRC
+
+** Dashboard
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package dashboard
+      :init
+      (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+      (add-hook 'after-init-hook 'dashboard-refresh-buffer)
+      (add-hook 'dashboard-mode-hook 'hide-mode-line-mode)
+      :config
+      (dashboard-setup-startup-hook))
+#+END_SRC
+
+* Org Mode
+** Aesthetics
+#+BEGIN_SRC emacs-lisp :tangle yes
+;; Improved version of org-bullets
+(use-package org-superstar
+    :ensure t
+    :config
+    (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
+
+(setq org-startup-indented t)              ;; Indent according to section
+(setq org-startup-with-inline-images t)    ;; Display images in-buffer by default
+#+END_SRC
+
+** Evil-org for evil mode integration
+This is very fance, it treats org-mode elements (i.e. sections, source blocks, tables)
+as regular text objects ( 'ae' object ). Additionally, it allows reordering stuff using
+M-j, M-k, M-l and M-h instead of the regular M-<arrow keys>/
+Operators that deal with indention ( < and > ) also indent headers.
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package evil-org
+    :ensure t
+    :after (evil org)
+    :config
+    (add-hook 'org-mode-hook 'evil-org-mode)
+        (lambda ()
+            (evil-org-set-key-theme '(navigation insert textobjects additional calendar))))
+ (require 'evil-org-agenda)
+ (evil-org-agenda-set-keys))
+#+END_SRC
+
+#+RESULTS:
+: t
+
+** Org-agenda
+#+BEGIN_SRC emacs-lisp :tangle yes
+(setq org-agenda-files "~/.config/dev/personal/org")
+(set org-agenda-compact-blocks t)
+(setq org-agenda-custom-commands
+    '(("h" "Daily habits"
+        ((agenda ""))
+        ((org-agenda-show-log t)
+            (org-agenda-ndays 7)
+            (org-agenda-log-mode-items '(state))
+            (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":DAILY:"))))))
+#+END_SRC
+
+#+RESULTS:
+| h | Daily habits | ((agenda )) | (org-agenda-show-log t) (org-agenda-ndays 7) (org-agenda-log-mode-items (quote (state))) (org-agenda-skip-function (quote (org-agenda-skip-entry-if (quote notregexp) :DAILY:)))) |
