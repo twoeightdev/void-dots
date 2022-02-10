@@ -13,7 +13,7 @@ alias \
     yt="yt-dlp --add-metadata -i" \
     yta="yt -x -f bestaudio/best" \
     ffmpeg="ffmpeg -hide_banner" \
-    ec="emacsclient -t --socket-name=/tmp/emacs1000/server"
+    ec="emacsclient -c -n -a 'emacs'" \
     mbsync="mbsync -c $HOME/.config/mbsync/mbsyncrc"
 
 # Colorize commands when possible
