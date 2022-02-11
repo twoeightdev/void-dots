@@ -7,7 +7,7 @@
 #+SEQ_TODO: TODO(t) | DISABLED(d)
 :END:
 
-* TODO [0/1]
+* TODO Packages to try [0/1]
 	+ [ ] doom-themes
 	+ [ ] doom-modeline
 	+ [ ] toc-org
