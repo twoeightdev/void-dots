@@ -14,6 +14,8 @@ alias \
     yta="yt -x -f bestaudio/best" \
     ffmpeg="ffmpeg -hide_banner" \
     ec="emacsclient -c -n -a 'emacs'" \
+    svu="sv start emacs-daemon" \
+    svd="sv stop emacs-daemon" \
     mbsync="mbsync -c $HOME/.config/mbsync/mbsyncrc"
 
 # Colorize commands when possible
