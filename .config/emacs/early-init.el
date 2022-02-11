@@ -40,9 +40,13 @@
 (setq auto-save-default nil)
 
 ;; Indention
+(setq-default indent-tabs-mode t)
+(setq-default tab-width 4)
 
 ;; Misc
 (fset 'yes-or-no-p 'y-or-n-p)
+(setq-default org-display-custom-times t)
+(setq-default org-time-stamp-custom-formats '("<%a %b %d %Y>" . "<%a %b %d %Y %I:%M %p>"))
 
 ;; Increase font size
 ;;(set-face-attribute 'default nil :height 140)
