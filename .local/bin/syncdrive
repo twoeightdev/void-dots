@@ -1,0 +1,58 @@
+#!/bin/sh
+
+me="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+name="$USER"
+
+# Personal data
+sourcefiledir="$HOME/.config/dev/rsync/"
+targetfiledir="$HOME/.config/mnt/sdb1/rsync/"
+# Music
+sourcemusicdir="/media/data/music/"
+targetmusicdir="$HOME/.config/mnt/sdb1/music/"
+# Wallpapers
+sourcewalldir="/media/data/walls/"
+targetwalldir="$HOME/.config/mnt/sdb1/walls/"
+
+menu() {
+    echo    "usage:         " $me "[OPTION]"
+    echo    " "
+    echo    "dpr:           dry run for personal data transfer"
+    echo    "pr:            sync personal data"
+    echo    " "
+    echo    "dmusic:        dry run for music data transfer"
+    echo    "music:         sync music"
+    echo    " "
+    echo    "dwall:         dry run for wallpaper data transfer"
+    echo    "wall:          sync wallpaper"
+}
+
+dpr() {
+    rsync -anPv $sourcefiledir $targetfiledir
+}
+
+pr() {
+    rsync -aPv $sourcefiledir $targetfiledir
+}
+
+dmusic() {
+    rsync -anPv $sourcemusicdir $targetmusicdir
+}
+
+music() {
+    rsync -aPv $sourcemusicdir $targetmusicdir
+}
+
+dwall() {
+    rsync -anPv $sourcewalldir $targetwalldir
+}
+
+wall() {
+    rsync -aPv $sourcewalldir $targetwalldir
+}
+
+
+if [ -n "$1" ]; then
+    $1
+else
+    menu
+fi
