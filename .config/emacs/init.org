@@ -8,12 +8,12 @@
 :END:
 
 * TODO Packages to try [0/1]
-	+ [ ] doom-themes
-	+ [ ] doom-modeline
-	+ [ ] toc-org
-	+ [ ] define-word
-	+ [ ] mw-thesaurus
-	+ [ ] general
++ [ ] doom-themes
++ [ ] doom-modeline
++ [ ] toc-org
++ [ ] define-word
++ [ ] mw-thesaurus
++ [ ] general
 * Meta
   This file contains my wip Emacs configuration.
 
