@@ -88,6 +88,15 @@
       :config
       (dashboard-setup-startup-hook))
 #+END_SRC
+** Markdown
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package markdown-mode
+      :esure t
+      :mode (("README\\.md\\'" . gfm-mode)
+             ("\\.md\\'" . markdown-mode)
+             ("\\.markdown\\'" . markdown-mode))
+      :init (setq markdown-command "multimarkdown"))
+#+END_SRC
 * Org Mode
 ** Aesthetics
 #+BEGIN_SRC emacs-lisp :tangle yes
