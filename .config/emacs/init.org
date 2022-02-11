@@ -7,7 +7,7 @@
 #+SEQ_TODO: TODO(t) | DISABLED(d)
 :END:
 
-* TODO Packages to try [0/1]
+* TODO Packages to try [0/0]
 + [ ] doom-themes
 + [ ] doom-modeline
 + [ ] toc-org
@@ -38,6 +38,8 @@
 #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package evil
     :ensure t
+	:init
+	(setq evil-want-C-i-jump nil)
     :config
     (evil-mode 1))
 #+END_SRC
@@ -77,6 +79,14 @@
   (use-package hide-mode-line
       :ensure t
       :commands (hide-mode-line-mode))
+#+END_SRC
+** Doom theme
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package doom-themes
+	:ensure t
+    :config
+    (load-theme 'doom-gruvbox t)
+    (doom-themes-org-config))
 #+END_SRC
 ** Dashboard
 #+BEGIN_SRC emacs-lisp :tangle yes
@@ -133,6 +143,5 @@ Operators that deal with indention ( < and > ) also indent headers.
 #+BEGIN_SRC emacs-lisp :tangle yes
 (setq org-agenda-files '("~/.config/dev/rsync/org/personal.org"
                          "~/.config/dev/rsync/org/task.org"))
-(set org-agenda-compact-blocks t)
-(setq org-log-done t)
+(setq org-agenda-compact-blocks t)
 #+END_SRC

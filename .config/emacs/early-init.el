@@ -42,6 +42,7 @@
 ;; Indention
 (setq-default indent-tabs-mode t)
 (setq-default tab-width 4)
+(setq-default org-edit-src-content-indentation 0)
 
 ;; Misc
 (fset 'yes-or-no-p 'y-or-n-p)
