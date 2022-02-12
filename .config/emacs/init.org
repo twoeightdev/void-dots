@@ -179,6 +179,19 @@
 ** Org Agenda
 #+BEGIN_SRC emacs-lisp :tangle yes
 (setq org-agenda-files '("~/.config/dev/rsync/org/personal.org"
-						"~/.config/dev/rsync/org/task.org"))
+						 "~/.config/dev/personal/notes/task.org"
+						 "~/.config/dev/personal/notes/notes.org"))
+
 (setq org-agenda-compact-blocks t)
+(global-set-key (kbd "C-c o")
+				(lambda () (interactive) (find-file "~/.config/dev/personal/notes/notes.org")))
+#+END_SRC
+
+** Function
+#+BEGIN_SRC emacs-lisp :tangle yes
+(defun get-time ()
+	(interactive)
+	(insert (format-time-string "%I:%M %p")))
+
+(global-set-key (kbd "C-c t") 'get-time)
 #+END_SRC
