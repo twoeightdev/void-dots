@@ -13,9 +13,6 @@ alias \
     yt="yt-dlp --add-metadata -i" \
     yta="yt -x -f bestaudio/best" \
     ffmpeg="ffmpeg -hide_banner" \
-    ec="emacsclient -c -n -a 'emacs'" \
-    svu="sv start emacs-daemon" \
-    svd="sv stop emacs-daemon" \
     mbsync="mbsync -c $HOME/.config/mbsync/mbsyncrc"
 
 # Colorize commands when possible
@@ -33,6 +30,9 @@ alias \
     pk="pkill -9" \
     o="$FILE" \
     v="$EDITOR" \
+    ec="emacsclient -c -n -a 'emacs'" \
+    svu="sv start emacs-daemon" \
+    svd="sv stop emacs-daemon" \
     xbq="sudo xbps-query -Rs" \
     xbf="sudo xbps-query -f" \
     xbi="sudo xbps-install -Su" \
@@ -44,7 +44,6 @@ alias \
 # Make
 alias \
     mki="make && sudo make install" \
-    cb="make clean && rm -f blocks.h && git reset --hard origin/main" \
     cm="make clean && rm -f config.h && git reset --hard origin/main"
 
 # Miscellaneous
@@ -53,7 +52,7 @@ alias \
     weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
     getpath="find -type f | fzf | sed 's/^..//' | tr -d '\n' | xclip -selection c" \
     fxp="chmod -R a=r,u+w,a+X" \
-    cpat="echo $PATH | sed 's/:/\n/g' | sort | uniq -c" \
+    checkpath="echo $PATH | sed 's/:/\n/g' | sort | uniq -c" \
     df="df -h" \
     fn="fc-match -a | grep -i" \
     fne="fc-list : family | grep -i" \
@@ -66,4 +65,3 @@ alias \
     cih="convert -append" \
     covidph="curl https://corona-stats.online/philippines" \
     covid="curl https://corona-stats.online/" \
-    xrec="xmonad --recompile" \
