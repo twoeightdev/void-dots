@@ -3,8 +3,6 @@
 #+AUTHOR: hoaxdream
 #+STARTUP: fold
 #+PROPERTY: header-args:emacs-lisp :results silent
-#+HTML_HEAD: <link rel="stylesheet" href="https://sandyuraz.com/styles/org.min.css">
-#+SEQ_TODO: TODO(t) | DISABLED(d)
 :END:
 
 * TODO Packages to try [0/5]
