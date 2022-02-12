@@ -16,9 +16,6 @@
 (setq inhibit-splash-screen t)
 (setq use-file-dialog nil)
 
-;; Prevent unwanted runtime builds in gccemacs
-(setq comp-deferred-compilation nil)
-
 ;; Disable backups
 (setq make-backup-files nil
       auto-save-default nil
@@ -33,6 +30,9 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default org-display-custom-times t)
 (setq-default org-time-stamp-custom-formats '("<%a %b %d %Y>" . "<%a %b %d %Y %I:%M %p>"))
+
+;; Default directory
+(setq default-directory "/home/hoaxdream/")
 
 ;; Font
 (set-face-attribute 'default nil :font "Inconsolata" :height 150)
