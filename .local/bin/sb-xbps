@@ -1,6 +1,6 @@
 #!/bin/sh
 
-count="$(xbps-install -Mun | wc -l)"
+count="$(xbps-install -un | wc -l)"
 icon="Updates:"
 
 if [ $count -lt 0 ];then
