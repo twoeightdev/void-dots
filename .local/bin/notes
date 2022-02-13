@@ -1,5 +1,6 @@
 #!/bin/sh
-# Script for my notes.
+# Script for my temporary notes.
+# Notes from here are transfered to emacs org mode.
 
 NOTESDIR="$HOME/.config/dev/personal/notes"
 EDITOR="$EDITOR"
