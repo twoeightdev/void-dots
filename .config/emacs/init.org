@@ -5,8 +5,9 @@
 #+PROPERTY: header-args:emacs-lisp :results silent
 :END:
 
-* TODO Packages to try [0/5]
-+ [-] doom-modeline
+* TODO Packages to try [2/6]
++ [X] mood-line
++ [X] minions
 + [ ] toc-org
 + [ ] define-word
 + [ ] mw-thesaurus
@@ -18,17 +19,21 @@
    The following is exported to the top of the tangled init.el file as a note.
 
 #+BEGIN_SRC emacs-lisp :tangle yes
-  ;;;
-  ;;; hoaxdream's Emacs Configuration
-  ;;;
+;;; init.el -- Org -*- lexical-binding: t; -*-
+;;; Code:
+;;; Commentary:
 
-  ;; Copyright (C) hoaxdream
-  ;; Author: hoaxdream
-  ;; URL: https://github.com/hoaxdream
-  ;; This file is not part of GNU Emacs.
-  ;; This file is free software.
+;;;
+;;; hoaxdream's Emacs Configuration
+;;;
 
-  ;; ------- The following code was auto-tangled from an Orgmode file. ------- ;;
+;; Copyright (C) hoaxdream
+;; Author: hoaxdream
+;; URL: https://github.com/hoaxdream
+;; This file is not part of GNU Emacs.
+;; This file is free software.
+
+;; -------  The following code was auto-tangled from an Orgmode file.  ------- ;;
 #+END_SRC
 
 * Packages
@@ -37,7 +42,7 @@
 (require 'package)
 
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 ;; Package list
 (setq package-list '(
@@ -48,17 +53,17 @@
 	flycheck auto-complete
 
 	;; Themes
-	base16-theme dashboard
+	all-the-icons base16-theme mood-line minions dashboard
 
 	;; Keyboard
 	evil which-key
 
 	;; Org-related
-	org-superstar evil-org markdown-mode
+	org-superstar markdown-mode
 	))
 
 ;; Install packages that aren't installed
-(unless package-archive-contents
+ (unless package-archive-contents
 	(package-refresh-contents))
 
 (dolist (package package-list)
@@ -68,6 +73,13 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 (setq use-package-verbose nil)
+#+END_SRC
+
+** Custom file
+#+BEGIN_SRC emacs-lisp :tangle yes
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+(load custom-file)
 #+END_SRC
 
 ** Flycheck
@@ -91,19 +103,33 @@
 	(load-theme 'base16-gruvbox-dark-hard t))
 #+END_SRC
 
+** Modeline
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package mood-line
+	:config
+	(mood-line-mode))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package minions
+  :config
+  (minions-mode 1))
+#+END_SRC
+
 ** Dashboard
 #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package dashboard
 	:init
 	(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
-	(setq dashboard-center-content t)
-	(setq dashboard-startup-banner 'logo)
+	;; (setq dashboard-startup-banner 'logo)
 	(setq dashboard-show-shortcuts nil)
-	(setq dashboard-set-navigator t)
-	(setq dashboard-items '((recents . 5)
-							(agenda . 5)))
+	(setq dashboard-page-separator "\n\n")
+	(setq dashboard-startup-banner "~/.config/emacs/hoaxdream.txt")
 	:config
-	(dashboard-setup-startup-hook))
+	(dashboard-setup-startup-hook)
+
+	(setq dashboard-items '((recents . 5)
+							(agenda . 5))))
 #+END_SRC
 
 ** Evil
@@ -114,21 +140,14 @@
 	(setq evil-want-keybinding nil)
 	(setq evil-want-C-u-scroll t)
 	(setq evil-want-C-i-jump nil)
-	(setq evil-want-Y-yank-to-eol t)
 	(setq evil-respect-visual-line-mode t)
-	(setq evil-undo-system 'undo-fu)
 	(setq evil-search-module 'evil-search)
 	;; move to window when splitting
 	(setq evil-split-window-below t)
 	(setq evil-vsplit-window-right t)
 	(setq evil-auto-indent nil)
 	:config
-	(evil-mode 1)
-	(define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-	(define-key evil-motion-state-map "_" 'evil-end-of-line)
-	(define-key evil-motion-state-map "0" 'evil-beginning-of-line)
-	(evil-set-initial-state 'messages-buffer-mode 'normal)
-	(evil-set-initial-state 'dashboard-mode 'normal))
+	(evil-mode 1))
 #+END_SRC
 
 ** Which-key
@@ -144,6 +163,16 @@
 #+END_SRC
 
 * Org Mode
+** Org Agenda
+#+BEGIN_SRC emacs-lisp :tangle yes
+(setq org-agenda-start-with-log-mode t)
+(setq org-log-done 'time)
+
+(setq org-agenda-files '("~/.config/dev/rsync/org/personal.org"
+						 "~/.config/dev/personal/notes/task.org"
+						 "~/.config/dev/personal/notes/notes.org"))
+#+END_SRC
+
 ** Org Superstar
 #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package org-superstar
@@ -155,18 +184,6 @@
 		org-ellipsis " ↴ "))
 #+END_SRC
 
-** Evil Org
-#+BEGIN_SRC emacs-lisp :tangle yes
-(use-package evil-org
-	:hook ((org-mode . evil-org-mode)
-			(org-mode . (lambda ()
-				(require 'evil-org)
-				(evil-normalize-keymaps)
-				(evil-org-set-key-theme '(textobjects))
-				(require 'evil-org-agenda)
-				(evil-org-agenda-set-keys)))))
-#+END_SRC
-
 ** Markdown Mode
 #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package markdown-mode
@@ -176,17 +193,6 @@
 	:init (setq markdown-command "multimarkdown"))
 #+END_SRC
 
-** Org Agenda
-#+BEGIN_SRC emacs-lisp :tangle yes
-(setq org-agenda-files '("~/.config/dev/rsync/org/personal.org"
-						 "~/.config/dev/personal/notes/task.org"
-						 "~/.config/dev/personal/notes/notes.org"))
-
-(setq org-agenda-compact-blocks t)
-(global-set-key (kbd "C-c o")
-				(lambda () (interactive) (find-file "~/.config/dev/personal/notes/notes.org")))
-#+END_SRC
-
 ** Function
 #+BEGIN_SRC emacs-lisp :tangle yes
 (defun get-time ()
@@ -194,4 +200,11 @@
 	(insert (format-time-string "%I:%M %p")))
 
 (global-set-key (kbd "C-c t") 'get-time)
+#+END_SRC
+
+* Ends
+** End File
+#+BEGIN_SRC emacs-lisp :tangle yes
+(provide 'init)
+;;; init.el ends here
 #+END_SRC
