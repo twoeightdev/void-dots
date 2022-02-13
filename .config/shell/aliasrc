@@ -32,6 +32,7 @@ alias \
     v="$EDITOR" \
     ec="emacsclient -c -n -a 'emacs'" \
     svu="sv start emacs-daemon" \
+    svr="sv restart emacs-daemon" \
     svd="sv stop emacs-daemon" \
     xbq="sudo xbps-query -Rs" \
     xbf="sudo xbps-query -f" \
