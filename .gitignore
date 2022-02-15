@@ -12,6 +12,7 @@ dots
 .config/dev/void-dwmblocks/
 .config/dev/void-slock/
 .config/dev/void-st/
+.config/dl/
 .config/emacs/auto-save-list/
 .config/emacs/elpa/
 .config/emacs/init.el
