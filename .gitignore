@@ -10,6 +10,7 @@ dots
 .config/dev/void-dmenu/
 .config/dev/void-dwm/
 .config/dev/void-dwmblocks/
+.config/dev/void-packages/
 .config/dev/void-slock/
 .config/dev/void-st/
 .config/dl/
@@ -34,6 +35,7 @@ dots
 .config/nvim/autoload/
 .config/nvim/plugged/
 .config/pulse/
+.config/qutebrowser/autoconfig.yml
 .config/qutebrowser/bookmarks/urls
 .config/qutebrowser/quickmarks
 .config/shell/shrc
@@ -44,8 +46,10 @@ dots
 .config/zsh/.history
 .dbus/
 .local/share/lf/
+.local/share/mail/
 .local/share/newsboat/
 .local/share/nvim/
 .local/share/qutebrowser/
+.local/share/weatherreport
 .local/var/service/
 .pki/
