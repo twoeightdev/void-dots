@@ -24,6 +24,7 @@ _Use at your own risk._
 - [Configure system](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md#configure-system)
     - Copy DNS configuration
     - Chroot
+    - Multilib and Non-free
     - Localization
     - Timezone
     - Hostname
@@ -32,11 +33,9 @@ _Use at your own risk._
     - Root password
     - Fstab
     - Dracut
-    - Multilib and mirrors
     - Bootloader
     - Finalization
 - [Post installation](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md#post-installation)
-    - Services
     - Users
     - Sudoers
 - [Dot files installation](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md#dot-files-installation)
@@ -127,17 +126,33 @@ Mount point | Partition | Partition type | Suggested size
     - $ PS1="(chroot)# " chroot /mnt/ /bin/bash
 ```
 
+- Non-free repo
+```sh
+    - $ xbps-install -Su void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
+    - $ xbps-install -Su
+    - $ cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/   # copy mirrors
+    - $ sed -i 's|https://alpha.de.repo.voidlinux.org|https://mirrors.servercentral.com/voidlinux|g' /etc/xbps.d/*-repository-*.conf   # change mirrors
+    - $ xbps-install -Su    # update
+    - $ xpbs-query -L       # check new repo URL
+```
+
 - Localization
 ```sh
     - $ echo "LANG=en_PH.UTF-8" > /etc/locale.conf
     - $ echo "LC_COLLATE=C" >> /etc/locale.conf
-    - $ echo "en_PH.UTF-8 UTF-8" >> /etc/default/libc-locales
+    - $ echo "en_PH.UTF-8 UTF-8" > /etc/default/libc-locales
+    - $ echo "en_PH. ISO-8859-1" >> /etc/default/libc-locales
     - $ xbps-reconfigure -f glibc-locales
 ```
 
 - Timezone
 ```sh
     - $ ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime
+    - $ xbps-install -Su ntp neovim
+    - $ ntpdate -s ph.pool.ntp.org
+    - $ hwclock --systohc
+    - $ ln -s /etc/sv/ntpd /var/service
+    - $ ln -s /etc/sv/isc-ntpd /var/service
 ```
 
 - Hostname
@@ -147,14 +162,14 @@ Mount point | Partition | Partition type | Suggested size
 
 - Hosts
 ```sh
-127.0.0.1   art.localdomain art localhost
-::1         art.localdomain art localhost
+127.0.0.1       localhost
+::1             localhost
+192.168.0.100   art.localdomain art
 
 ```
 
 - Configure rc.conf
 ```sh
-    - $ xbps-install -Su neovim
     - $ nvim /etc/rc.conf
     - $ KEYMAP="us"             # uncomment KEYMAP
     - $ FONT=LatGrkCyr-12x22    # uncomment FONT
@@ -190,21 +205,12 @@ compress="cat"
 omit_dracutmodules+=" dash i18n rpmversion btrfs lvm qemu multipatch qemu-net lunmask fstab-sys biosdevname dmraid dmsquash-live mdraid nbd nfs "
 nofscks=yes
 no_hostonly_commandline=yes
-```
-
-- Non-free repo
-```sh
-    - $ xbps-install -Su void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
-    - $ xbps-install -Su
-    - $ cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/   # copy mirrors
-    - $ sudo sed -i 's|https://alpha.de.repo.voidlinux.org|https://mirrors.servercentral.com/voidlinux|g' /etc/xbps.d/*-repository-*.conf   # change mirrors
-    - $ xbps-install -Su    # update
-    - $ xpbs-query -L       # check new repo URL
-    - $ xbps-install -Su intel-ucode nvidia efibootmgr
+early_microcode=yes
 ```
 
 - Bootloader
 ```sh
+    - $ xbps-install -Su intel-ucode nvidia efibootmgr
     - $ ls /boot    # show kernel version
     - $ blkid -s UUID -o value /dev/nvme0n1p2   # root parition UUID
     - $ in my case i use nvme so i'll just do /dev/nvme0n1p2    # root nvme partition
@@ -213,6 +219,12 @@ no_hostonly_commandline=yes
 
 - Finalization
 ```sh
+    - $ echo "static ip_address=192.168.0.1/100" >> /etc/dhcpcd.conf
+    - $ echo "static routers=192.168.0.1" >> /etc/dhcpcd.conf
+    - $ ehco "static domain_name_servers=1.1.1.1 1.0.0.1" >> /etc/dhcpcd.conf
+    - $ cp -R /etc/sv/dhcpcd-eth0 /etc/sv/dhcpcd-enp0s31f6
+    - $ sed -i 's/eth0/enp0s31f6/' /etc/sv/dhcpcd-enp0s31f6/run
+    - $ ln -sf /etc/sv/dhcpcd-enp0s31f6 /var/service   # enable internet
     - $ xbps-query -l | grep linux  # check major and minor; linux5.15
     - $ xbps-reconfigure -fa linux<major>.<minor>
     - $ exit
@@ -221,13 +233,6 @@ no_hostonly_commandline=yes
 ```
 
 ### Post installation
-
-- Services
-```sh
-    - $ cp -R /etc/sv/dhcpcd-eth0 /etc/sv/dhcpcd-enp0s31f6
-    - $ sed -i 's/eth0/enp0s31f6/' /etc/sv/dhcpcd-enp0s31f6/run
-    - $ ln -sf /etc/sv/dhcpcd-enp0s31f6 /var/service   # enable internet
-```
 
 - Users
 ```sh
@@ -238,7 +243,7 @@ no_hostonly_commandline=yes
 
 - Sudoers
 ```sh
-    - $ EDITOR=nvim visudo
+    - $ visudo
     - Exit root and login user
 ```
 
@@ -248,10 +253,10 @@ no_hostonly_commandline=yes
     - $ sudo xbps-install -Syu git
     - $ git clone https://github.com/hoaxdream/void-bootstrap
     - $ cd void-bootstrap
+    - $ sudo ./hhd.sh       # Run only for fresh disk configured for my system
+    - $ sudo ./ssd.sh       # Run only for fresh disk configured for my system
     - $ ./setup.sh          # You only need this, install dot first
     - $ sudo ./root.sh      # Needs to be run as root configured for my system
-    - $ sudo ./ssd.sh       # Run only for fresh disk configured for my system
-    - $ sudo ./hhd.sh       # Run only for fresh disk configured for my system
     - $ sudo reboot
 ```
 
