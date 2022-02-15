@@ -29,6 +29,7 @@ _Use at your own risk._
     - Timezone
     - Hostname
     - Hosts
+    - Network
     - Configure rc.conf
     - Root password
     - Fstab
@@ -168,6 +169,17 @@ Mount point | Partition | Partition type | Suggested size
 
 ```
 
+- Network
+```
+    - $ echo "static ip_address=192.168.0.1/100" >> /etc/dhcpcd.conf
+    - $ echo "static routers=192.168.0.1" >> /etc/dhcpcd.conf
+    - $ ehco "static domain_name_servers=1.1.1.1 1.0.0.1" >> /etc/dhcpcd.conf
+    - $ cp -R /etc/sv/dhcpcd-eth0 /etc/sv/dhcpcd-enp0s31f6
+    - $ sed -i 's/eth0/enp0s31f6/' /etc/sv/dhcpcd-enp0s31f6/run
+    - $ ln -sf /etc/sv/dhcpcd-enp0s31f6 /var/service   # enable internet
+    -
+```
+
 - Configure rc.conf
 ```sh
     - $ nvim /etc/rc.conf
@@ -219,12 +231,6 @@ early_microcode=yes
 
 - Finalization
 ```sh
-    - $ echo "static ip_address=192.168.0.1/100" >> /etc/dhcpcd.conf
-    - $ echo "static routers=192.168.0.1" >> /etc/dhcpcd.conf
-    - $ ehco "static domain_name_servers=1.1.1.1 1.0.0.1" >> /etc/dhcpcd.conf
-    - $ cp -R /etc/sv/dhcpcd-eth0 /etc/sv/dhcpcd-enp0s31f6
-    - $ sed -i 's/eth0/enp0s31f6/' /etc/sv/dhcpcd-enp0s31f6/run
-    - $ ln -sf /etc/sv/dhcpcd-enp0s31f6 /var/service   # enable internet
     - $ xbps-query -l | grep linux  # check major and minor; linux5.15
     - $ xbps-reconfigure -fa linux<major>.<minor>
     - $ exit
