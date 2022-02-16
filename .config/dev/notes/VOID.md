@@ -149,9 +149,7 @@ Mount point | Partition | Partition type | Suggested size
 - Timezone
 ```sh
     - $ ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime
-    - $ xbps-install -Su ntp neovim
-    - $ ntpdate -s ph.pool.ntp.org
-    - $ hwclock --systohc
+    - $ xbps-install -Su neovim
 ```
 
 - Hostname
@@ -239,8 +237,6 @@ early_microcode=yes
 
 - Users
 ```sh
-    - $ ln -s /etc/sv/ntpd /var/service
-    - $ ln -s /etc/sv/isc-ntpd /var/service
     - $ ln -sf /etc/sv/dhcpcd-enp0s31f6 /var/service   # enable internet
     - $ xbps-install -S zsh
     - $ useradd -m -G users,wheel,input,video,audio,storage,disk -s /bin/zsh hoaxdream
