@@ -142,7 +142,7 @@ Mount point | Partition | Partition type | Suggested size
     - $ echo "LANG=en_PH.UTF-8" > /etc/locale.conf
     - $ echo "LC_COLLATE=C" >> /etc/locale.conf
     - $ echo "en_PH.UTF-8 UTF-8" > /etc/default/libc-locales
-    - $ echo "en_PH. ISO-8859-1" >> /etc/default/libc-locales
+    - $ echo "en_PH ISO-8859-1" >> /etc/default/libc-locales
     - $ xbps-reconfigure -f glibc-locales
 ```
 
@@ -152,8 +152,6 @@ Mount point | Partition | Partition type | Suggested size
     - $ xbps-install -Su ntp neovim
     - $ ntpdate -s ph.pool.ntp.org
     - $ hwclock --systohc
-    - $ ln -s /etc/sv/ntpd /var/service
-    - $ ln -s /etc/sv/isc-ntpd /var/service
 ```
 
 - Hostname
@@ -176,7 +174,6 @@ Mount point | Partition | Partition type | Suggested size
     - $ ehco "static domain_name_servers=1.1.1.1 1.0.0.1" >> /etc/dhcpcd.conf
     - $ cp -R /etc/sv/dhcpcd-eth0 /etc/sv/dhcpcd-enp0s31f6
     - $ sed -i 's/eth0/enp0s31f6/' /etc/sv/dhcpcd-enp0s31f6/run
-    - $ ln -sf /etc/sv/dhcpcd-enp0s31f6 /var/service   # enable internet
     -
 ```
 
@@ -242,6 +239,9 @@ early_microcode=yes
 
 - Users
 ```sh
+    - $ ln -s /etc/sv/ntpd /var/service
+    - $ ln -s /etc/sv/isc-ntpd /var/service
+    - $ ln -sf /etc/sv/dhcpcd-enp0s31f6 /var/service   # enable internet
     - $ xbps-install -S zsh
     - $ useradd -m -G users,wheel,input,video,audio,storage,disk -s /bin/zsh hoaxdream
     - $ passwd hoaxdream
