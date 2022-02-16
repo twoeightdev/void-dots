@@ -8,6 +8,7 @@ dots
 .config/cron/
 .config/dev/personal/
 .config/dev/rsync/
+.config/dev/rUI/
 .config/dev/startpage/
 .config/dev/void-bootstrap/
 .config/dev/void-dmenu/
