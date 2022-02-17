@@ -229,6 +229,7 @@ early_microcode=yes
     - $ ls /boot    # show kernel version
     - $ blkid -s UUID -o value /dev/nvme0n1p2   # root parition UUID
     # in my case i use nvme so i'll just do /dev/nvme0n1p2 -> root nvme partition
+    # it is much better if you use UUID.
     # this is just one line kernel parameter i just put \ so i can easily read them.
     - $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=/dev/nvme0n1p2 \
     - $ rw quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 \
@@ -248,7 +249,9 @@ early_microcode=yes
 
 - Users
 ```sh
-    - $ ln -sf /etc/sv/dhcpcd-enp0s31f6 /var/service   # enable internet
+    # enable internet if using dhcpcd
+    # if using rc.local no need to do this and just skip to installing zsh and add user.
+    - $ ln -sf /etc/sv/dhcpcd-enp0s31f6 /var/service
     - $ xbps-install -S zsh
     - $ useradd -m -G users,wheel,input,video,audio,storage,disk -s /bin/zsh hoaxdream
     - $ passwd hoaxdream
@@ -256,6 +259,7 @@ early_microcode=yes
 
 - Sudoers
 ```sh
+    # edit sudoers
     - $ visudo
     - Exit root and login user
 ```
