@@ -1,2 +1,3 @@
+# Type sudo -E crontab -e
 0 */2 * * * /usr/bin/xbps-install -S && pkill -RTMIN+16 dwmblocks
 5 */2 * * * /usr/bin/pacman -Syuw --noconfirm && pkill -RTMIN+16 dwmblocks
