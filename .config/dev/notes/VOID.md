@@ -119,7 +119,7 @@ Mount point | Partition | Partition type | Suggested size
 
 - Copy DNS configuration
 ```sh
-    - $ cp /etc/resolv.conf /mnt/etc/
+    - $ cp /etc/resolv.conf /mnt/etc/   # nameserver 192.168.1.1
 ```
 
 - Chroot
