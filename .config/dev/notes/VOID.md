@@ -167,6 +167,11 @@ Mount point | Partition | Partition type | Suggested size
 
 - Network
 ```
+    - # 1st method: /etc/rc.local
+    - ip link set dev enp0s31f6 up
+    - ip addr add 192.168.0.100/24 brd + dev enp0s31f6
+    - ip route add default via 192.168.0.1
+    - # 2nd method dhcpcd
     - $ echo "static ip_address=192.168.0.1/100" >> /etc/dhcpcd.conf
     - $ echo "static routers=192.168.0.1" >> /etc/dhcpcd.conf
     - $ ehco "static domain_name_servers=1.1.1.1 1.0.0.1" >> /etc/dhcpcd.conf
