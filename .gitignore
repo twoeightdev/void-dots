@@ -71,3 +71,4 @@ dots
 .local/share/weatherreport
 .local/var/service/
 .pki/
+.ssh/
