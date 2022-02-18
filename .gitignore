@@ -36,6 +36,7 @@ dots
 .config/mpd/sticker.sql
 .config/msmtp/config
 .config/mutt/
+.config/mpv/watch_later/
 .config/ncmpcpp/error.log
 .config/newsboat/error.log
 .config/notmuchrc
