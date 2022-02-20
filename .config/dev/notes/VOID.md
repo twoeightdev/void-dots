@@ -119,7 +119,9 @@ Mount point | Partition | Partition type | Suggested size
 
 - Copy DNS configuration
 ```sh
-    - $ cp /etc/resolv.conf /mnt/etc/   # nameserver 192.168.1.1
+    - $ cp /etc/resolv.conf /mnt/etc/
+nameserver 1.1.1.1
+nameserver 1.0.0.1
 ```
 
 - Chroot
@@ -216,8 +218,9 @@ use_fstab=yes
 compress="cat"
 # omit_dracutmodules+ is just one line. i just put \ so i can easily read them.
 # and this comment is not included with boot.conf
-omit_dracutmodules+=" dash i18n rpmversion convertfs btrfs lvm qemu multipatch qemu-net \
-lunmask fstab-sys securityfs biosdevname dmraid dmsquash-live mdraid nbd nfs "
+omit_dracutmodules+=" dash i18n rpmversion convertfs btrfs lvm qemu \
+multipatch qemu-net lunmask fstab-sys securityfs biosdevname \
+dmraid dmsquash-live mdraid nbd nfs "
 nofscks=yes
 no_hostonly_commandline=yes
 early_microcode=yes
@@ -231,9 +234,10 @@ early_microcode=yes
     # in my case i use nvme so i'll just do /dev/nvme0n1p2 -> root nvme partition
     # it is much better if you use UUID.
     # this is just one line kernel parameter i just put \ so i can easily read them.
-    - $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u 'root=/dev/nvme0n1p2 \
-    - $ rw quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 nowatchdog ipv6.disable=1 \
-    - $ udev.log_level=3 initrd=\initramfs-5.11.12_1.img' --verbose \
+    - $ efibootmgr -d /dev/nvme0n1 -p Y -c -L "Void" -l /vmlinuz-5.11.12_1 -u \
+    - $ 'root=/dev/nvme0n1p2 rw quiet loglevel=0 console=tty2 nvidia-drm.modeset=1 \
+    - $ nowatchdog ipv6.disable=1 udev.log_level=3 \
+    - $ initrd=\initramfs-5.11.12_1.img' --verbose
 ```
 
 - Finalization
@@ -274,6 +278,7 @@ early_microcode=yes
     - $ sudo ./ssd.sh       # Run only for fresh disk configured for my system
     - $ ./setup.sh          # You only need this, install dot first
     - $ sudo ./root.sh      # Needs to be run as root configured for my system
+    - $ sudo ./post.sh      # Needs to be run as root configured for my system
     - $ sudo reboot
 ```
 
