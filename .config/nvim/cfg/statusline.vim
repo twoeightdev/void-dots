@@ -25,83 +25,83 @@ let g:none          = ["none", "none"]
 highlight Comment cterm=italic gui=italic
 
 function! g:C(scope, bg, fg, attr)
-  exec "hi ".a:scope "ctermbg=".a:bg[0] "ctermfg=".a:fg[0] "cterm=".a:attr "guibg=".a:bg[1] "guifg=".a:fg[1] "gui=".a:attr
+    exec "hi ".a:scope "ctermbg=".a:bg[0] "ctermfg=".a:fg[0] "cterm=".a:attr "guibg=".a:bg[1] "guifg=".a:fg[1] "gui=".a:attr
 endfunction
 
 " color depending on mode
 function! RedrawModeColors(mode)
-  " normal mode
-  if a:mode ==# 'n'
-    call g:C("Mode", g:dark.black, g:dark.blue, "none")
-    " insert mode
-  elseif a:mode ==# 'i'
-    call g:C("Mode", g:dark.black, g:dark.yellow, "none")
-    " replace mode
-  elseif a:mode ==# 'R'
-    call g:C("Mode", g:dark.black, g:dark.red, "none")
-    " visual mode
-  elseif a:mode ==# 'v' || a:mode ==# 'V' || a:mode ==# '^V'
-    call g:C("Mode", g:dark.black, g:dark.magenta, "none")
-    " command mode
-  elseif a:mode ==# 'c'
-    call g:C("Mode", g:dark.black, g:dark.green, "none")
-    " terminal mode
-  elseif a:mode ==# 't'
-    call g:C("Mode", g:dark.black, g:dark.red, "none")
-  endif
-  " return empty string so as not to display anything in the statusline
-  return ''
+    " normal mode
+    if a:mode ==# 'n'
+        call g:C("Mode", g:dark.black, g:dark.blue, "none")
+        " insert mode
+    elseif a:mode ==# 'i'
+        call g:C("Mode", g:dark.black, g:dark.yellow, "none")
+        " replace mode
+    elseif a:mode ==# 'R'
+        call g:C("Mode", g:dark.black, g:dark.red, "none")
+        " visual mode
+    elseif a:mode ==# 'v' || a:mode ==# 'V' || a:mode ==# '^V'
+        call g:C("Mode", g:dark.black, g:dark.magenta, "none")
+        " command mode
+    elseif a:mode ==# 'c'
+        call g:C("Mode", g:dark.black, g:dark.green, "none")
+        " terminal mode
+    elseif a:mode ==# 't'
+        call g:C("Mode", g:dark.black, g:dark.red, "none")
+    endif
+    " return empty string so as not to display anything in the statusline
+    return ''
 endfunction
 
 " nice mode name
 function! ModeName(mode)
-  if a:mode ==# 'n'
-    return 'NORMAL'
-    " insert mode
-  elseif a:mode ==# 'i'
-    return 'INSERT'
-    " replace mode
-  elseif a:mode ==# 'R'
-    return 'REPLACE'
-    " visual mode
-  elseif a:mode ==# 'v'
-    return 'VISUAL'
-  elseif a:mode ==# 'V'
-    return 'V-LINE'
-  elseif a:mode ==# '^V'
-    return 'V-BLOCK'
-    " command mode
-  elseif a:mode ==# 'c'
-    return 'COMMAND'
-    " terminal mode
-  elseif a:mode ==# 't'
-    return 'TERMINAL'
-  endif
+    if a:mode ==# 'n'
+        return 'NORMAL'
+        " insert mode
+    elseif a:mode ==# 'i'
+        return 'INSERT'
+        " replace mode
+    elseif a:mode ==# 'R'
+        return 'REPLACE'
+        " visual mode
+    elseif a:mode ==# 'v'
+        return 'VISUAL'
+    elseif a:mode ==# 'V'
+        return 'V-LINE'
+    elseif a:mode ==# '^V'
+        return 'V-BLOCK'
+        " command mode
+    elseif a:mode ==# 'c'
+        return 'COMMAND'
+        " terminal mode
+    elseif a:mode ==# 't'
+        return 'TERMINAL'
+    endif
 endfunction
 
 " git
 function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
 
 " modification mark
 function! SetModifiedSymbol(modified)
-  if a:modified == 1
-    hi ModifiedBody ctermbg=NONE cterm=NONE ctermfg=7
-    return '+'
-  else
-    hi ModifiedBody ctermbg=NONE cterm=bold ctermfg=7
-    return ''
-  endif
+    if a:modified == 1
+        hi ModifiedBody ctermbg=NONE cterm=NONE ctermfg=7
+        return '+'
+    else
+        hi ModifiedBody ctermbg=NONE cterm=bold ctermfg=7
+        return ''
+    endif
 endfunction
 
 " filetype
 function! SetFiletype(filetype)
-  if a:filetype ==# ''
-    return '-'
-  else
-    return a:filetype
-  endif
+    if a:filetype ==# ''
+        return '-'
+    else
+        return a:filetype
+    endif
 endfunction
 
 " statusbar
@@ -128,12 +128,12 @@ set statusline+=%#Mode#%t
 " git branch
 let branch = GitBranch()
 if !empty(branch)
-  set statusline+=%#Separator#▓▒░
-  set statusline+=%#Separator#░▒▓
-  set statusline+=%#Git#%{FugitiveHead()}
-  set statusline+=%#Separator#█▓▒░
+    set statusline+=%#Separator#▓▒░
+    set statusline+=%#Separator#░▒▓
+    set statusline+=%#Git#%{FugitiveHead()}
+    set statusline+=%#Separator#█▓▒░
 else
-  set statusline+=%#Separator#█▓▒░
+    set statusline+=%#Separator#█▓▒░
 endif
 
 " modified status

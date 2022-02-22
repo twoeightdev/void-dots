@@ -3,7 +3,7 @@ let g:vimwiki_list = [{
             \ 'auto_diary_index':1,
             \ 'automatic_nested_syntaxes':1,
             \ 'syntax': 'markdown', 'ext': '.md'},
-            \ {'path': '~/.config/dev/rsync/org/',
+            \ {'path': '~/.config/dev/rsync/notes/',
             \ 'syntax': 'markdown', 'ext': '.md'
             \}]
 

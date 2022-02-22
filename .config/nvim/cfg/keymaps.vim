@@ -40,11 +40,5 @@
   nnoremap <C-l> <C-w>l
   nnoremap <C-e> <C-w>q
 
-" Use alt + hjkl to resize windows
-  nnoremap <silent> <M-j>    :resize -2<CR>
-  nnoremap <silent> <M-k>    :resize +2<CR>
-  nnoremap <silent> <M-h>    :vertical resize -2<CR>
-  nnoremap <silent> <M-l>    :vertical resize +2<CR>
-
 " Save file as sudo on files that require root permission
   cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
