@@ -1,6 +1,3 @@
-" Define separator
-let g:which_key_sep = '-'
-
 " Hide status line
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
@@ -20,24 +17,33 @@ let g:which_key_use_floating_win = 0
 
 " Single leader mappings
 let g:which_key_map['.'] = [ ':e $MYVIMRC',             'open init' ]
-let g:which_key_map['w'] = [ ':x',                      'exit save' ]
+let g:which_key_map['x'] = [ ':x',                      'exit save' ]
 let g:which_key_map['r'] = [ ':w',                      'save' ]
 let g:which_key_map['q'] = [ ':q!',                     'exit without save' ]
 let g:which_key_map['c'] = [ ':let @/ = ""',            'clear hlsearch' ]
 let g:which_key_map['t'] = [ ':retab',                  'retab' ]
 let g:which_key_map['h'] = [ ':ColorToggle',            'Colorizer' ]
-let g:which_key_map['m'] = [ ':MarkdownPreviewToggle',  'Markdown Preview' ]
 let g:which_key_map['i'] = [ ':IndentLinesToggle',      'Toggle Indentguide' ]
 let g:which_key_map['e'] = [ ':FZF ~',                  'FZF Home' ]
 let g:which_key_map['d'] = [ ':bd!',                    'delete buffer' ]
 let g:which_key_map[';'] = [ 'q:',                      'commands history' ]
 let g:which_key_map['z'] = [':FZF',                     'FZF' ]
+let g:which_key_map['1'] = ['1gt',                      'tab1' ]
+let g:which_key_map['2'] = ['2gt',                      'tab2' ]
+let g:which_key_map['3'] = ['3gt',                      'tab3' ]
+let g:which_key_map['4'] = ['4gt',                      'tab4' ]
+let g:which_key_map['5'] = ['5gt',                      'tab5' ]
 
 " Actions is for a
 let g:which_key_map.a = {
     \ 'name' : '+actions',
     \ 'n' : [ ':set nonumber!',                         'line-numbers' ],
     \ 'r' : [ ':set norelativenumber!',                 'relative line nums' ],
+    \ 's' : [ ':new',                                   'horizontal split' ],
+    \ 'v' : [ ':vnew',                                  'vertical split' ],
+    \ 'c' : [ ':CalendarH',                             'Calendar' ],
+    \ 't' : [ ':r!date "+\%I:\%M\%p"',                  'Time' ],
+    \ 'd' : [ ':r!date "+<\%Y-\%B>"',                     'Date' ],
     \ }
 
 " Buffer is for b
