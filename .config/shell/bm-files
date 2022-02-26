@@ -3,7 +3,7 @@ bf    $XDG_CONFIG_HOME/bm/bm-files
 bd    $XDG_CONFIG_HOME/bm/bm-dirs
 cfx   $XDG_CONFIG_HOME/xorg/xresources
 
-cfv   $XDG_CONFIG_HOME/nvim/init.vim
+cfv   $XDG_CONFIG_HOME/nvim/lua/options.lua
 cfz   $ZDOTDIR/.zshrc
 cfa   $XDG_CONFIG_HOME/shell/aliasrc
 cfn   $XDG_CONFIG_HOME/newsboat/config
