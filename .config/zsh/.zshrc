@@ -83,7 +83,7 @@ lfcd () {
     if [ -f "$tmp" ]; then
         dir="$(cat "$tmp")"
         rm -f "$tmp" >/dev/null
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir" && ls -hNA --color=auto --group-directories-first
     fi
 }
 bindkey -s '^o' 'lfcd\n'
@@ -128,10 +128,10 @@ bindkey '\ez' fzf-file-widget
 e() { fzf | xargs -r $EDITOR ;}
 
 # cd to any directory in $HOME
-q() { cd "$(find $HOME -type d 2>/dev/null | fzf)" && ls -a ;}
+q() { cd "$(find $HOME -type d 2>/dev/null | fzf)" && ls -A ;}
 
 # cd to any directory in /media
-qm() { cd "$(find "/media/" -type d 2>/dev/null | fzf)" && ls -a ;}
+qm() { cd "$(find "/media/" -type d 2>/dev/null | fzf)" && ls -A ;}
 
 # Syntax highlighting
 if [ ! -d ~/.config/zsh/zplug/zsh-syntax-highlighting ]; then
