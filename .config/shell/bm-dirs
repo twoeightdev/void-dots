@@ -6,6 +6,7 @@ w   $HOME/.config/dev
 b   $HOME/.local/bin
 u   $HOME/.config/mnt
 t   $HOME/.config/ss
+n   $HOME/.config/nvim/lua/plugins
 i   /mnt
 x   /media/core
 f   /media/data
