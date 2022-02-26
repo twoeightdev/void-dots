@@ -116,10 +116,10 @@ c.downloads.location.prompt = False
 c.downloads.remove_finished = 1000
 
 # Font and define colors values
-c.fonts.default_family = ['Noto Sans Mono']
+c.fonts.default_family = ['Inconsolata']
 c.fonts.default_size = '18px'
-c.fonts.web.family.cursive = 'Noto Sans Mono'
-c.fonts.web.family.sans_serif = 'Noto Sans Mono'
+c.fonts.web.family.cursive = 'Inconsolata'
+c.fonts.web.family.sans_serif = 'Inconsolata'
 c.fonts.completion.category = 'bold default_size default_family'
 c.fonts.contextmenu = '16px default_family'
 
