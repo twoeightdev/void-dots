@@ -40,8 +40,7 @@ dots
 .config/ncmpcpp/error.log
 .config/newsboat/error.log
 .config/notmuchrc
-.config/nvim/autoload/
-.config/nvim/plugged/
+.config/nvim/plugin/
 .config/pulse/
 .config/qutebrowser/autoconfig.yml
 .config/qutebrowser/bookmarks/urls
@@ -58,6 +57,7 @@ dots
 .local/share/applications/steam.desktop
 .local/share/applications/wine*
 .local/share/desktop-directories/
+.local/share/fonts/.uuid
 .local/share/icons/
 .local/share/lf/
 .local/share/lutris/
