@@ -1,4 +1,4 @@
 #!/bin/sh
 
-sudo xbps-install -Su
+sudo xbps-install -Syu
 pkill -RTMIN+16 dwmblocks
