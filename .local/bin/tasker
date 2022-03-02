@@ -1,0 +1,60 @@
+#!/bin/sh
+# Script to add daily task for taskwarrior
+
+# Clear the variables just in case a recent session set them
+PRJNAME=""
+TAGNAME=""
+LEVELVAL=""
+RECURVAL=""
+DUEVAL=""
+UNTILVAL=""
+WAITVAL=""
+TSKNAME=""
+
+clear
+
+echo "\033[0;32mENTER PROJECT NAME"
+read PRJNAME
+if [ -z $PRJNAME ] ; then PRJNAME="" ; fi
+
+echo "\033[0;32mENTER ANY TAG:home,dev,work"
+read TEMPTAGNAME
+TAGNAME="+"`echo $TEMPTAGNAME | sed 's/ / +/g'`
+if [ -z $TEMPTAGNAME ] ; then TAGNAME=""; fi
+
+echo "\033[0;32mENTER PRIORITY:L,M,H"
+read TEMPLEVEL
+LEVELVAL="priority:"`echo $TEMPLEVEL | sed 's/ / priority:/g'`
+if [ -z $TEMPLEVEL ] ; then LEVELVAL=""; fi
+
+echo "\033[0;32mENTER RECURRANCE:daily"
+read TEMPRECUR
+RECURVAL="recur:"`echo $TEMPRECUR | sed 's/ / recur:/g'`
+if [ -z $TEMPRECUR ] ; then RECURVAL=""; fi
+
+echo "\033[0;32mENTER DUE:Exact task date,time or both"
+read TEMPDUE
+DUEVAL="due:"`echo $TEMPDUE | sed 's/ / due:/g'`
+#DUEVAL="due:"`echo $TEMPDUE | sed 's/^/due:/'`     # Need to fix this to be able to use date+time(2022-03-10 23:30)
+if [ -z $TEMPDUE ] ; then DUEVAL=""; fi
+
+echo "\033[0;32mENTER UNTIL:Time it gets remove"
+read "TEMPUNTIL"
+UNTILVAL="until:"`echo $TEMPUNTIL | sed 's/ / until:/g'`
+if [ -z $TEMPUNTIL ] ; then UNTILVAL=""; fi
+
+echo "\033[0;32mENTER WAIT:Time before the task shows up or just type due"
+read TEMPWAIT
+WAITVAL="wait:"`echo $TEMPWAIT | sed 's/ / wait:/g'`
+if [ -z $TEMPWAIT ] ; then WAITVAL=""; fi
+
+while :
+do
+    clear
+    echo "\033[0;32mENTER TASK DESCRIPTION (Project:$PRJNAME)"
+    echo "\033[0;32mor enter again to quit"
+    read TSKNAME
+        if [ -z $TSKNAME ] ; then exit ; fi
+        task add project\:$PRJNAME $TAGNAME $LEVELVAL $RECURVAL $DUEVAL $UNTILVAL $WAITVAL $TSKNAME 1>/dev/null
+    echo -e "\e[0;m"
+done

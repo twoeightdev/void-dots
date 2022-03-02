@@ -1,0 +1,4 @@
+#!/bin/sh
+# View converted pdf in zathura
+
+ls -r ~/.config/dev/personal/pdf/*.pdf | head -n1 | xargs zathura

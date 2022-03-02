@@ -1,0 +1,20 @@
+#!/bin/sh
+
+waitbydate () {
+    echo "\nMon\n";
+    task rc.verbose=label monwait;
+    echo "\nTue\n";
+    task rc.verbose=label tuewait;
+    echo "\nWed\n";
+    task rc.verbose=label wedwait;
+    echo "\nThu\n";
+    task rc.verbose=label thuwait;
+    echo "\nFri\n";
+    task rc.verbose=label friwait;
+    echo "\nSat\n";
+    task rc.verbose=label satwait;
+    echo "\nSun\n";
+    task rc.verbose=label sunwait;
+}
+
+waitbydate
