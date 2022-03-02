@@ -1,26 +1,15 @@
 #!/bin/sh
 # Script for my temporary notes.
-# Notes from here are transfered to emacs org mode.
+# Notes from here are transfered to vimwiki.
 
-NOTESDIR="$HOME/.config/dev/personal/notes"
-EDITOR="$EDITOR"
+NOTEFILE="$HOME/.config/dev/personal/quicknotes/$(date +%Y-%d-%B-%A).md"
 
-new() {
-    [ ! -d "$NOTESDIR/date" ] && mkdir -p $NOTESDIR/By_date
-    TIME="Time: $(date '+%I:%M:%S %P') "
+if [ ! -f $NOTEFILE ]; then
+    echo "### Notes for $(date +%Y-%d-%B-%A)" > $NOTEFILE
+fi
 
-    cat >>$NOTESDIR/By_date/$1 <<EOF
----
-
-$TIME
-
-EOF
-
-$EDITOR "+:normal G" "+star" $NOTESDIR/By_date/"$1" && exit
-}
-
-while true; do
-    clear -x
-    name="$(date '+%Y-%d-%B-%A')"
-    new $name.md
-done
+$EDITOR -c "norm Go" \
+    -c "norm GoTime: $(date +%I:%M%p)" \
+    -c "norm G1o" \
+    -c "norm zz" \
+    -c "startinsert" $NOTEFILE
