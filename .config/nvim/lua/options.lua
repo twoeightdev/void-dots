@@ -1,14 +1,17 @@
 local options = {
-    --conceallevel = 2,
+    conceallevel = 2,
     --concealcursor = 'nc',
-    background = 'light',
-    termguicolors = true,
+    background = 'light',                   -- Set to light if not using colorscheme
+    --signcolumn = 'number',                  -- Move gitsigns in number line
+    signcolumn = "yes",
+    hidden = true,
     clipboard = 'unnamedplus',              -- System clipboard
-    ignorecase = true,                      -- Ignore case in search patterns
+    ignorecase = false,                     -- Ignore case in search patterns
     mouse = 'a',                            -- Allow the mouse to use
     wrap = false,                           -- Wrap long lines
-    --cursorline = true,                      -- Highlight the current line
-    hlsearch = true,                        -- Highlight all match in search patterns
+    --updatetime = 300,                       -- Faster completion (4000ms default)
+    cursorline = true,                      -- Highlight the current line
+    hlsearch = false,                       -- Highlight all match in search patterns
     showmode = false,                       -- Stop showing INSERT
     smartindent = true,                     -- Make indenting smart
     showcmd = false,                        -- Command in the last line
@@ -24,6 +27,8 @@ local options = {
     laststatus = 2,                         -- Show status line
     number = true,                          -- Show line number
     relativenumber = true,                  -- Show relative number
+    scrolloff = 8,
+    sidescrolloff = 8,
     shortmess = vim.opt.shortmess + 'icw',  -- Avoid hit-enter prompt
     timeoutlen = 300,                       -- Time to wait for mapped sequence
     fillchars = {                           -- Remove annoying ~
@@ -67,37 +72,31 @@ end
 -- Autocommands
 local cmd = vim.cmd
 
-cmd [[au BufWritePost dunstrc !pkill dunst; dunst &]]
-cmd [[au BufWritePost *Xresources,Xdefaults,xresources,xcolor !xrdb %]]
-cmd [[au BufWritePost *sxhkdrc !pkill -USR1 sxhkd]]
-cmd [[au BufWritePost bm-files,bm-dirs !shortcuts]]
-cmd [[au BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]]
-cmd [[au BufWritePre * let currPos = getpos(".")]]
-cmd [[au BufWritePre * %s/\s\+$//e]]
-cmd [[au BufWritePre * %s/\n\+\%$//e]]
-cmd [[au BufWritePre * cal cursor(currPos[1], currPos[2])]]
-
--- Autocommands
---local au = require('autocmd')
---au.addListeners({
---    -- Reload when configuration is updated
---    ['user-binary'] = {
---        [[BufWritePost dunstrc !pkill dunst; dunst &]],
---        [[BufWritePost *Xresources,Xdefaults,xresources,xcolor !xrdb %]],
---        [[BufWritePost *sxhkdrc !pkill -USR1 sxhkd]],
---        [[BufWritePost bm-files,bm-dirs !shortcuts]],
---    },
---    -- Disable auto commenting on newline
---    ['user-newline'] = {
---        [[BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]]
---    },
---    -- Automatically deletes all trailing white space and newlines
---    -- at the end of file on save. & reset cursor position
---    ['user-whitespace'] = {
---        [[BufWritePre * let currPos = getpos(".")]],
---        [[BufWritePre * %s/\s\+$//e]],
---        [[BufWritePre * %s/\n\+\%$//e]],
---        [[BufWritePre *.[ch] %s/\%$/\r/e]],
---        [[BufWritePre * cal cursor(currPos[1], currPos[2])]],
---    },
---})
+-- Reload programs when configuration is updated
+cmd [[
+    augroup _progs
+        autocmd!
+        autocmd BufWritePost *Xresources,Xdefaults,xresources,xcolor !xrdb %
+        autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+        autocmd BufWritePost dunstrc !pkill dunst; dunst &
+        autocmd BufWritePost bm-files,bm-dirs !shortcuts
+    augroup end
+]]
+-- Disable auto comment on newline
+cmd [[
+    augroup _comment
+        autocmd!
+        autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    augroup end
+]]
+-- Delete all trailing whitespace and newlines
+cmd [[
+    augroup _whitespace
+        autocmd!
+        autocmd BufWritePre * let currPos = getpos(".")
+        autocmd BufWritePre * %s/\s\+$//e
+        autocmd BufWritePre * %s/\n\+\%$//e
+        autocmd BufWritePre *.[ch] %s/\%$/\r/e
+        autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
+    augroup end
+]]
