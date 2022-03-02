@@ -1,23 +1,22 @@
--- following options are the default
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
 vim.g.nvim_tree_icons = {
     default = "",
     symlink = "",
     git = {
-        unstaged = "",
-        staged = "S",
+        unstaged = "✗",
+        staged = "✓",
         unmerged = "",
         renamed = "➜",
         deleted = "",
-        untracked = "U",
+        untracked = "★",
         ignored = "◌",
     },
     folder = {
-        default = "",
+        default = "",
         open = "",
         empty = "",
         empty_open = "",
         symlink = "",
+        symlink_open = "",
     },
 }
 
@@ -53,8 +52,8 @@ nvim_tree.setup {
     diagnostics = {
         enable = true,
         icons = {
-            hint = "",
-            info = "",
+            hint = "",
+            info = "",
             warning = "",
             error = "",
         },
@@ -78,7 +77,7 @@ nvim_tree.setup {
         timeout = 500,
     },
     view = {
-        width = 30,
+        width = 25,
         height = 30,
         hide_root_folder = false,
         side = "left",

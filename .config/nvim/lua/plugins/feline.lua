@@ -44,7 +44,7 @@ end
 
 -- My component
 local comps = {
-    -- vi_mode -> NORMAL, INSERT..
+    -- vi_mode
     vi_mode = {
         left = {
             provider = function()
@@ -115,7 +115,7 @@ local comps = {
             }
         },
     },
-    -- git info
+    -- Git info
     git = {
         branch = {
             provider = 'git_branch',

@@ -5,7 +5,7 @@ end
 
 indent_blankline.setup {
     char = "▏",
-    show_first_indent_level = false,
+    show_first_indent_level = true,
     filetype_exclude = {
         'help',
         'git',
