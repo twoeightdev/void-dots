@@ -39,6 +39,8 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export INPUTRC="$ZDOTDIR/inputrc"
 export MBSYNCRC="HOME/.config/mbsync/mbsyncrc"
 export SVDIR="$HOME/.local/var/service"
+export TASKRC="$HOME/.config/task/taskrc"
+export TASKDATA="$HOME/.config/task"
 
 # Misc
 export HISTSIZE=1000
