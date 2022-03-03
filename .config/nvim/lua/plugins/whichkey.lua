@@ -100,8 +100,9 @@ local mappings = {
     a = {
         name = "actions",
         r = { "<cmd>retab<cr>", "retab" },
-        t = { "a<C-r>=strftime('%I:%M:%S%p')<CR>", "Time" },
-        d = { "a<C-r>=strftime('%a/%d/%b/%Y')<CR>", "Date" },
+        t = { "a<C-r>=strftime('Time:<%I:%M-%p>')<CR>", "time" },
+        d = { "a<C-r>=strftime('%a/%d/%b/%Y')<CR>", "date" },
+        D = { "a<C-r>=strftime('<%Y-%m-%d>')<CR>", "tododate" },
         s = { "<cmd>setlocal spell! spelllang=en_us<cr>", "Spell Check" },
         h = { "<cmd>new<cr>", "Hsplit" },
         v = { "<cmd>vnew<cr>", "Vsplit" },
