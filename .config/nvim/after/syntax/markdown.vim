@@ -16,3 +16,7 @@ syn region markdownLink matchgroup=markdownLinkDelimiter start="(" end=")" conta
 "call matchadd('Conceal', '\[x\]', 0, 12, {'conceal': ''})
 "hi Conceal guibg=NONE
 "hi clear Conceal
+
+" https://vi.stackexchange.com/a/4003/16249
+" Ignore URL and email address in spell file
+syntax match NoSpellAcronym '\<\(\u\|\d\)\{3,}s\?\>' contains=@NoSpell
