@@ -31,11 +31,15 @@ local options = {
     sidescrolloff = 8,
     shortmess = vim.opt.shortmess + 'icw',  -- Avoid hit-enter prompt
     timeoutlen = 300,                       -- Time to wait for mapped sequence
-    fillchars = {                           -- Remove annoying ~
-        eob = ' ',
+    fillchars = {
+        eob = ' ',                          -- Suppress ~ at end of buffer
         vert = '│',
         msgsep = '‾',
-        fold = ' '
+        diff = '╱', -- alternatives = ⣿ ░ ─
+        fold = ' ',
+        foldopen = '▾',
+        foldsep = '│',
+        foldclose = '▸'
     },
 }
 
