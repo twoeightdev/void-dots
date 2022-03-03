@@ -25,6 +25,7 @@ dots
 .config/emacs/recentf
 .config/fzf/
 .config/glib-2.0/
+.config/htop/
 .config/lf/shrc
 .config/lutris/
 .config/mbsync/mbsyncrc
