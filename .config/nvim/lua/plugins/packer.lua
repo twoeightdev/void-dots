@@ -68,6 +68,8 @@ return packer.startup(function(use)
     use "vimwiki/vimwiki"                               -- Note taking
     use "tools-life/taskwiki"                           -- Taskwarrior
     use "mattn/calendar-vim"                            -- Calendar for vimwiki
+    use "NFrid/due.nvim"
+    use "folke/todo-comments.nvim"
 
     -- Automatically setup your configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then
