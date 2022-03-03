@@ -44,7 +44,7 @@ alias \
 
 # Make
 alias \
-    mki="make && sudo make install" \
+    mi="make && sudo make install" \
     cm="make clean && rm -f config.h && git reset --hard origin/main"
 
 # Miscellaneous
