@@ -30,7 +30,8 @@ c.content.blocking.adblock.lists = [
 
 # Search engines
 c.url.searchengines = {
-        "DEFAULT": "https://duckduckgo.com/?q={}",
+        "DEFAULT": "https://www.google.fi/search?q={}",
+        #"DEFAULT": "https://duckduckgo.com/?q={}",
         "aw": "https://wiki.archlinux.org/?search={}",
         "gw": "https://wiki.gentoo.org/?search-{}",
         "yt": "https://youtube.com/results?search_query={}",
