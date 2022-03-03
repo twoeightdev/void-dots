@@ -35,7 +35,7 @@ if [ -z $TEMPRECUR ] ; then RECURVAL=""; fi
 echo "\033[0;32mENTER DUE:Exact task date,time or both"
 read TEMPDUE
 DUEVAL="due:"`echo $TEMPDUE | sed 's/ / due:/g'`
-#DUEVAL="due:"`echo $TEMPDUE | sed 's/^/due:/'`     # Need to fix this to be able to use date+time(2022-03-10 23:30)
+#DUEVAL="due:"`echo $TEMPDUE | sed 's/^/due:/'`
 if [ -z $TEMPDUE ] ; then DUEVAL=""; fi
 
 echo "\033[0;32mENTER UNTIL:Time it gets remove"
