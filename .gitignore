@@ -6,6 +6,7 @@ dots
 .cache/
 .config/Signal/
 .config/cron/
+.config/dev/calendar-vim/
 .config/dev/personal/
 .config/dev/rsync/
 .config/dev/rUI/
