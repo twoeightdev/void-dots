@@ -36,7 +36,7 @@ c.url.searchengines = {
         "gw": "https://wiki.gentoo.org/?search-{}",
         "yt": "https://youtube.com/results?search_query={}",
         "w": "https://en.wikipedia.org/?search={}",
-        "g": "https://www.google.fi/search?q={}",
+        #"g": "https://www.google.fi/search?q={}",
         "dgi": "https://duckduckgo.com/?q=!ddgi {}",
         "tw": "twitter.com/{}",
         "dick": "http://en.wiktionary.org/?search={}",
