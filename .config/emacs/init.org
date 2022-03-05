@@ -161,9 +161,9 @@
 #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package org
 	:config
-	(setq org-agenda-files '("~/.config/dev/rsync/org/personal.org"
-							 "~/.config/dev/personal/notes/task.org"
-							 "~/.config/dev/personal/notes/notes.org")))
+	(setq org-agenda-files '("~/.config/dev/rsync/notes/personal.org"
+							 "~/.config/dev/personal/emacs/task.org"
+							 "~/.config/dev/personal/emacs/notes.org")))
 #+END_SRC
 
 ** Org Superstar
