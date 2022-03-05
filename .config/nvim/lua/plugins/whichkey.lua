@@ -81,7 +81,7 @@ local mappings = {
     ["i"] = { "<cmd>WikiIndex<cr>", "notes" },
     ["j"] = { "<cmd>WikiJournal<cr>", "journal" },
     ["e"] = { "<cmd>FZF ~<cr>", "home fzf" },
-    ["c"] = { "<cmd>CalendarH<cr>", "calendar" },
+    ["c"] = { "<cmd>CalendarVR<cr>", "calendar" },
 
     w = {
         name = "wiki",
