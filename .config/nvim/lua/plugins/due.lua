@@ -16,8 +16,8 @@ due_nvim.setup{
     overdue = "OVERDUE",
     overdue_hi = "Error",
     date_hi = "Conceal",
-    pattern_start = "<",
-    pattern_end = ">",
-    use_clock_time = false,
-    default_due_time = "noon",
+    pattern_start = "[",
+    pattern_end = "]",
+    use_clock_time = true,
+    default_due_time = "midnight",
 }
