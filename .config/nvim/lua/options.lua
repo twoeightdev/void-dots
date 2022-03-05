@@ -1,17 +1,18 @@
 local options = {
     conceallevel = 2,
     --concealcursor = 'nc',
-    background = 'light',                   -- Set to light if not using colorscheme
+    background = 'light',                   -- Set if not using colorscheme
     --signcolumn = 'number',                  -- Move gitsigns in number line
     signcolumn = "yes",
+    colorcolumn = "80",
     hidden = true,
     clipboard = 'unnamedplus',              -- System clipboard
     ignorecase = false,                     -- Ignore case in search patterns
     mouse = 'a',                            -- Allow the mouse to use
     wrap = false,                           -- Wrap long lines
-    --updatetime = 300,                       -- Faster completion (4000ms default)
+    updatetime = 300,                       -- Faster completion
     cursorline = true,                      -- Highlight the current line
-    hlsearch = false,                       -- Highlight all match in search patterns
+    hlsearch = false,                       -- Highlight match in search
     showmode = false,                       -- Stop showing INSERT
     smartindent = true,                     -- Make indenting smart
     showcmd = false,                        -- Command in the last line
@@ -90,7 +91,7 @@ cmd [[
 cmd [[
     augroup _comment
         autocmd!
-        autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+        autocmd FileType * setlocal fo-=c fo-=r fo-=o
     augroup end
 ]]
 -- Delete all trailing whitespace and newlines
