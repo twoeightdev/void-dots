@@ -35,3 +35,7 @@ keymap("n", "<M-7>", "7gt", opts)
 keymap("n", "<M-8>", "8gt", opts)
 keymap("n", "<M-9>", "9gt", opts)
 keymap("n", "<M-0>", "10gt", opts)
+
+-- Wiki
+keymap("n", "<cr>", ":WikiLinkFollow<cr>", opts)
+keymap("n", "<bs>", ":WikiLinkReturn<cr>", opts)
