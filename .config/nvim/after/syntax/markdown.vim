@@ -8,15 +8,11 @@ syn region markdownLinkText matchgroup=markdownLinkTextDelimiter start="!\=\[\%(
 syn region markdownLink matchgroup=markdownLinkDelimiter start="(" end=")" contains=markdownUrl keepend contained conceal
 
 " markdown checkbox no indention
-"syntax match todoCheckbox '\v(\s+)?-\s\[\s\]'hs=e-4 conceal cchar=
-"syntax match todoCheckbox '\v(\s+)?-\s\[X\]'hs=e-4 conceal cchar=
-
-" markdown checkbox with indention
-"call matchadd('Conceal', '\[\ \]', 0, 11, {'conceal': ''})
-"call matchadd('Conceal', '\[x\]', 0, 12, {'conceal': ''})
-"hi Conceal guibg=NONE
-"hi clear Conceal
+syntax match todoCheckbox '\v(\s+)?-\s\[\s\]'hs=e-4 conceal cchar=
+syntax match todoCheckbox '\v(\s+)?-\s\[X\]'hs=e-4 conceal cchar=
+hi Conceal guibg=NONE
+hi clear Conceal
 
 " https://vi.stackexchange.com/a/4003/16249
 " Ignore URL and email address in spell file
-syntax match NoSpellAcronym '\<\(\u\|\d\)\{3,}s\?\>' contains=@NoSpell
+ syntax match NoSpellAcronym '\<\(\u\|\d\)\{3,}s\?\>' contains=@NoSpell
