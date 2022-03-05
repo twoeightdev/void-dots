@@ -40,36 +40,31 @@ packer.init {
 
 -- Plugins
 return packer.startup(function(use)
-    use "wbthomason/packer.nvim"                        -- Have packer manage itself
-    --use "nvim-lua/popup.nvim"
-    use "nvim-lua/plenary.nvim"                         -- Lua functions used by plugins
-    use "windwp/nvim-autopairs"                         -- Integrates with both cmp & treesitter
-    use "lewis6991/gitsigns.nvim"                       -- Required by feline
-    use "feline-nvim/feline.nvim"                       -- Statusline
-    use "~/.config/fzf"                                 -- Fzf path
-    use "junegunn/fzf.vim"                              -- Fuzzy finder
-    use "lukas-reineke/indent-blankline.nvim"           -- Indent guidelines
-    use "kyazdani42/nvim-tree.lua"                      -- File explorer
-    use "folke/which-key.nvim"                          -- Shows command like emacs
-    use "norcalli/nvim-colorizer.lua"                   -- Color highlighter
-    use "terrortylor/nvim-comment"                      -- Commenter
-    use "eddyekofo94/gruvbox-flat.nvim"                 -- Main theme
+    use "wbthomason/packer.nvim"                -- Have packer manage itself
+    use "nvim-lua/plenary.nvim"                 -- Functions used by plugins
+    use "windwp/nvim-autopairs"                 -- Autopairs
+    use "lewis6991/gitsigns.nvim"               -- Required by feline
+    use "feline-nvim/feline.nvim"               -- Statusline
+    use "~/.config/fzf"                         -- Fzf path
+    use "junegunn/fzf.vim"                      -- Fuzzy finder
+    use "lukas-reineke/indent-blankline.nvim"   -- Indent guidelines
+    use "folke/which-key.nvim"                  -- Shows command like emacs
+    use "norcalli/nvim-colorizer.lua"           -- Color highlighter
+    use "terrortylor/nvim-comment"              -- Commenter
+    use "eddyekofo94/gruvbox-flat.nvim"         -- Main theme
 
     -- Cmp
-    use "hrsh7th/nvim-cmp"                              -- Completion plugin
-    use "hrsh7th/cmp-path"                              -- Path completions
-    use "saadparwaiz1/cmp_luasnip"                      -- Snippet completions
-
-    -- Snippet
-    use "L3MON4D3/LuaSnip"
-    use "rafamadriz/friendly-snippets"
+    use "hrsh7th/nvim-cmp"                      -- Completion plugin
+    use "hrsh7th/cmp-path"                      -- Path completions
 
     -- Note taking
-    use "vimwiki/vimwiki"                               -- Note taking
-    use "tools-life/taskwiki"                           -- Taskwarrior
-    use "mattn/calendar-vim"                            -- Calendar for vimwiki
+    use "lervag/wiki.vim"                       -- Note taking
+    use "lervag/lists.vim"                      -- Checkbox toggle for wiki.vim
+    use "hoaxdream/calendar-vim"                -- Calendar for wiki.vim
     use "NFrid/due.nvim"
     use "folke/todo-comments.nvim"
+    --use "vimwiki/vimwiki"
+    --use "hoaxdream/calendar-vim"
 
     -- Automatically setup your configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then
