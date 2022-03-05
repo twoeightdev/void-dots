@@ -9,7 +9,6 @@ indent_blankline.setup {
     filetype_exclude = {
         'help',
         'git',
-        'NvimTree',
         'text',
         'terminal',
         'packer'
