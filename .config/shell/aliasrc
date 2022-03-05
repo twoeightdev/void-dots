@@ -17,7 +17,7 @@ alias \
 
 # Colorize commands when possible
 alias \
-    ls="ls -hN --color=auto --group-directories-first" \
+    ls="ls -AhN --color=auto --group-directories-first" \
     ll="ls -lA -h --group-directories-first --color=auto" \
     la="ls -A -S1qX" \
     lh="ls -A" \
