@@ -7,7 +7,7 @@ syn region markdownLinkText matchgroup=markdownLinkTextDelimiter start="!\=\[\%(
 " markdownLink is copied from runtime files with 'conceal' appended
 syn region markdownLink matchgroup=markdownLinkDelimiter start="(" end=")" contains=markdownUrl keepend contained conceal
 
-" markdown checkbox no indention
+"markdown checkbox no indention
 syntax match todoCheckbox '\v(\s+)?-\s\[\s\]'hs=e-4 conceal cchar=
 syntax match todoCheckbox '\v(\s+)?-\s\[X\]'hs=e-4 conceal cchar=
 hi Conceal guibg=NONE
