@@ -13,6 +13,9 @@ vim.g.maplocalleader = " "
 -- Disable Ex mode
 keymap("", "Q", "<Nop>", opts)
 
+-- Disable record
+keymap("", "q", "<Nop>", opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

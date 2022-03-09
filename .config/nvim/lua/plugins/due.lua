@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-due_nvim.setup{
+due_nvim.setup {
     draw = 0,
     clean = 0,
     redraw = 0,
@@ -19,6 +19,7 @@ due_nvim.setup{
     pattern_start = "(",
     pattern_end = ")",
     use_clock_time = true,
-    use_clock_today = true,
-    default_due_time = "noon",
+    use_clock_today = false,
+    use_seconds = true,
+    default_due_time = "noon"
 }

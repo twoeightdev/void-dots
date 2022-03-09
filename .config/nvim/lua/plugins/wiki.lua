@@ -31,17 +31,3 @@ vim.g.wiki_journal = {
         monthly = "%Y_m%m",
     }
 }
-
---local cmd = vim.cmd
-
-
-
--- Calendar
--- vim.g.calendar_diary = "~/.config/dev/personal/wiki/diary"
---
--- vim.g.calendar_filetype = "markdown"
--- vim.g.calendar_diary_path_pattern = "{YYYY}-{MM}-{DD}{EXT}"
--- vim.g.calendar_diary_extensions = ".md"
-
-
---vim.g.bullets_enabled_file_types = { "markdown" }
