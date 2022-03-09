@@ -4,4 +4,4 @@ uptime="$(uptime --pretty | sed -e 's/up //g' -e 's/ days/d/g' -e 's/ day/d/g' -
 sep="|"
 
 . sb-theme
-display "$(echo "$sep$uptime$sep")"
+display "$(echo "$uptime ^d^")"

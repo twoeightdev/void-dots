@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # Gruvbox colorscheme
-color1="#1d2021"    # black
+color0="#5d6061"    # gray
+color1="#32302f"    # black
 color2="#ea6962"    # red
 color3="#a9b665"    # green
 color4="#e78a4e"    # yellow
@@ -30,9 +31,9 @@ display() {
             sb-mem) color="$color3" ;;
             sb-gpu) color="$color4" ;;
             sb-cpu) color="$color3" ;;
-            sb-time) color="$color4" ;;
+            #sb-time) color="$color4" ;;
             sb-date) color="$color2" ;;
-            sb-uptime) color="$color8" ;;
+            sb-uptime) color="$color0" ;;
             *) color="$color8" ;;
         esac
     fi

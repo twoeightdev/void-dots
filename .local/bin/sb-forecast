@@ -7,4 +7,4 @@ showweather() {
     cat "$weatherreport" | sed 's/.* //'
 }
 
-display W:$(showweather)
+display :$(showweather)

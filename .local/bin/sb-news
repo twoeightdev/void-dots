@@ -1,4 +1,4 @@
 #!/bin/sh
 
 . sb-theme
-cat ~/.cache/news_unread 2>/dev/null || display "$(echo "$(newsboat -x print-unread | awk '{ if($1>0) print "NEWS:" $1}')")"
+cat ~/.cache/news_unread 2>/dev/null || display "$(echo "$(newsboat -x print-unread | awk '{ if($1>0) print "News:" $1}')")"

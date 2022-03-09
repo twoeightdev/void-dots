@@ -4,7 +4,6 @@ remaps &
 xsetroot -cursor_name left_ptr &
 setbg &
 dwmblocks &
-usersv &
 
 autostart="picom mpd dunst unclutter"
 
