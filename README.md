@@ -31,14 +31,18 @@
 
 ## Personal suckless build
 
-- [Dwm](https://github.com/hoaxdream/void-dwm)
+- [dwm](https://github.com/hoaxdream/void-dwm)
 
-- [St](https://github.com/hoaxdream/void-st)
+- [st](https://github.com/hoaxdream/void-st)
 
-- [Slock](https://github.com/hoaxdream/void-slock)
+- [slock](https://github.com/hoaxdream/void-slock)
 
-- [Dwmblocks](https://github.com/hoaxdream/void-dwmblocks) - [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) by UtkarshVerma
+- [dwmblocks](https://github.com/hoaxdream/void)
 
-- [Dmenu](https://github.com/hoaxdream/void-dmenu)
+- [dmenu](https://github.com/hoaxdream/void-dmenu)
 
-Check the [Guide](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md) on how to patch [libxft-bgra](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/patches/libXft-bgra/change.patch) for void linux.
+## Credits
+- Thanks to [UtkarshVerma](https://github.com/UtkarshVerma) for [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async)
+- Many thanks to [eProTaLT83](https://www.reddit.com/user/eProTaLT83) as he made the patch for [statuspadding](https://dwm.suckless.org/patches/statuspadding/) compatible with [status2d](https://dwm.suckless.org/patches/status2d/).😊
+
+* Check the [Guide](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md) on how to patch [libxft-bgra](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/patches/libXft-bgra/change.patch) for void linux.
