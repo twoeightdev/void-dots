@@ -1,6 +1,6 @@
 local options = {
     conceallevel = 2,
-    --concealcursor = 'nc',
+    concealcursor = 'nc',
     background = 'light',                   -- Set if not using colorscheme
     --signcolumn = 'number',                  -- Move gitsigns in number line
     signcolumn = "yes",
