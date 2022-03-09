@@ -7,5 +7,5 @@ if [ $count -lt 0 ];then
 	exit
 else
     . sb-theme
-    display "$(echo $icon$count)"
+    display "^b$color1^ $(echo $icon$count) ^d^"
 fi

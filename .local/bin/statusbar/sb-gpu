@@ -1,4 +1,4 @@
 #!/bin/sh
 
 . sb-theme
-display "GPU-$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)°C"
+display "^b$color1^ GPU-$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)°C ^d^"

@@ -3,8 +3,5 @@
 weatherreport="$HOME/.local/share/weatherreport"
 
 . sb-theme
-showweather() {
-    cat "$weatherreport" | sed 's/.* //'
-}
 
-display :$(showweather)
+display "^b$color1^ :$(cat "$weatherreport" | sed 's/.* //') ^d^"

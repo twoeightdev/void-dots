@@ -1,4 +1,4 @@
 #!/bin/sh
 
 . sb-theme
-display "$(sensors | awk '/Core 0/ {print "CPU" $3}')"
+display "^b$color1^ $(sensors | awk '/Core 0/ {print "CPU" $3}') ^d^"

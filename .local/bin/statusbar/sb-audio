@@ -13,4 +13,4 @@ else
 	icon=" "
 fi
 
-display "$icon$vol%"
+display "^b$color1^ $icon$vol% ^d^"
