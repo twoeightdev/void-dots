@@ -13,6 +13,7 @@ local colors = {
     orange = '#e78a4e',
     purple = '#d3869b',
     red = '#ea6962',
+    trans = 'none',
 }
 
 local vi_mode_colors = {
@@ -102,7 +103,7 @@ local comps = {
             left_sep = ' ',
             hl = {
                 fg = colors.purple,
-                bg = colors.bg,
+                bg = colors.trans,
                 style = 'bold',
             }
         },
@@ -181,7 +182,7 @@ table.insert(components.active[2], comps.file.line_percentage)
 
 feline.setup {
     theme = {
-        bg = colors.bg,
+        bg = colors.trans,
         fg = colors.fg
     },
     components = components,
