@@ -45,4 +45,4 @@
 - Thanks to [UtkarshVerma](https://github.com/UtkarshVerma) for [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async)
 - Many thanks to [eProTaLT83](https://www.reddit.com/user/eProTaLT83) as he made the patch for [statuspadding](https://dwm.suckless.org/patches/statuspadding/) compatible with [status2d](https://dwm.suckless.org/patches/status2d/).😊
 
-* Check the [Guide](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md) on how to patch [libxft-bgra](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/patches/libXft-bgra/change.patch) for void linux.
+Check the [Guide](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/notes/VOID.md) on how to patch [libxft-bgra](https://github.com/hoaxdream/void-dots/blob/main/.config/dev/patches/libXft-bgra/change.patch) for void linux.
