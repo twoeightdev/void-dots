@@ -7,6 +7,7 @@ due_nvim.setup {
     draw = 0,
     clean = 0,
     redraw = 0,
+    async_update = 0,
     prescript = "due: ",
     prescript_hi = "Comment",
     due_hi = "String",
@@ -18,8 +19,9 @@ due_nvim.setup {
     date_hi = "Conceal",
     pattern_start = "(",
     pattern_end = ")",
+    update_rate = 1000,
     use_clock_time = true,
     use_clock_today = false,
     use_seconds = true,
-    default_due_time = "noon"
+    default_due_time = "noon"   -- midnight(24hr) and noon(12hr)
 }
