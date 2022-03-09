@@ -1,0 +1,4 @@
+#!/bin/sh
+#"$(TZ='Asia/Riyadh' date "+%I:%M%p") $(date "+%I:%M%p")"
+. sb-theme
+display " $(date "+%I:%M%p")"

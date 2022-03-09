@@ -1,0 +1,16 @@
+#!/bin/sh
+
+. sb-theme
+vol="$(pamixer --get-volume)"
+
+if [ "$vol" -gt 10 ]; then
+	icon=" "
+elif [ "$vol" -gt 5 ]; then
+	icon=" "
+elif [ "$vol" -gt 0 ]; then
+	icon=" "
+else
+	icon=" "
+fi
+
+display "$icon$vol%"

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+count="$(xbps-install -un | wc -l)"
+icon="Updates:"
+
+if [ $count -lt 0 ];then
+	exit
+else
+    . sb-theme
+    display "$(echo $icon$count)"
+fi
