@@ -1,7 +1,7 @@
 # Environmental variables sets in here
 typeset -U PATH
 # Path to scripts
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.local/bin/statusbar:$PATH"
 
 # XDG Base Directory
 export XDG_LOCAL_HOME="$HOME/.local" # This sould be one of defaults
