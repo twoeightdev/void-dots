@@ -3,7 +3,7 @@
 # If newsboat is open, sends it an "R" key to refresh
 export DISPLAY=:0
 
-notify-send " updating RSS feeds..."
+notify-send "📰 updating RSS feeds..."
 
 if pgrep newsboat$ >/dev/null 2>&1; then
     xdotool key --window "$(xdotool search --class newsboat)" R
@@ -16,4 +16,4 @@ newsboat -x reload
 rm -f ~/.cache/news_unread
 pkill -RTMIN+19 dwmblocks
 
-notify-send " RSS feed update complete"
+notify-send "📰 RSS feed update complete"

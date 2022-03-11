@@ -3,5 +3,5 @@
 
 xbpsupdate=$(xbps-install -un | awk '{print $1}')
 
-notify-send "Package Update" "$xbpsupdate"
+notify-send "📦 Package Update" "$xbpsupdate"
 pkill -RTMIN+16 dwmblocks

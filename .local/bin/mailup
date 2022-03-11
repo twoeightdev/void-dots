@@ -15,7 +15,7 @@ export DISPLAY=:0
 
 if [ $new -gt 0 ]
 then
-    notify-send "New mail!" "New: $new Old: $old" && pkill -RTMIN+18 dwmblocks
+    notify-send "📭 New mail!" "New: $new Old: $old" && pkill -RTMIN+18 dwmblocks
 fi
 
 wait

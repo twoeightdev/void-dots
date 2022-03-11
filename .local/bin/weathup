@@ -11,4 +11,4 @@ getforecast() {
 
 getforecast
 
-notify-send "Weather updated" && pkill -RTMIN+20 dwmblocks
+notify-send "🌈 Weather updated" && pkill -RTMIN+20 dwmblocks

@@ -7,4 +7,4 @@ if ! pidof transmission-daemon >/dev/null; then
     sleep 1
 fi
 
-transmission-remote -a "$@" && notify-send "Torrent added."
+transmission-remote -a "$@" && notify-send "🔽 Torrent added."
