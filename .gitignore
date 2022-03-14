@@ -53,7 +53,7 @@ dots
 .config/shell/zshdirrc
 .config/ss/
 .config/sv/emacs-daemon/supervise/
-.config/transmission/stats.json
+.config/transmission-daemon/stats.json
 .config/unity3d/
 .config/zsh/.zcompdump
 .config/zsh/zplug/
