@@ -70,6 +70,7 @@
     frame_color = "#e78a4e"
     timeout = 0
 
+# use dunst -print to show appname and summary
 [history-ignore-audiobar]
     appname = "audiobar"
     history_ignore = yes
