@@ -2,7 +2,8 @@
 
 # Gruvbox colorscheme
 color0="#5d6061"    # gray
-color1="#282828"    # black
+#color1="#282828"    # black
+color1="#32302f"    # black
 color2="#ea6962"    # red
 color3="#a9b665"    # green
 color4="#e78a4e"    # yellow

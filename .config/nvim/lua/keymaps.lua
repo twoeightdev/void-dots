@@ -25,7 +25,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Insert --
 -- Press jj fast to enter
-keymap("i", "jj", "<ESC>", opts)
+--keymap("i", "jj", "<ESC>", opts)
 
 -- Tab management
 keymap("n", "<M-1>", "1gt", opts)
