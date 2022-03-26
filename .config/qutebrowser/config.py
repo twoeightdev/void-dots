@@ -127,7 +127,7 @@ c.fonts.contextmenu = '16px default_family'
 # Colors
 bg = "#1d2021"
 fg = "#d4be98"
-base01 = "#1d2021" # black
+base01 = "#32302f" # black
 base02 = "#ea6962" # red
 base03 = "#a9b665" # green
 base04 = "#e78a4e" # yellow
