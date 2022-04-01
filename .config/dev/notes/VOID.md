@@ -272,13 +272,13 @@ early_microcode=yes
 
 ```sh
     - $ sudo xbps-install -Syu git
-    - $ git clone https://github.com/hoaxdream/void-bootstrap
+    - $ git clone https://github.com/hoaxdream/void-bootstrap.git
     - $ cd void-bootstrap
-    - $ sudo ./hhd.sh       # Run only for fresh disk configured for my system
-    - $ sudo ./ssd.sh       # Run only for fresh disk configured for my system
-    - $ ./setup.sh          # You only need this, install dot first
-    - $ sudo ./root.sh      # Needs to be run as root configured for my system
-    - $ sudo ./post.sh      # Needs to be run as root configured for my system
+    - $ sudo ./opt.sh   # Needs to be run as root configured for my system
+    - $ sudo ./hhd.sh   # Run only for fresh disk configured for my system
+    - $ sudo ./ssd.sh   # Run only for fresh disk configured for my system
+    - $ ./setup.sh      # You only need this, install dot first
+    - $ sudo ./root.sh  # Needs to be run as root configured for my system
     - $ sudo reboot
 ```
 
