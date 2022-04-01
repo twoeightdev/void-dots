@@ -52,6 +52,7 @@ export SUDO_ASKPASS="$HOME/.local/bin/dmenu-pass"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export BAT_THEME="gruvbox-dark"
+export QTWEBENGINE_CHROMIUM_FLAGS="--widevine-path=/usr/lib/chromium/libwidevinecdm.so"
 
 # X11
 #export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
