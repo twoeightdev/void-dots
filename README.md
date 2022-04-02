@@ -5,11 +5,9 @@
 
 ## Dwm
 
-![Rice screen preview00](https://i.imgur.com/5H2nKdX.png)
+<img src="https://github.com/hoaxdream/void-dots/blob/main/.config/dev/screenshot/img_preview01.png">
+<img src="https://github.com/hoaxdream/void-dots/blob/main/.config/dev/screenshot/img_preview02.png">
 
-![Rice screen preview01](https://i.imgur.com/CgCDqQq.png)
-
-![Rice screen preview02](https://i.imgur.com/JPoX6H9.png)
 
 ## Dotfiles installation
 
