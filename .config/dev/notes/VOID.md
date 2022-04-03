@@ -87,7 +87,6 @@ Mount point | Partition | Partition type | Suggested size
     - Create partition
         - $ wipefs -af /dev/nvme0n1   # wipe drive
         - $ fdisk /dev/nvme0n1        # use fdisk to partition disk
-        - <code>Type <b>g</b> to set GPT disklabel</code>
     - Format parition
         - $ mkfs.vfat /dev/nvme0n1p1
         - $ mkfs.ext4 /dev/nvme0n1p2
