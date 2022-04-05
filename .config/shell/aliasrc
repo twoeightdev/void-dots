@@ -22,8 +22,7 @@ alias \
     la="ls -A -S1qX" \
     lh="ls -A" \
     grep="grep --color=auto" \
-    diff="diff --color=auto" \
-    bat="bat -n"
+    diff="diff --color=auto"
 
 # These common commands are just too long! abbreviate them
 alias \
@@ -38,8 +37,6 @@ alias \
     xbf="sudo xbps-query -f" \
     xbi="sudo xbps-install -Su" \
     xbr="sudo xbps-remove -ROo" \
-    vkls="sudo vkpurge list" \
-    vkrm="sudo vkpurge rm all" \
     z="zathura"
 
 # Make
