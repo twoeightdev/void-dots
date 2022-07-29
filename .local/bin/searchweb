@@ -17,7 +17,7 @@ case "$DMENU" in
     ludeon)         $BROWSER https://ludeon.com/forums/index.php        ;;
     suckless)       $BROWSER https://suckless.org                       ;;
     arch)           $BROWSER https://bbs.archlinux.org/index.php        ;;
-    goanime)        $BROWSER https://gogoanime.film/                    ;;
+    goanime)        $BROWSER https://Gogoanime.gg/                    ;;
     animix)         $BROWSER https://animixplay.to                      ;;
     wallhaven)      $BROWSER https://wallhaven.cc                       ;;
     unixporn)       $BROWSER https://www.reddit.com/r/unixporn          ;;
