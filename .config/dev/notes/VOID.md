@@ -133,7 +133,7 @@ nameserver 1.0.0.1
     - $ xbps-install -Su void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
     - $ xbps-install -Su
     - $ cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/   # copy mirrors
-    - $ sed -i 's|https://alpha.de.repo.voidlinux.org|https://mirrors.servercentral.com/voidlinux|g' /etc/xbps.d/*-repository-*.conf   # change mirrors
+    - $ sed -i 's|https://repo-default.voidlinux.org|https://mirrors.servercentral.com/voidlinux|g' /etc/xbps.d/*-repository-*.conf   # change mirrors
     - $ xbps-install -Su    # update
     - $ xpbs-query -L       # check new repo URL
 ```
