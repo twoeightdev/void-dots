@@ -50,6 +50,11 @@ export LESSHISTFILE="-"
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenu-pass"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+export CLUTTER_DEFAULT_FPS=144
+export __GL_SHADER_DISK_CACHE=1
+export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
+export __GL_SYNC_DISPLAY_DEVICE=DP-2
+export __GL_SYNC_TO_VBLANK=0
 export _JAVA_AWT_WM_NONREPARENTING=1
 export BAT_THEME="gruvbox-dark"
 export QTWEBENGINE_CHROMIUM_FLAGS="--widevine-path=/usr/lib/chromium/libwidevinecdm.so"
