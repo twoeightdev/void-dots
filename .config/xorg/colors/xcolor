@@ -1,3 +1,7 @@
+!!! Emacs
+!emacs*foreground: #1d2021
+!emacs*background: #ebdbb1
+
 !!! Nord Xresources palette */
 !*.foreground: #D8DEE9 */
 !*.background: #22262e */
@@ -39,44 +43,44 @@
 !*.color15:    #ebdbb2 */
 
 !! Gruvbox-flat Xresources pallete
-*.foreground: #d4be98
-*.background: #1d2021
-*.color0:     #32302f
-*.color1:     #ea6962
-*.color2:     #a9b665
-*.color3:     #e78a4e
-*.color4:     #7daea3
-*.color5:     #d3869b
-*.color6:     #89b482
-*.color7:     #d4be98
-*.color8:     #32302f
-*.color9:     #ea6962
-*.color10:    #a9b665
-*.color11:    #e78a4e
-*.color12:    #7daea3
-*.color13:    #d3869b
-*.color14:    #89b482
-*.color15:    #d4be98
+!*.foreground: #d4be98 */
+!*.background: #1d2021 */
+!*.color0:     #32302f */
+!*.color1:     #ea6962 */
+!*.color2:     #a9b665 */
+!*.color3:     #e78a4e */
+!*.color4:     #7daea3 */
+!*.color5:     #d3869b */
+!*.color6:     #89b482 */
+!*.color7:     #d4be98 */
+!*.color8:     #32302f */
+!*.color9:     #ea6962 */
+!*.color10:    #a9b665 */
+!*.color11:    #e78a4e */
+!*.color12:    #7daea3 */
+!*.color13:    #d3869b */
+!*.color14:    #89b482 */
+!*.color15:    #d4be98 */
 
-!!! Catppuccin Xresources palette */
-!*.foreground: #dadae8 */
-!*.background: #1e1e28 */
-!*.color0:     #6e6c7e */
-!*.color1:     #e38c8f */
-!*.color2:     #b1e3ad */
-!*.color3:     #ebddaa */
-!*.color4:     #a4b9ef */
-!*.color5:     #c6aae8 */
-!*.color6:     #e5b4e2 */
-!*.color7:     #dadae8 */
-!*.color8:     #6e6c7e */
-!*.color9:     #e38c8f */
-!*.color10:    #b1e3ad */
-!*.color11:    #ebddaa */
-!*.color12:    #a4b9ef */
-!*.color13:    #c6aae8 */
-!*.color14:    #e5b4e2 */
-!*.color15:    #dadae8 */
+!!! Catppuccin frappe Xresources palette */
+!*.foreground: #c6d0f5 */
+!*.background: #303446 */
+!*.color0:     #51576d */
+!*.color1:     #e78284 */
+!*.color2:     #a6d189 */
+!*.color3:     #e5c890 */
+!*.color4:     #8caaee */
+!*.color5:     #f4b8e4 */
+!*.color6:     #81c8be */
+!*.color7:     #b5bfe2 */
+!*.color8:     #626880 */
+!*.color9:     #e78284 */
+!*.color10:    #a6d189 */
+!*.color11:    #e5c890 */
+!*.color12:    #8caaee */
+!*.color13:    #f4b8e4 */
+!*.color14:    #81c8be */
+!*.color15:    #a5adce */
 
 !!! Iceberg Xresources palette */
 !*.foreground: #c6c8d1 */
