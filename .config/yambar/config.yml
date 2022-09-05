@@ -1,0 +1,14 @@
+font-md: &font-md "Inconsolata:pixelsize=21"
+
+bar:
+  height: 26
+  location: top
+  background: 000000ff
+
+  right:
+    - clock:
+        time-format: "%I:%M %p"
+        date-format: "%m/%d"
+        content:
+          - string: {text: "{date}", font: *font-md}
+          - string: {text: "{time}", font: *font-md}
