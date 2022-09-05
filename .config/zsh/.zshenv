@@ -27,11 +27,11 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="less"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="qutebrowser"
 export READER="zathura"
 export FILE="lf"
-export WM="dwm"
+export WM="bspwm"
 
 # Relocate variables
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
