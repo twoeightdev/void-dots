@@ -5,6 +5,7 @@ pgrep -x polybar > /dev/null || polybar &
 xsetroot -cursor_name left_ptr &
 xset s off -dpms &
 xset r rate 300 50 &
+xset m 2 0
 setxkbmap -option caps:swapescape &
 setbg &
 
